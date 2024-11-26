@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/temp', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
-
-
-Route::get('/', function () {
-    return redirect('/temp');
-});
+//
+//
+//
+//
+//
+//
+//Route::get('/', function () {
+//    return redirect('/temp');
+//});
 
 
 

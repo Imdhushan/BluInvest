@@ -102,6 +102,7 @@
         "jsvectormap": "^1.5.3",
         "jszip": "^3.10.1",
         "leaflet": "^1.9.4",
+        "leaflet.tilelayer.colorfilter": "^1.2.5",
         "lity": "^2.4.1",
         "maska": "^2.1.10",
         "masonry-layout": "^4.2.2",

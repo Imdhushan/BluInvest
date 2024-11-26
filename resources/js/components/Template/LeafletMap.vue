@@ -1,274 +1,155 @@
 <template>
   <div>
     <div id="map"></div>
-    <button @click="showQueryModal" class="btn btn-primary">Open Query</button>
-    <div id="loading" v-show="loading">
-      <div class="loader"></div>
-      <p>Loading...</p>
-    </div>
 
-    <!-- Query Modal -->
-    <div class="modal fade" id="queryModal" tabindex="-1" aria-labelledby="queryModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="queryModalLabel">Query Layer by Attribute</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="queryForm">
-              <div class="mb-3">
-                <label for="attributeSelect" class="form-label">Select Attribute</label>
-                <select class="form-select" v-model="selectedAttribute">
-                  <option v-for="attribute in attributes" :key="attribute" :value="attribute">{{ attribute }}</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="attributeValue" class="form-label">Enter Value</label>
-                <input type="text" class="form-control" v-model="attributeValue" placeholder="Enter value to query" />
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" @click="applyQuery">Apply Query</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--    &lt;!&ndash; Query Modal &ndash;&gt;-->
+<!--    <div class="modal fade" id="queryModal" tabindex="-1" aria-labelledby="queryModalLabel" aria-hidden="true">-->
+<!--      <div class="modal-dialog">-->
+<!--        <div class="modal-content">-->
+<!--          <div class="modal-header">-->
+<!--            <h5 class="modal-title" id="queryModalLabel">Query Layer by Attribute</h5>-->
+<!--            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--          </div>-->
+<!--          <div class="modal-body">-->
+<!--            <form id="queryForm">-->
+<!--              <div class="mb-3">-->
+<!--                <label for="attributeSelect" class="form-label">Select Attribute</label>-->
+<!--                <select class="form-select" v-model="selectedAttribute">-->
+<!--                  <option v-for="attribute in attributes" :key="attribute" :value="attribute">{{ attribute }}</option>-->
+<!--                </select>-->
+<!--              </div>-->
+<!--              <div class="mb-3">-->
+<!--                <label for="attributeValue" class="form-label">Enter Value</label>-->
+<!--                <input type="text" class="form-control" v-model="attributeValue" placeholder="Enter value to query" />-->
+<!--              </div>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--          <div class="modal-footer">-->
+<!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+<!--            <button type="button" class="btn btn-primary" @click="applyQuery">Apply Query</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted ,defineProps} from 'vue';
+import {ref, onMounted, inject, watch} from 'vue';
 import L from 'leaflet';
 
 const map = ref(null);
-const geoServerLayer = ref(null);  // Reference for GeoServer layer
-const queryLayerGroup = L.layerGroup(); // Initialize query layer group
-
-// Default values for selectedAttribute and attributeValue
-const selectedAttribute = ref('Grid_id');  // Set default value for selected attribute
-const attributeValue = ref('1');  // Set default value for attribute value
-
-const selectedAttributeIn = 'Grid_id';  // Set default value for selected attribute
-const attributeValueIn = '1';  // Set default value for attribute value
-
-const attributes = ref([]);
-const loading = ref(false);
+const queryLayerGroup = L.layerGroup(); // Group for displaying queried features
+const $loading =  inject('$loading')
 
 const props = defineProps({
-  selectedAttributeIn: {
-    type: String,
-    default: 'Grid_id', // default value for selectedAttributeIn
+  filters: {
+    type: Array,
+    default: [],
   },
-  attributeValueIn: {
-    type: String,
-    default: '1', // default value for attributeValueIn
-  },
+
 });
 
-// Initialize map when component is mounted
-onMounted(() => {
-  map.value = L.map('map').setView([6.9271, 79.8612], 7); // Sri Lanka center coordinates
 
-  // Base layers
+// Function to apply hard-coded tourism filters
+const applyTourismQuery = () => {
+
+  let loader = $loading.show();
+
+  // Construct the filter for hard-coded values
+  const filters = props.filters
+      .map(
+          filter =>
+              `<PropertyIsEqualTo><PropertyName>${filter.attribute}</PropertyName><Literal>${filter.value}</Literal></PropertyIsEqualTo>`
+      )
+      .join('');
+
+  const queryUrl = `https://geoserver.g-sentry.com/geoserver/cite/wfs?` +
+      `service=WFS&version=1.1.0&request=GetFeature&typeName=cite:GRID&outputFormat=application/json&` +
+      `filter=<Filter>${filters}</Filter>`;
+
+  fetch(queryUrl)
+      .then(response => response.json())
+      .then(data => {
+        queryLayerGroup.clearLayers();
+
+        // Create a GeoJSON layer with the filtered data
+        const queryLayer = L.geoJSON(data, {
+          onEachFeature: function (feature, layer) {
+            // Format attributes into a list
+            const attributesHTML = Object.entries(feature.properties)
+                .map(([key, value]) => `<tr><td><b>${key}:</b></td><td>${value}</td></tr>`)
+                .join('');
+
+            // Wrap popup content in a small, scrollable window
+            const popupContent = `
+            <div class="info-popup">
+              <h6>Tourism Feature</h6>
+              <div class="popup-content" style="height: 100px;overflow-y: scroll">
+                <table>${attributesHTML}</table>
+              </div>
+            </div>
+          `;
+            layer.bindPopup(popupContent, {
+              className: 'custom-popup', // Custom class for popup styling
+              offset: L.point(0, -10),  // Slight offset to mimic Google-style popups
+              closeButton: true,        // Add close button for user convenience
+            });
+          },
+        });
+
+        // Add the GeoJSON layer to the queryLayerGroup
+        queryLayerGroup.addLayer(queryLayer);
+
+        // Fit the map to the bounds of the filtered data
+        map.value.fitBounds(queryLayer.getBounds());
+        loader.hide();
+      })
+      .catch(error => {
+        console.error('Error querying tourism features:', error);
+        loader.hide();
+      });
+};
+
+// Initialize the map
+onMounted(() => {
+  map.value = L.map('map').setView([6.9271, 79.8612], 7); // Centered on Sri Lanka
+
+  // Add base layer (OpenStreetMap)
   const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '© OpenStreetMap contributors',
   });
 
-  const satelliteBaseLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors',
-  });
-
-  // Add OpenStreetMap base layer to map
   osmBaseLayer.addTo(map.value);
 
-  // Add queryLayerGroup to map
+  // Add the query layer group to the map
   queryLayerGroup.addTo(map.value);
 
-  // Layer control
-  const baseLayers = {
-    "OpenStreetMap": osmBaseLayer,
-    "Satellite": satelliteBaseLayer
-  };
-
-  const overlays = {
-    "Query Layer": queryLayerGroup, // Add to overlays
-  };
-
-  L.control.layers(baseLayers, overlays).addTo(map.value);
-
-  // Fetch attributes for query
-  fetchAttributes();
-  console.log('props.selectedAttributeIn,props.attributeValueIn',props.selectedAttributeIn,props.attributeValueIn)
-  applyQueryIn(props.selectedAttributeIn,props.attributeValueIn);
-  // Set up the zoom event listener to check for zoom changes
- // map.value.on('zoomend', onZoomEnd);
+  // Trigger the tourism query on load
+  // applyTourismQuery();
 });
 
-// Fetch available attributes from the GeoServer
-const fetchAttributes = () => {
-  const attributesUrl = 'http://43.224.124.70:8090/geoserver/cite/wfs?service=WFS&version=1.1.0&request=DescribeFeatureType&typeName=cite:GRID';
 
-  fetch(attributesUrl)
-    .then(response => response.text())
-    .then(data => {
-      const parser = new DOMParser();
-      const xml = parser.parseFromString(data, 'text/xml');
-      const elements = xml.getElementsByTagName('xsd:element');
-      const attributeArray = [];
+watch(() => props.filters, (data, oldEvent) => {
+  if (data){
+    console.log("filter array",data);
+    applyTourismQuery();
 
-      for (let i = 0; i < elements.length; i++) {
-        const attributeName = elements[i].getAttribute('name');
-        if (attributeName !== 'the_geom') {
-          attributeArray.push(attributeName);
-        }
-      }
-      attributes.value = attributeArray;
-    })
-    .catch(error => console.error('Error fetching attributes:', error));
-};
-
-// Show query modal
-const showQueryModal = () => {
-  const queryModal = new bootstrap.Modal(document.getElementById('queryModal'));
-  queryModal.show();
-};
-
-const applyQueryIn = (selectedAttributeIn,attributeValueIn) => {
-  loading.value = true;
-
-  // Add GeoServer layer conditionally if attribute is selected
-  // if (selectedAttribute.value && attributeValue.value) {
-  //   addGeoServerLayer();
-  // }
-
-  const queryUrl = `http://43.224.124.70:8090/geoserver/cite/wfs?` +
-    `service=WFS&version=1.1.0&request=GetFeature&typeName=cite:GRID&outputFormat=application/json&` +
-    `filter=<Filter><PropertyIsEqualTo><PropertyName>${selectedAttributeIn}</PropertyName><Literal>${attributeValueIn}</Literal></PropertyIsEqualTo></Filter>`;
-
-  fetch(queryUrl)
-    .then(response => response.json())
-    .then(data => {
-      // Clear existing layers from queryLayerGroup
-      queryLayerGroup.clearLayers();
-
-      // Create a new GeoJSON layer
-      const queryLayer = L.geoJSON(data, {
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(`<b>Attributes:</b><br>${JSON.stringify(feature.properties)}`);
-        },
-      });
-
-      // Add the new layer to the queryLayerGroup
-      queryLayerGroup.addLayer(queryLayer);
-
-      // Adjust map view to fit the new layer's bounds
-      map.value.fitBounds(queryLayer.getBounds());
-
-      // Hide loading indicator
-      loading.value = false;
-
-      // Close the query modal
-      const queryModal = bootstrap.Modal.getInstance(document.getElementById('queryModal'));
-      queryModal.hide();
-    })
-    .catch(error => {
-      console.error('Error querying features:', error);
-      loading.value = false;
-    });
-};
-
-// Apply query to the GeoServer
-const applyQuery = () => {
-  loading.value = true;
-
-  // Add GeoServer layer conditionally if attribute is selected
-  // if (selectedAttribute.value && attributeValue.value) {
-  //   addGeoServerLayer();
-  // }
-
-  const queryUrl = `http://43.224.124.70:8090/geoserver/cite/wfs?` +
-    `service=WFS&version=1.1.0&request=GetFeature&typeName=cite:GRID&outputFormat=application/json&` +
-    `filter=<Filter><PropertyIsEqualTo><PropertyName>${selectedAttribute.value}</PropertyName><Literal>${attributeValue.value}</Literal></PropertyIsEqualTo></Filter>`;
-
-  fetch(queryUrl)
-    .then(response => response.json())
-    .then(data => {
-      // Clear existing layers from queryLayerGroup
-      queryLayerGroup.clearLayers();
-
-      // Create a new GeoJSON layer
-      const queryLayer = L.geoJSON(data, {
-        onEachFeature: function (feature, layer) {
-          layer.bindPopup(`<b>Attributes:</b><br>${JSON.stringify(feature.properties)}`);
-        },
-      });
-
-      // Add the new layer to the queryLayerGroup
-      queryLayerGroup.addLayer(queryLayer);
-
-      // Adjust map view to fit the new layer's bounds
-      map.value.fitBounds(queryLayer.getBounds());
-
-      // Hide loading indicator
-      loading.value = false;
-
-      // Close the query modal
-      const queryModal = bootstrap.Modal.getInstance(document.getElementById('queryModal'));
-      queryModal.hide();
-    })
-    .catch(error => {
-      console.error('Error querying features:', error);
-      loading.value = false;
-    });
-};
-
-// Function to add GeoServer Layer
-const addGeoServerLayer = () => {
-  if (!geoServerLayer.value) {
-    geoServerLayer.value = L.tileLayer.wms('http://43.224.124.70:8090/geoserver/cite/wms?', {
-      layers: 'cite:GRID',
-      format: 'image/png',
-      transparent: true,
-      attribution: 'Map data from GeoServer',
-    }).addTo(map.value);
   }
-};
-
-// Function to handle zoom end event
-const onZoomEnd = () => {
-  const zoomLevel = map.value.getZoom();
-
-  // If zoom level is less than a specific threshold (e.g., zoom level 10), add the GeoServer layer
-  if (zoomLevel <= 10 && !geoServerLayer.value) {
-    addGeoServerLayer();
-  } else if (zoomLevel > 10 && geoServerLayer.value) {
-    geoServerLayer.value.remove();
-    geoServerLayer.value = null; // Remove the layer and reset the reference
-  }
-};
+})
 
 </script>
 
+
+
 <style scoped>
+/* Map container styling */
 #map {
   width: 100%;
   height: 90vh;
 }
 
-#loading {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1100;
-  text-align: center;
-}
 
 .loader {
   border: 8px solid #f3f3f3;
@@ -281,10 +162,67 @@ const onZoomEnd = () => {
 
 @keyframes spin {
   0% {
+
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
   }
 }
+
+/* Leaflet popup styling */
+.custom-popup .leaflet-popup-content-wrapper {
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  max-width: 250px; /* Set maximum width for the popup */
+}
+
+.custom-popup .leaflet-popup-content {
+  margin: 0;
+  font-size: 12px; /* Compact font size for content */
+  line-height: 1.4; /* Adjust line height for readability */
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: white;
+}
+
+/* Title styling */
+.info-popup h6 {
+  margin: 0 0 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Scrollable popup content */
+.popup-content {
+  height: 100px !important; /* Fixed height to constrain content */
+  overflow-y: scroll !important; /* Enable vertical scrolling */
+  white-space: nowrap; /* Prevent wrapping of text (optional, can be removed) */
+}
+
+/* Table styling */
+.popup-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.popup-content td {
+  padding: 2px 5px;
+  vertical-align: top;
+  word-wrap: break-word; /* Ensure long text wraps */
+}
+
+.popup-content td:first-child {
+  font-weight: bold;
+  width: 40%;
+}
+
+.popup-content td:last-child {
+  width: 60%;
+}
+
 </style>
+
+
