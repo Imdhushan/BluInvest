@@ -14,37 +14,45 @@
               <p class="text-white">Invest in a thriving ocean economy and pave the way for both business success and a healthier planet.</p>
           <div>
             <div class="row mx-n1">
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/generic/4.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/Test_1.png" alt="" />
-    </a>
-  </div>
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/generic/4.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/Boat_new.png" alt="" />
-    </a>
-  </div>
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/generic/5.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/Marine.png" alt="" />
-    </a>
-  </div>
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/gallery/4.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/Wind_new.png" alt="" />
-    </a>
-  </div>
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/gallery/4.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/Solar_new.png" alt="" />
-    </a>
-  </div>
-  <div class="col-4 p-1">
-    <a class="post1" href="/assets/img/gallery/4.jpg" data-gallery="gallery-1">
-      <img class="img-fluid rounded" src="/assets/img/financ_new.png" alt="" />
-    </a>
-  </div>
-</div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/tourism" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Test_1.png" alt="" />
+                  <div class="overlay-text">Tourism</div>
+                </a>
+              </div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/boat" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Boat_new.png" alt="" />
+                  <div class="overlay-text">Boat Building</div>
+                </a>
+              </div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/marine" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Marine.png" alt="" />
+                  <div class="overlay-text">Marine Industries</div>
+
+                </a>
+              </div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/wind" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Wind_new.png" alt="" />
+                  <div class="overlay-text">Wind Energy</div>
+                </a>
+              </div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/solar" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Solar_new.png" alt="" />
+                  <div class="overlay-text">Solar Energy</div>
+                </a>
+              </div>
+              <div class="col-4 p-1">
+                <a class="post1 hover-effect" href="/tourismsector/conservation" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/financ_new.png" alt="" />
+                  <div class="overlay-text">Conservation</div>
+
+                </a>
+              </div>
+            </div>
           </div>
 
           <!-- <div class="row flex-center align-items-stretch">
@@ -271,85 +279,35 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.light {
-  padding: 5rem 0;
-}
 
-.hover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.post1:hover .hover-overlay {
-  opacity: 1;
-}
-
-.initial-text {
-  display: none;
-}
-
-.hover-text {
-  display: block;
-  text-align: center;
-}
-
-.post1 {
+.hover-effect {
   position: relative;
   display: block;
+  overflow: hidden;
 }
 
-img {
-  transition: transform 0.3s ease-in-out;
+.hover-effect img {
+  transition: transform 0.5s ease;
 }
 
-.post1:hover img {
+.hover-effect:hover img {
   transform: scale(1.1);
 }
 
-.text-white {
-  color: white !important;
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.text-800 {
-  font-weight: 800;
-}
-
-.text-warning {
-  color: #ff9800 !important;
-}
-
-.card-body {
-  padding: 1rem;
-}
-
-.card-body .row {
-  margin-bottom: 1.5rem;
-}
-
-.card-body .row .col-md-4 {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.card-body .row .col-md-4:last-child {
-  padding-right: 0;
-}
-
-.btn-outline-light {
-  border: 2px solid #ffffff;
-}
-
-.btn-outline-light:hover {
-  background-color: #ffffff;
-  color: #000;
+.hover-effect:hover .overlay-text {
+  opacity: 1;
 }
 </style>
