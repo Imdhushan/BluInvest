@@ -4,20 +4,32 @@
     <section class="py-0 overflow-hidden light" id="banner">
       <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/pexels-tomfisk-4603274.jpg);background-position: center bottom;"></div>
       <div class="container">
-        <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-          <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">
-            <h1 class="text-white fw-light">MARINE INDUSTRIES</h1>
+        <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
+          <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
+       
+              <h1 class="text-white fw-light">MARINE INDUSTRIES</h1>
             <p class="text-white fw-light text-600 opacity-10">
-              Sri Lanka's marine industries thrive within the Blue Economy, offering opportunities in fisheries, aquaculture, shipping, and coastal development.
-            </p>
+             <b>Fisheries</b> 
+
+             <br>
+Fisheries are a vital part of Sri Lanka’s economy, contributing significantly to food security and livelihoods. The sector provides about 50 percent of animal protein for Sri Lankans—three times the global average—and supports nearly 1 million people through full- or part-time employment. Coastal and marine fisheries also benefit 3.6 million Sri Lankans indirectly, strengthening the island’s socio-economic fabric. Key products like yellowfin tuna and blue swimming crabs are central to the sector, with areas such as Negombo and Mirissa serving as prime locations for visitors to explore traditional fishing practices. While the sector’s contribution to GDP and export revenues remains modest, it remains a key component of Sri Lanka’s marine industries and sustainable tourism offerings.
+<br/>
+<b>Aquaculture</b>
+<br>
+Aquaculture in Sri Lanka has seen significant growth, providing sustainable alternatives to wild-caught seafood. Key products like barramundi and sea cucumbers are farmed along the southern and western coasts, including areas near Galle and Kalutara, where eco-friendly aquaculture practices are on the rise. These aquaculture tours allow visitors to learn about sustainable seafood harvesting methods while promoting awareness of responsible marine resource management. By combining leisure with environmental stewardship, these activities highlight Sri Lanka’s commitment to aquaculture as a sustainable tourism offering.
+<br>
+<b>Blue Biotechnology</b>
+<br>
+Sri Lanka’s blue biotechnology sector is leveraging marine resources to create innovative products with global appeal. From anti-aging skin care solutions to collagen supplements derived from marine life, the industry taps into the unique properties of sea cucumbers, corals, and other marine organisms. Locations such as Colombo and Galle are emerging as hubs for blue biotech, where companies are conducting cutting-edge research and development. By integrating these marine-based products into wellness and tourism experiences, Sri Lanka positions itself as a leader in both sustainable biotechnology and eco-tourism.            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Dynamic Sections -->
-    <InfrastructureSection @done="handleDone" />
-    <NaturalResourcesSection ref="naturalResourcesSectionRef" />
+    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
+
 
     <!-- Access to Documents -->
     <section class="light bg-dark">
@@ -36,66 +48,16 @@
       </div>
     </section>
 
-    <!-- Mission and Partners -->
-    <section class="bg-dark pt-8 pb-4 light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-            <p class="text-600">To empower Sri Lanka’s marine industries through innovation, sustainability, and global partnerships.</p>
-            <div class="icon-group mt-4">
-              <a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a>
-              <a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a>
-              <a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a>
-              <a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Insights & Updates</h5>
-            <ul class="list-unstyled">
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Sustainable Marine Practices</a></h5>
-                <p class="text-600 opacity-50">Innovations driving eco-friendly fisheries and aquaculture.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Shipping and Logistics</a></h5>
-                <p class="text-600 opacity-50">Boosting Sri Lanka’s role as a regional maritime hub.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Coastal Development</a></h5>
-                <p class="text-600 opacity-50">Balancing economic growth with coastal ecosystem protection.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-0 bg-dark light">
-      <div>
-        <hr class="my-0 text-600 opacity-25" />
-        <div class="container py-3">
-          <div class="row justify-content-between fs--1">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">
-                Thank you | 2024 &copy; <a class="text-white opacity-85" href="https://themewagon.com">Gsentry</a>
-              </p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">v3.14.0</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    
+   
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import InfrastructureSection from './InfrastructureSection.vue';
-import NaturalResourcesSection from './NaturalResourcesSection.vue';
+import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
 
 const handleDone = () => {
   console.log('Infrastructure section complete');

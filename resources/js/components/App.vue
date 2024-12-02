@@ -11,6 +11,7 @@
 
         </SidebarNav> -->
 
+        <Footer/>
       </div>
 
     <!-- </div> -->

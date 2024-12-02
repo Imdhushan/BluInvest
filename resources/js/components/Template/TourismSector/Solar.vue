@@ -4,11 +4,29 @@
     <section class="py-0 overflow-hidden light" id="banner">
       <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/solor.jpeg);background-position: center bottom;"></div>
       <div class="container">
-        <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-          <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">
+        <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
+          <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
+        
             <h1 class="text-white fw-light">SOLAR ENERGY</h1>
-            <p class="text-white fw-light text-600 opacity-10">
-              Harnessing the power of the sun, Sri Lanka’s solar energy initiatives contribute to sustainable energy independence and a greener future.
+            <p class="text-white fw-light text-600 opacity-0">
+              Solar energy presents a transformative solution for reducing carbon emissions and meeting the growing energy demands of Sri Lanka and the wider region. With its high solar irradiance, Sri Lanka is positioned as a central hub for renewable energy — supplying power not only to its own needs but also to neighbouring markets. This is particularly crucial as the region undergoes a “just energy transition” from fossil fuels to renewable sources.
+<br/>
+By leveraging solar power, countries in the region can significantly reduce their reliance 
+on fossil fuels, improve energy security, and contribute 
+to the global commitment to achieving net-zero emissions. 
+Investments in solar energy ensure long-term cost efficiency 
+while aligning with the region's goals for sustainable development and 
+clean energy. Solar power is not just an environmentally responsible choice — it 
+is a strategic route to a resilient, self-sufficient energy future for the region as a whole.
+<br></p>
+<p class="text-white fw-light text-600 opacity-0">Investing in solar energy offers several key benefits:</p>
+<ul class="text-white fw-light text-600 opacity-0">
+<li>Ensures long-term, stable returns, driven by the growing demand for renewable energy.</li>
+<li>Government incentives aimed at reducing carbon footprints enhance the investment's value.</li>
+<li>Solar projects typically have predictable cash flows, offering a degree of financial certainty.</li>
+<li>Typically less volatile compared to other industries, making it a safer investment.</li>
+</ul>
+<p  class="text-white fw-light text-600 opacity-0">With the tool, you can conveniently discover optimal locations for solar energy projects.
             </p>
           </div>
         </div>
@@ -16,8 +34,9 @@
     </section>
 
     <!-- Dynamic Sections -->
-    <InfrastructureSection @done="handleDone" />
-    <NaturalResourcesSection ref="naturalResourcesSectionRef"/>
+    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
+
 
     <!-- Access to Documents -->
     <section class="light bg-dark">
@@ -36,66 +55,16 @@
       </div>
     </section>
 
-    <!-- Mission and Partners -->
-    <section class="bg-dark pt-8 pb-4 light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-            <p class="text-600">To lead Sri Lanka towards energy sustainability by promoting the use of solar power and reducing reliance on non-renewable resources.</p>
-            <div class="icon-group mt-4">
-              <a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a>
-              <a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a>
-              <a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a>
-              <a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Insights & Updates</h5>
-            <ul class="list-unstyled">
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Solar Panel Installations Across Rural Areas</a></h5>
-                <p class="text-600 opacity-50">Programs to increase energy accessibility in underserved communities.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Sri Lanka's Solar Energy Targets for 2030</a></h5>
-                <p class="text-600 opacity-50">Strategies to meet renewable energy goals.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Community Solar Power Initiatives</a></h5>
-                <p class="text-600 opacity-50">Empowering local households with clean energy solutions.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-0 bg-dark light">
-      <div>
-        <hr class="my-0 text-600 opacity-25" />
-        <div class="container py-3">
-          <div class="row justify-content-between fs--1">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">
-                Thank you | 2024 &copy; <a class="text-white opacity-85" href="https://themewagon.com">Gsentry</a>
-              </p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">v3.14.0</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+  
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import InfrastructureSection from './InfrastructureSection.vue';
-import NaturalResourcesSection from './NaturalResourcesSection.vue';
+import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
 
 const handleDone = () => {
   console.log('Infrastructure section complete');

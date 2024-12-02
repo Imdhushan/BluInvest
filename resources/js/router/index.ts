@@ -17,6 +17,12 @@ const router = createRouter({
       { path: '/tourismsector/marine', component: () => import('../components/Template/TourismSector/Marine.vue'), meta: { requiresAuth: false} },
 
 
+      { path: '/regulation/energy', component: () => import('../components/Template/Regulations/RegEnergy.vue'), meta: { requiresAuth: false} },
+      { path: '/regulation/conservation', component: () => import('../components/Template/Regulations/RegConservation.vue'), meta: { requiresAuth: false} },
+      { path: '/regulation/boat', component: () => import('../components/Template/Regulations/RegBoatBuilding.vue'), meta: { requiresAuth: false} },
+      { path: '/regulation/tourism', component: () => import('../components/Template/Regulations/RegTourism.vue'), meta: { requiresAuth: false} },
+
+
 
 
       { path: '/tourismsector/aboutbluinvest:', component: () => import('../components/Template/AboutUs/WtBluInv.vue'), meta: { requiresAuth: false} },

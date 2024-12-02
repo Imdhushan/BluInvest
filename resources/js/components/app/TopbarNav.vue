@@ -34,29 +34,28 @@ onMounted(() => {
   
   <nav class="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark" data-navbar-darken-on-scroll="data-navbar-darken-on-scroll">
     <!-- Blue Investment -->
-        <div class="container"><a class="navbar-brand" href="/temp"><span class="text-white dark__text-white philosopher-bold">BluInvest</span></a>
+        <div class="container"><a class="navbar-brand" href="/"><span class="text-white dark__text-white philosopher-bold">BluInvest</span></a>
           <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
             <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dashboards">About Us</a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="dashboards">
                   <div class="bg-white dark__bg-1000 rounded-3 py-2">
-                    <a class="dropdown-item link-600 fw-medium" href="/tourismsector/aboutbluinvest">What is BluInvest</a>
+                    <a class="dropdown-item link-600 fw-medium" href="/tourismsector/aboutbluinvest">About BluInvest</a>
                     <a class="dropdown-item link-600 fw-medium" href="/tourismsector/howtousebluinvest">How to use BluInvest</a>
                    
-                    <a class="dropdown-item link-600 fw-medium" href="#">Contact Us</a>
+                    <!-- <a class="dropdown-item link-600 fw-medium" href="#">Contact Us</a> -->
                     <!-- <a class="dropdown-item link-600 fw-medium" href="../dashboard/analytics.html">Analytics</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/crm.html">CRM</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/e-commerce.html">E commerce</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/lms.html">LMS<span class="badge rounded-pill ms-2 badge-soft-success">New</span></a><a class="dropdown-item link-600 fw-medium" href="../dashboard/project-management.html">Management</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/saas.html">SaaS</a><a class="dropdown-item link-600 fw-medium" href="../dashboard/support-desk.html">Support desk<span class="badge rounded-pill ms-2 badge-soft-success">New</span></a> -->
                   </div>
                 </div>
                 
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">Invest</a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">
+                Invest</a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="apps">
-                  <div class="card navbar-card-app shadow-none dark__bg-1000">
-                    <div class="card-body scrollbar max-h-dropdown">
+                  
                       
-                      <div class="row">
-                        <div class="col-6 col-md-4">
+                     
                           <div class="nav flex-column">
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/tourism">Tourism</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/conservation">Conservation</a>
@@ -65,51 +64,29 @@ onMounted(() => {
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
                             <!-- <p class="nav-link text-700 mb-0 fw-bold">Support Desk</p><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/table-view.html">Table view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/card-view.html">Card view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contacts.html">Contacts</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contact-details.html">Contact details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/tickets-preview.html">Tickets preview</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/quick-links.html">Quick links</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/reports.html">Reports</a> -->
-                          </div>
-                        </div>
-                        <!-- <div class="col-6 col-md-4">
-                          <div class="nav flex-column">
-                            <p class="nav-link text-700 mb-0 fw-bold">E-Learning</p><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-list.html">Course list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-grid.html">Course grid</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/course-details.html">Course details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/course/create-a-course.html">Create a course</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/student-overview.html">Student overview</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-learning/trainer-profile.html">Trainer profile</a>
-                            <p class="nav-link text-700 mb-0 fw-bold">Events</p><a class="nav-link py-1 link-600 fw-medium" href="../app/events/create-an-event.html">Create an event</a><a class="nav-link py-1 link-600 fw-medium" href="../app/events/event-detail.html">Event detail</a><a class="nav-link py-1 link-600 fw-medium" href="../app/events/event-list.html">Event list</a>
-                            <p class="nav-link text-700 mb-0 fw-bold">Email</p><a class="nav-link py-1 link-600 fw-medium" href="../app/email/inbox.html">Inbox</a><a class="nav-link py-1 link-600 fw-medium" href="../app/email/email-detail.html">Email detail</a><a class="nav-link py-1 link-600 fw-medium" href="../app/email/compose.html">Compose</a>
-                          </div>
-                        </div> -->
-                        <!-- <div class="col-6 col-md-4">
-                          <div class="nav flex-column">
-                            <p class="nav-link text-700 mb-0 fw-bold">E-Commerce</p><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-list.html">Product list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-grid.html">Product grid</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/product/product-details.html">Product details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/orders/order-list.html">Order list</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/orders/order-details.html">Order details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/customers.html">Customers</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/customer-details.html">Customer details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/shopping-cart.html">Shopping cart</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/checkout.html">Checkout</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/billing.html">Billing</a><a class="nav-link py-1 link-600 fw-medium" href="../app/e-commerce/invoice.html">Invoice</a>
-                          </div>
-                        </div> -->
+                         
+                     
                       </div>
-                    </div>
-                  </div>
+                    
                 </div>
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">Regulations </a>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">
+                Regulations </a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="pagess">
-                  <div class="card navbar-card-pages shadow-none dark__bg-1000">
-                    <div class="card-body scrollbar max-h-dropdown">
+                  
                       
-                      <div class="row">
-                        <div class="col-12 col-xxl-3">
                           <div class="nav flex-column">
                           
-                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/asset">Tourism</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="#">Conservation</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="#">Solar Energy</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="#">Wind Energy</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="#">Boat Building</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="#">Marine Industries</a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/regulation/tourism">Tourism</a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/regulation/conservation">Conservation</a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/regulation/energy">Energy</a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/regulation/boat">Boat Building</a>
+                            <!-- <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/regulation/tourism">Marine Industries</a> -->
                           </div>
                         </div>
                         
                        
-                        
-                      </div>
                       
-                      
-                    </div>
-                  </div>
-                </div>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link " href="#" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">Services</a>

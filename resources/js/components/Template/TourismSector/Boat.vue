@@ -4,20 +4,26 @@
     <section class="py-0 overflow-hidden light" id="banner">
       <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/Boat.jpeg);background-position: center bottom;"></div>
       <div class="container">
-        <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-          <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">
-            <h1 class="text-white fw-light">BOAT BUILDING</h1>
+        <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
+          <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
+       
+               <h1 class="text-white fw-light">BOAT BUILDING</h1>
             <p class="text-white fw-light text-600 opacity-10">
-              Sri Lanka’s boat-building industry showcases craftsmanship, engineering, and innovation, serving local and international markets.
-            </p>
+              Sri Lanka’s boat-building industry plays a pivotal role in both tourism and export revenue generation, positioning the country as a prime destination for boat-building ventures. The strategic geographical location of Sri Lanka, nestled at a key marine crossroads in the Indian Ocean, provides a unique advantage for the growth of the boat-building and shipbuilding industry. With a highly trainable workforce, low labour costs, and one of the best natural harbours in Asia, Sri Lanka has become a key player in producing boats that navigate global oceanic channels as well as inland waterways.
+<br/>
+In the tourism sector, eco-friendly boat designs enhance activities such as whale watching, snorkelling tours, and island-hopping excursions, ensuring minimal environmental impact while enriching visitor experiences. These sustainable watercraft not only elevate the appeal of marine tourism but also serve as a competitive edge for businesses in the sector.
+<br>
+Beyond tourism, the expanding technological capacity in boat building and drydock services positions Sri Lanka as a hub for nautical tourism and maritime services, including boat assembly, refuelling, refit, and repair. By investing in sustainable, innovative boat designs, businesses can tap into both the growing demand for eco-tourism and the global market for boat exports, strengthening Sri Lanka’s position in the maritime industry.
+<br>
+Take a closer look at any location of your choice, use the tool to explore detailed insights about its surrounding environment, and make informed business decisions with confidence and clarity!            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Dynamic Sections -->
-    <InfrastructureSection @done="handleDone" />
-    <NaturalResourcesSection ref="naturalResourcesSectionRef"/>
+    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
 
     <!-- Access to Documents -->
     <section class="light bg-dark">
@@ -36,66 +42,15 @@
       </div>
     </section>
 
-    <!-- Mission and Partners -->
-    <section class="bg-dark pt-8 pb-4 light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-            <p class="text-600">To promote Sri Lanka as a global hub for high-quality boat building and marine services.</p>
-            <div class="icon-group mt-4">
-              <a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a>
-              <a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a>
-              <a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a>
-              <a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Insights & Updates</h5>
-            <ul class="list-unstyled">
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Sri Lanka's Boat Building Industry</a></h5>
-                <p class="text-600 opacity-50">A growing sector contributing to exports and employment.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Innovative Marine Engineering</a></h5>
-                <p class="text-600 opacity-50">Exploring modern designs and materials for sustainable boats.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Boat Building for Local Communities</a></h5>
-                <p class="text-600 opacity-50">Enhancing livelihoods and supporting coastal economies.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-0 bg-dark light">
-      <div>
-        <hr class="my-0 text-600 opacity-25" />
-        <div class="container py-3">
-          <div class="row justify-content-between fs--1">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">
-                Thank you | 2024 &copy; <a class="text-white opacity-85" href="https://themewagon.com">Gsentry</a>
-              </p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">v3.14.0</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+  
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import InfrastructureSection from './InfrastructureSection.vue';
-import NaturalResourcesSection from './NaturalResourcesSection.vue';
+import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
 
 const handleDone = () => {
   console.log('Infrastructure section complete');

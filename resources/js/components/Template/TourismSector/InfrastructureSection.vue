@@ -1,119 +1,108 @@
-<!-- InfrastructureSection.vue -->
 <template>
-    <section :key="componentKey" class="bg-dark pt-6 pb-4 light" style="background-color: #2196F3" >
-  
-        <div class="container">
-            <div class="row flex-center">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  text-xl-start mt-3 ">
+  <section :key="componentKey" class="bg-dark pt-6 pb-4 light" style="background-color: #2196F3">
+    <div
+      v-if="backgroundImage"
+      class="bg-holder overlay bg-holder-natural natural-overlay"
+      :style="{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center bottom' }"
+    ></div>
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-xl-start mt-3">
+          <h4 class="text-white fw-light">
+            {{ title }}
+            <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
+          </h4>
+          <p class="text-white text-200">
+            {{ description }}          </p>
+          <h5 class="text-white fw-light">
+            {{ currentSection.title || "No Section" }}:
+            <br />
+            <span class="text-600">{{ currentCardText || "No Card Available" }}</span>
+          </h5>
 
-                <h4 class="text-white fw-light">
-                  INFRASTRUCTURE <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
-                </h4>
-
-                <!-- <button @click="emitDone" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button> -->
-
-                <p class="text-white text-200">Invest in eco-friendly tourism ventures that capitalize on Sri Lanka’s breathtaking landscapes and coastal beauty, ensuring both profitability and sustainability.</p>
-
-                <h5 class="text-white fw-light" v-if="currentStep === 1">Accessibility: <br/> <span class="text-600">{{ currentAccessibilityCard.text }}</span></h5>
-                <h5 class="text-white fw-light" v-else-if="currentStep === 2">Groundwater</h5>
-                <h5 class="text-white fw-light" v-else-if="currentStep === 3">Accommodation Facilities</h5>
-                <div class="d-flex flex-wrap justify-content-between align-items-center pa-10">
-
-                    <!-- Render dynamic checkboxes based on the current step and card -->
-                    <div v-for="(input, index) in currentDynamicInputs" 
-                    :key="index"
-                    class="form-check me-3  text-white"
-                    >
-                    <input
-                        type="checkbox"
-                        :id="`${input.label}-${index}`"
-                        :checked="isChecked(currentCardText, input.label)"
-                        @change="handleCheckboxChange(currentCardText, input.label, $event.target.checked)"
-                        class="form-check-input text-white"
-                    />
-                    <label :for="`${input.label}-${index}`">{{ input.label }}</label>
-                    </div>
-                </div>
-            
-                <!-- Navigation Buttons -->
-                <button v-if="currentCard > 1" @click="prevCard" class="btn btn-outline-light btn-sm mx-2 my-2">Back</button>
-                <button v-if="currentCard < totalCardsInCurrentStep" @click="nextCard" class="btn btn-outline-light btn-sm mx-2 my-2">Next</button>
-                <button @click="skipCard" class="btn btn-outline-danger btn-sm mx-2 my-2">Skip</button>
-                <button
-                    v-if="currentCard === totalCardsInCurrentStep && currentStep < 3"
-                    @click="goToNextStep"
-                    class="btn btn-outline-light btn-sm mx-2 my-2"
-                >
-                    Next Section
-                </button>
-                <button
-                    v-if="currentStep > 1 && currentCard === 1"
-                    @click="goToBackStep"
-                    class="btn btn-outline-warning btn-sm mx-2 my-2"
-                >
-                    Back Section
-                </button>
-                <button v-if="currentStep === 3" @click="completeProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button>
-                </div>
+          <div class="d-flex flex-wrap  align-items-center pa-10">
+            <!-- Render dynamic checkboxes based on the current step and card -->
+            <div
+              v-for="(input, index) in currentDynamicInputs"
+              :key="index"
+              class="form-check me-3 text-white"
+            >
+              <input
+                type="checkbox"
+                :id="`${input.label}-${index}`"
+                :checked="isChecked(currentCardText, input.label)"
+                @change="handleCheckboxChange(currentCardText, input.label, $event.target.checked)"
+                class="form-check-input text-white"
+              />
+              <label :for="`${input.label}-${index}`">{{ input.label }}</label>
             </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button v-if="currentCard > 1" @click="prevCard" class="btn btn-outline-light btn-sm mx-2 my-2">Back</button>
+          <button v-if="currentCard < totalCardsInCurrentSection" @click="nextCard" class="btn btn-outline-light btn-sm mx-2 my-2">Next</button>
+          <button @click="skipCard" class="btn btn-outline-danger btn-sm mx-2 my-2">Skip</button>
+          <button
+            v-if="currentCard === totalCardsInCurrentSection && currentSectionIndex < sectionsData.length - 1"
+            @click="goToNextSection"
+            class="btn btn-outline-light btn-sm mx-2 my-2"
+          >
+            Next Section
+          </button>
+          <button
+            v-if="currentSectionIndex > 0 && currentCard === 1"
+            @click="goToPreviousSection"
+            class="btn btn-outline-warning btn-sm mx-2 my-2"
+          >
+            Back Section
+          </button>
+          <button v-if="currentSectionIndex === sectionsData.length - 1" @click="completeProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </template>
-  
 <script setup>
-import { ref, computed, watch ,onMounted,defineEmits} from 'vue';
+import { ref, computed, defineProps } from "vue";
 
-const currentStep = ref(1); // Current step of the process
-const currentCard = ref(1); // Current card within a step
+const props = defineProps({
+  sections: {
+    type: Object, // Account for a nested structure
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  backgroundImage: {
+    type: String,
+    required: false,
+    default: '',
+  },
 
-const emit = defineEmits();
-
-
-// Emit the event when the Done button is clicked
-const emitDone = () => {
-  emit('done');
-};
-
-// Card data for each section
-const accessibilityCards = ref([
-  { text: "Proximity to the main road ", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] },
-  { text: "Proximity to secondary roads", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] },
-  { text: "Proximity to a track", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] },
-  { text: "Proximity to a highway", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] },
-  { text: "Proximity to a railway", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] }
-]);
-const groundwaterCards = ref([
-  { text: "Water", dynamicInputs: [{ label: "Availability of groundwater", value: false }] },
-]);
-const accommodationCards = ref([
-  { text: "Availability of accommodation", dynamicInputs: [ { type: "checkbox", label: "Classified Hotels( 1-5 Star)", value: false }, { type: "checkbox", label: "Tourist Hotels", value: false }, { type: "checkbox", label: "Boutique Hotels & Villas", value: false }, { type: "checkbox", label: "Guest Houses", value: false }, { type: "checkbox", label: "Bungalows", value: false }, { type: "checkbox", label: "Home Stay Units", value: false } ] }
-]);
-
-// Initial selections loaded from localStorage, or empty object if not found
-const selections = ref(JSON.parse(localStorage.getItem('selections')) || {});
-
-// Watch selections and store them in localStorage
-watch(selections, (newSelections) => {
-  localStorage.setItem('selections', JSON.stringify(newSelections));
-}, { deep: true });
-
-// Helper to determine the current card set based on the step
-const currentCards = computed(() => {
-  if (currentStep.value === 1) return accessibilityCards.value;
-  if (currentStep.value === 2) return groundwaterCards.value;
-  if (currentStep.value === 3) return accommodationCards.value;
-  return [];
 });
 
-const totalCardsInCurrentStep = computed(() => currentCards.value.length);
-const currentAccessibilityCard = computed(() => currentCards.value[currentCard.value - 1]);
-const currentDynamicInputs = computed(() => currentAccessibilityCard.value.dynamicInputs);
-const currentCardText = computed(() => currentAccessibilityCard.value.text);
+// Handle nested or flat structure
+const sectionsData = computed(() => props.sections.sections || props.sections || []);
 
-// Check if a checkbox is checked based on selections
+// State variables
+const currentSectionIndex = ref(0);
+const currentCard = ref(1);
+const selections = ref({});
+
+// Computed properties
+const currentSection = computed(() => sectionsData.value[currentSectionIndex.value] || {});
+const currentCards = computed(() => currentSection.value.cards || []);
+const currentCardText = computed(() => currentCards.value[currentCard.value - 1]?.text || "");
+const currentDynamicInputs = computed(() => currentCards.value[currentCard.value - 1]?.dynamicInputs || []);
+const totalCardsInCurrentSection = computed(() => currentCards.value.length);
+
+// Helpers
 const isChecked = (cardText, label) => selections.value[cardText]?.includes(label);
-
-// Handle checkbox selection and deselection
 const handleCheckboxChange = (cardText, label, isSelected) => {
   if (isSelected) {
     if (!selections.value[cardText]) selections.value[cardText] = [];
@@ -125,94 +114,66 @@ const handleCheckboxChange = (cardText, label, isSelected) => {
   }
 };
 
-// Navigation functions
+// Navigation
 const nextCard = () => {
-  if (currentCard.value < totalCardsInCurrentStep.value) currentCard.value++;
+  if (currentCard.value < totalCardsInCurrentSection.value) currentCard.value++;
 };
-
 const prevCard = () => {
   if (currentCard.value > 1) currentCard.value--;
 };
-
 const skipCard = () => {
-  if (currentCard.value < totalCardsInCurrentStep.value) {
+  if (currentCard.value < totalCardsInCurrentSection.value) {
     currentCard.value++;
   } else {
-    goToNextStep();
+    goToNextSection();
   }
 };
-
-const goToNextStep = () => {
-  currentStep.value++;
-  currentCard.value = 1;
+const goToNextSection = () => {
+  if (currentSectionIndex.value < sectionsData.value.length - 1) {
+    currentSectionIndex.value++;
+    currentCard.value = 1;
+  }
 };
-
-const goToBackStep = () => {
-  if (currentStep.value > 1) {
-    currentStep.value--;
+const goToPreviousSection = () => {
+  if (currentSectionIndex.value > 0) {
+    currentSectionIndex.value--;
     currentCard.value = 1;
   }
 };
 
-//   const completeProcess = () => {
-//     const finalSelections = JSON.parse(localStorage.getItem('selections'));
-//     console.log("Final selections JSON:", finalSelections);
-//     alert("You have completed the survey! JSON saved to localStorage.");
-//     currentStep.value = 1;
-//   };
-
-const completed = ref(false);
-const finalSelections = ref({});
-
-// Retrieve final selections when component mounts
-onMounted(() => {
-const storedSelections = JSON.parse(localStorage.getItem("formattedSelections"));
-if (storedSelections) {
-  finalSelections.value = storedSelections;
-  completed.value = true;
-}
-});
-
+// Complete process
 const completeProcess = () => {
-  const formattedSelections = {
-    "INFRASTRUCTURE": {
-      "Accessibility": {
-        "Main road": selections.value["Main road"] || [],
-        "Highway": selections.value["Highway"] || [],
-        "Railway station": selections.value["Railway station"] || [],
-        "Track": selections.value["Track"] || []
-      },
-      "Groundwater": {
-        "Availability of groundwater": selections.value["Groundwater"] ? "Yes" : "No"
-      },
-      "Accommodation Facilities": {
-        "Tourist Hotels": selections.value["Accommodation Facilities"]?.includes("Tourist Hotels") ? "Yes" : "No"
-      }
-    }
-  };
-
-  console.log("Final selections JSON:", formattedSelections);
-  alert("Survey completed! JSON saved to localStorage.");
-  localStorage.setItem("formattedSelections", JSON.stringify(formattedSelections));  // Save in storage
+  console.log("Selections:", selections.value);
+  alert("Survey completed!");
 };
 
-
-const componentKey = ref(0); 
-
-
+// Reset process
+const componentKey = ref(0);
 const reSetProcess = () => {
-alert("You have completed the survey! JSON saved to localStorage.");
-currentStep.value = 1;
-currentCard.value = 1;
-selections.value = {}; // Reset selections
-localStorage.removeItem('selections');
-componentKey.value += 1; // Change the key to force re-render
+  currentSectionIndex.value = 0;
+  currentCard.value = 1;
+  selections.value = {};
+  componentKey.value++;
 };
-
 </script>
 
 <style scoped>
-/* Add any needed custom styling here */
-</style>
 
+/* Add relevant styles */
+.bg-holder-natural.natural-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
   
+  .bg-holder-natural.natural-overlay > * {
+    position: relative;
+    z-index: 2; /* Ensures the content inside the div is above the overlay */
+  }
+
+</style>

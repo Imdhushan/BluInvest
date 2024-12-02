@@ -14,7 +14,7 @@
       </section>
     
     
-        <section>
+        <section style="background-color: #ffff">
     
     <div class="container">
       <div class="row justify-content-center text-left">
@@ -22,20 +22,33 @@
           <h1 class="fs-2 fs-sm-4 fs-md-5">How to use BluInvest</h1>
           <p class="lead">
     
-            Second phase of a Roadmap on MSP progressed, and validation exercise concluded. An
-advanced GIS grid-based coastal and EEZ spatial opportunity map, which provides quick
-information for incoming investors to identify the most suitable locations for tourism, energy
-projects, boat building and conservation-based investments, compiled. This dataset can be
-further developed for any sector of investor interest. The value of this exercise is that it reduces
-investors’ time spent on location identification and expedites the environmental impact
-assessment stage. UNDP recently concluded a data validation exercise to finalize the first
-iteration of the maps which will be launched in a web portal. Leveraging this data tool, UNDP is
-supporting the GoSL to identify atleast one investible business /investment cases, particulary
-sustainable business models in the marine tourism industry along with the related financing
-models, in consultation with the relevant stakeholders, including IFIs.
+            Here are a few guidelines to help you find your way to places of interest for your investments.
     
             </p>
-            
+            <ol class="lead">
+              <li><strong>Click on an investment area that interests you</strong></li>
+              <p>Hover over the map and discover opportunities for boat building, marine conservation, and a variety of marine industry sectors. </p>
+              <li><strong>This will take you to a questionnaire</strong></li>
+              <p>Please select your preferred options for Infrastructure, Natural Resources and land Use, Natural Environment and Biodiversity, 
+                Biodiversity and recreation, and Marine Archeology.</p>
+                <li><strong>Optimal locations will be generated</strong></li>
+                <p>Once the questionnaire is completed, our GIS tool will generate the ideal locations for your blue business venture. </p>
+                <li><strong>Zoom in on suggested locations</strong></li>
+                <p>Zoom in on these locations to learn more about the availability and feasibility of your preferred investment idea in a select location.</p>
+                <li><strong>Learn about the corresponding rules, laws & regulations for your investment</strong></li>
+                <p>Next, take a look at the comprehensive regulatory framework for investments in Sri Lanka.</p>
+            </ol>
+            <p class="lead">For further information on what we offer investors at BluInvest, contact the Ministry of Finance via any of the hotlines below.</p>
+            <address>
+              GIS Unit, National Planning Department, 1st Floor,
+              The Secretariat,Colombo 1
+            </address>
+            <p>srilanka.msp@gmail.com</p>
+            <p>Tel :(+94) 11 248 46 12</p>
+            <p>Tel :(+94) 11 248 46 13</p>
+            <p>Tel :(+94) 11 244 80 63</p>
+            <p>Tel :(+94) 11 243 16 20</p>
+
     
         </div>
       </div>
@@ -44,92 +57,10 @@ models, in consultation with the relevant stakeholders, including IFIs.
     <!-- end of .container-->
     
     </section>
-      <section class="bg-dark pt-8 pb-4 light">
-      
-      <div class="container">
-        <div class="position-absolute btn-back-to-top bg-dark"><a class="text-600" href="#banner" data-bs-offset-top="0"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
-        <div class="row">
-          <div class="col-lg-4">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-            <p class="text-600">Sri Lanka's Financial Ministry and UNDP are committed to driving sustainable growth through Blue Economy initiatives. By providing comprehensive resources and support, we aim to create opportunities for investors to contribute to the prosperity of Sri Lanka while ensuring environmental protection.</p>
-            <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white" href="#!"><span class="fab fa-medium-m"></span></a></div>
-          </div>
-          <div class="col ">
-            <div class="row mt-5 mt-lg-0">
-              <div class="col-lg-6 col-md-3">
-                <h5 class="text-uppercase text-white opacity-85 mb-3">Partners</h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1">Our initiatives are supported by a strong network of partners dedicated to sustainable development and growth within Sri Lanka’s Blue Economy. Together, we work to provide resources, expertise, and guidance for impactful investment opportunities</li>
-                  <!-- <li class="mb-1">UNDP (United Nations Development Programme): A key driver in fostering sustainable development across Sri Lanka, UNDP works closely with the government and private sector to implement Blue Economy projects that align with global sustainability goals.</li>
-                  <li class="mb-1">UDA (Urban Development Authority): The UDA plays a pivotal role in planning and managing the infrastructure development necessary for the success of land and marine-based investments, ensuring long-term sustainability and growth.</li>
-                  <li class="mb-1">Sri Lanka Financial Ministry: As the primary government entity for economic management, the Financial Ministry oversees policies and initiatives that create a favorable environment for investors in Sri Lanka's Blue Economy.</li> -->
-                  <!-- <li class="mb-1"><a class="link-600" href="#!">Terms</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Privacy</a></li>
-                  <li><a class="link-600" href="#!">Imprint</a></li> -->
-                </ul>
-              </div>
-              <!-- <div class="col-6 col-md-3">
-                <h5 class="text-uppercase text-white opacity-85 mb-3">Product</h5>
-                <ul class="list-unstyled">
-                  <li class="mb-1"><a class="link-600" href="#!">Features</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Roadmap</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Changelog</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Pricing</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Docs</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">System Status</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Agencies</a></li>
-                  <li class="mb-1"><a class="link-600" href="#!">Enterprise</a></li>
-                </ul>
-              </div> -->
-              <div class="col-lg-6 mt-5 mt-md-0">
-                <h5 class="text-uppercase text-white opacity-85 mb-3"> Insights & Updates</h5>
-                <ul class="list-unstyled">
-                  <li>
-                    <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> New Investment Strategies for 2024</a></h5>
-                    <p class="text-600 opacity-50"> Blue Economy opportunities. </p>
-                  </li>
-                  <li>
-                    <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Sustainable Development Goals in Action</a></h5>
-                    <p class="text-600 opacity-50">Projects align with global sustainability targets.</p>
-                  </li>
-                  <li>
-                    <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> A Look Back at 2023's Progress</a></h5>
-                    <p class="text-600 opacity-50">Blue Economy projects.</p>
-                  </li>
-                  <!-- <li>
-                    <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> The New Falcon Theme</a></h5>
-                    <p class="text-600 opacity-50">Dec 23 &bull; 10min read </p>
-                  </li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end of .container-->
-      
-      </section>
+     
       
        
       
-      <section class="py-0 bg-dark light">
-      
-      <div>
-        <hr class="my-0 text-600 opacity-25" />
-        <div class="container py-3">
-          <div class="row justify-content-between fs--1">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">Thank you  <span class="d-none d-sm-inline-block">| </span><br class="d-sm-none" /> 2024 &copy; <a class="text-white opacity-85" href="https://themewagon.com">Gsentry</a></p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">v3.14.0</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end of .container-->
-      
-      </section>
       
       </template>
       

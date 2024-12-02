@@ -4,20 +4,27 @@
     <section class="py-0 overflow-hidden light" id="banner">
       <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/wind.jpg);background-position: center bottom;"></div>
       <div class="container">
-        <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
-          <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">
+        <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
+          <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
+       
             <h1 class="text-white fw-light">WIND ENERGY</h1>
             <p class="text-white fw-light text-600 opacity-10">
-              Capitalizing on Sri Lanka's coastal winds, wind energy drives a sustainable shift toward renewable power and environmental conservation.
+              Sri Lanka’s coastal winds offer significant potential for large-scale renewable energy generation, to meet domestic energy needs and supply the wider region. The country’s offshore wind potential is exceptional, with an estimated 56GW capacity. This includes 27GW of fixed offshore wind in shallow waters (less than 50 meters) and 29GW of floating offshore wind in deeper waters (between 50 and 1,000 meters).
+<br/>
+In addition to offshore wind, Sri Lanka also boasts favourable conditions for onshore wind power development. Many areas experience annual average wind speeds exceeding 7 meters per second, as indicated by the Global Wind Atlas. 
+<br/>
+By harnessing its abundant wind energy, Sri Lanka can strengthen its energy security and become a key player in the region's transition to renewable energy. Large-scale wind energy investments will not only advance Sri Lanka’s renewable energy goals but also provide a scalable, sustainable solution for meeting both national and regional energy demands while promoting a greener and more sustainable future.
+<br/>
+Use the tool to conveniently explore the ideal location for wind energy investments.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Dynamic Sections -->
-    <InfrastructureSection @done="handleDone" />
-    <NaturalResourcesSection ref="naturalResourcesSectionRef" />
+    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
+
 
     <!-- Access to Documents -->
     <section class="light bg-dark">
@@ -36,66 +43,18 @@
       </div>
     </section>
 
-    <!-- Mission and Partners -->
-    <section class="bg-dark pt-8 pb-4 light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-            <p class="text-600">To leverage Sri Lanka’s natural wind resources to promote renewable energy, reducing dependency on fossil fuels.</p>
-            <div class="icon-group mt-4">
-              <a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a>
-              <a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a>
-              <a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a>
-              <a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <h5 class="text-uppercase text-white opacity-85 mb-3">Insights & Updates</h5>
-            <ul class="list-unstyled">
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Expanding Wind Farms in Coastal Regions</a></h5>
-                <p class="text-600 opacity-50">Efforts to increase wind farm installations across Sri Lanka.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Wind Energy and Climate Goals</a></h5>
-                <p class="text-600 opacity-50">Sri Lanka’s commitments to renewable energy by 2030.</p>
-              </li>
-              <li>
-                <h5 class="fs-0 mb-0"><a class="link-600" href="#!">Community Benefits of Wind Energy</a></h5>
-                <p class="text-600 opacity-50">Creating local jobs and boosting energy independence.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
-    <!-- Footer -->
-    <footer class="py-0 bg-dark light">
-      <div>
-        <hr class="my-0 text-600 opacity-25" />
-        <div class="container py-3">
-          <div class="row justify-content-between fs--1">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">
-                Thank you | 2024 &copy; <a class="text-white opacity-85" href="https://themewagon.com">Gsentry</a>
-              </p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-600 opacity-85">v3.14.0</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import InfrastructureSection from './InfrastructureSection.vue';
-import NaturalResourcesSection from './NaturalResourcesSection.vue';
+import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
+
 
 const handleDone = () => {
   console.log('Infrastructure section complete');

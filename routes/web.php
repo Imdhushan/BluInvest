@@ -33,6 +33,9 @@ Route::get('/', function () {
 Route::get('/tourismsector/{any}', function () {
     return view('welcome');
 });
+Route::get('/regulation/{any}', function () {
+    return view('welcome');
+});
 
 Route::get('/map', function () {
     return view('welcome');
