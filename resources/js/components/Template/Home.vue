@@ -1,10 +1,11 @@
 <template>
-  <section class="light" style="background-color: #2196F3">
+  <section class="light" style="background-color: #1A237E
+">
     <div class="container">
       <div class="row flex-center">
-        <div class="col-lg-7 col-md-12 col-sm-12 text-center text-xl-start">
-          <h4 class="text-white fw-light opacity-5 ">Welcome to Sri Lanka</h4>
-          <h3 class="text-white fw-light ">Are you interested in investing in Sri Lanka's Blue Economy ?</h3>
+        <div class="col-lg-7 col-md-12 col-sm-12 text-center text-xl-start mt-0 pt-0">
+          <h4 class="text-white fw-light opacity-5 merienda">Welcome to Sri Lanka</h4>
+          <h3 class="text-white fw-light anton-sc-regular">you interested in investing in Sri Lanka's Blue Economy ?</h3>
           <p class="text-white">Explore what awaits you with BluInvest</p>
           <p class="text-white">
             Join BluInvest and make a positive impact while securing your investment! Be part of an initiative dedicated to maximising your business potential by leveraging Sri Lanka's marine frontier  .
@@ -164,7 +165,7 @@
       </div>
     </div>
   </section>
-
+<!-- 
   <section class="light bg-dark">
     <div class="bg-holder overlay" style="background-image:url(/assets/img/generic/bg-2.jpg);background-position: center top;">
     </div>
@@ -179,7 +180,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </template>
 
 <script setup>
@@ -310,4 +311,17 @@ onMounted(() => {
 .hover-effect:hover .overlay-text {
   opacity: 1;
 }
+
+.merienda {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.anton-sc-regular {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
 </style>

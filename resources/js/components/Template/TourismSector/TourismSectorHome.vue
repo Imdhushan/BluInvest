@@ -2,26 +2,32 @@
   <section class="py-0 overflow-hidden light" id="banner">
     <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/malindabandaralk.jpg);background-position: center bottom;"></div>
     <div class="container">
-      <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
-        <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
-          <h1 class="text-white fw-light">TOURISM</h1>
+      <div class="row flex-center">
+        <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+          
+          <h1 class="text-white ">TOURISM</h1>
+          <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka: A Timeless Paradise for Every Traveller</h4>
+          <h4  class="text-white  merienda">Ayubowan!</h4>
+          
           <p class=" text-white  text-600 opacity-10">
            
-Sri Lanka’s tourism sector lies at the heart of its Blue Economy, seamlessly combining stunning beaches, thriving marine ecosystems, and a rich cultural heritage into exciting opportunities for sustainable growth and meaningful investments.
-As a global hotspot for eco-conscious travellers, Sri Lanka offers unforgettable experiences, such as whale watching in Mirissa, spotting dolphins in Kalpitiya, and encountering all five species of sea turtles in Rekawa and Kosgoda. 
+            Sri Lanka, the Pearl of the Indian Ocean, is a traveller's dream — a fascinating fusion of rich cultural heritage, natural wonders, warm hospitality, and exciting investing potential. From golden beaches to misty mountains, bustling cities to serene villages, this tropical paradise offers experiences that stay etched in your memory! Explore what makes Sri Lanka the perfect destination for exploration, relaxation, and opportunities beyond the ordinary!
 
-With 114 historic shipwrecks dotting its coastline — the oldest dating back to the 2nd century BCE — and renowned scuba diving sites like Pigeon Island and Bar Reef, the island offers fascinating underwater adventures. According to the National Shipwreck Database of Sri Lanka (NSDSL), of these recorded shipwrecks, 38 are historical and 10 are protected sites, earning Sri Lanka the title of "wreck diving capital of the Indian Ocean. These shipwrecks are not only significant marine heritage sites but also biodiversity hotspots, providing shelter for a diverse array of fish and attracting international divers.
 
-Emerging activities such as kite surfing in Kalpitiya, sport fishing in Weligama, and match racing further cement its reputation as a haven for water sports enthusiasts.
 
-With BluInvest, you can unlock Sri Lanka’s tourism potential by leveraging industry insights and sustainable development strategies. The Blue Investment Opportunity Map (BIOM) enables you to pinpoint prime locations for development, from luxurious coastal resorts to thrilling adventure hubs, all while balancing environmental and economic factors.
 
-Take a closer look at any location of your choice, use the tool to explore detailed insights about its surrounding environment, and make informed business decisions with confidence and clarity!
-
-Unlock the chance to achieve significant returns while contributing to Sri Lanka's rise as a leader in sustainable tourism in South Asia!
           </p>
         </div>
-      </div>
+        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
+  <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
+  <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
+
+  
+    
+
+    </div>
+
+    </div>
     </div>
   </section>
 
@@ -71,9 +77,104 @@ Unlock the chance to achieve significant returns while contributing to Sri Lanka
 
 
   console.log('title',infrastructureTitle);
+
+   const popupData = {
+    "torist_map-u-colombo": {
+      title: "Colombo",
+      id: "colombo",
+      description: "Feel the pulse of Sri Lanka in Colombo, a bustling city where modern skyscrapers rise alongside colonial landmarks and bustling street markets."
+    },
+    // Add more locations
+  };
+
+  let activePopup = null;
+
+  Object.keys(popupData).forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.cursor = "pointer";
+
+      element.addEventListener("mouseenter", (event) => {
+        if (activePopup) activePopup.remove();
+
+        const { title, description } = popupData[id];
+        const popup = document.createElement("div");
+        popup.className = "popup";
+        popup.style.position = "absolute";
+        popup.style.left = `${event.pageX + 10}px`;
+        popup.style.top = `${event.pageY + 10}px`;
+        popup.style.background = "rgba(0, 0, 0, 0.8)";
+        popup.style.color = "white";
+        popup.style.padding = "15px";
+        popup.style.borderRadius = "5px";
+        popup.style.zIndex = "1000";
+        popup.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
+        popup.style.maxWidth = "250px";
+
+        const titleElement = document.createElement("h4");
+        titleElement.style.margin = "0 0 10px 0";
+        titleElement.style.color = "#FFD700";
+        titleElement.style.fontSize = "16px";
+        titleElement.innerText = title;
+
+        const descriptionElement = document.createElement("p");
+        descriptionElement.style.margin = "0";
+        descriptionElement.style.fontSize = "14px";
+        descriptionElement.style.lineHeight = "1.4";
+        descriptionElement.innerText = description;
+
+        popup.appendChild(titleElement);
+        popup.appendChild(descriptionElement);
+
+        document.body.appendChild(popup);
+        activePopup = popup;
+      });
+
+      element.addEventListener("mouseleave", () => {
+        if (activePopup) {
+          activePopup.remove();
+          activePopup = null;
+        }
+      });
+    } else {
+      console.error(`Element with ID '${id}' not found in the SVG.`);
+    }
+  });
+  
   </script>
   
   <style scoped>
-  /* Add any needed custom styling here */
+  .popup {
+    font-family: Arial, sans-serif;
+  }
+
+  #map-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust as per your needs */
+    margin: 0 auto;
+  }
+
+  .merienda {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.bg-holder-natural.natural-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
+  
+  .bg-holder-natural.natural-overlay > * {
+    position: relative;
+    z-index: 2; /* Ensures the content inside the div is above the overlay */
+  }
   </style>
   

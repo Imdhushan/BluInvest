@@ -1,5 +1,5 @@
 <template>
-  <section :key="componentKey" class="bg-dark pt-6 pb-4 light" style="background-color: #2196F3">
+  <section :key="componentKey" class="pt-2 pb-2 light" style="background-color: #1A237E">
     <div
       v-if="backgroundImage"
       class="bg-holder overlay bg-holder-natural natural-overlay"
@@ -8,19 +8,18 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-xl-start mt-3">
-          <h4 class="text-white fw-light">
+          <h4 class="text-white fw-light merienda">
             {{ title }}
-            <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
           </h4>
           <p class="text-white text-200">
             {{ description }}          </p>
-          <h5 class="text-white fw-light">
+          <h5 class="text-white  merienda">
             {{ currentSection.title || "No Section" }}:
             <br />
-            <span class="text-600">{{ currentCardText || "No Card Available" }}</span>
+            <span class="text-info fw-light anton-sc-regular">{{ currentCardText || "No Card Available" }}</span>
           </h5>
 
-          <div class="d-flex flex-wrap  align-items-center pa-10">
+          <div class="d-flex flex-wrap  align-items-center pa-10 ml-5">
             <!-- Render dynamic checkboxes based on the current step and card -->
             <div
               v-for="(input, index) in currentDynamicInputs"
@@ -57,6 +56,8 @@
             Back Section
           </button>
           <button v-if="currentSectionIndex === sectionsData.length - 1" @click="completeProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button>
+          <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
+
         </div>
       </div>
     </div>
@@ -158,6 +159,19 @@ const reSetProcess = () => {
 </script>
 
 <style scoped>
+
+
+.merienda {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.anton-sc-regular {
+  font-family: "Anton SC", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
 
 /* Add relevant styles */
 .bg-holder-natural.natural-overlay::before {

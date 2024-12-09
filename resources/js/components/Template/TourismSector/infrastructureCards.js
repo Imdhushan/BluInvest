@@ -1,11 +1,11 @@
-const infrastructureTitle = "INFRASTRUCTURE";
+const infrastructureTitle = "";
 const infrastructureDescription =
-  "Invest in eco-friendly tourism ventures that capitalize on Sri Lanka’s breathtaking landscapes and coastal beauty, ensuring both profitability and sustainability.";
+  "";
 
   const infrastructureimageUrl = "";
 const infrastructureSectionsData = [
   {
-    title: "Accessibility",
+    title: "What kind of facilities do you need in the area",
     cards: [
     { text: "Proximity to the main road ", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] },
 
@@ -25,12 +25,12 @@ const infrastructureSectionsData = [
     ],
   },
   {
-    title: "Water",
+    title: "Do you need access to ground water",
     cards: [
       { text: " ", dynamicInputs: [{ label: "Availability of groundwater" }] }],
   },
   {
-    title: "Availability of accommodation",
+    title: "Do you require accomodation facilities in the area",
     cards: [
     { text: " ", dynamicInputs: [ { type: "checkbox", label: "Classified Hotels( 1-5 Star)", value: false }, { type: "checkbox", label: "Tourist Hotels", value: false }, { type: "checkbox", label: "Boutique Hotels & Villas", value: false }, { type: "checkbox", label: "Guest Houses", value: false }, { type: "checkbox", label: "Bungalows", value: false }, { type: "checkbox", label: "Home Stay Units", value: false } ] }
     ],

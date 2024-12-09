@@ -1,14 +1,14 @@
-const naturalTitle = "Natural Resources and Land Use";
+const naturalTitle = "";
 const naturalDescription =
-  "Focus on sustainable resource management and land use for a thriving environment.";
+  "";
 
-  const naturalImageUrl = "/assets/img/nature.jpg";
+  const naturalImageUrl = "";
 const naturalSectionsData = [
   {
-    title: "Resources",
+    title: "Are you looking for certain types of land based on their uses",
     cards: [
       { 
-        text: "Land use​", 
+        text: "​", 
         dynamicInputs: [
           { type: "checkbox", label: "Agricultural land​", value: false },
           { type: "checkbox", label: "Built Up Area​", value: false },
@@ -20,37 +20,67 @@ const naturalSectionsData = [
           { type: "checkbox", label: "Rocky Area​", value: false },
         ]
       },
+      
+    ],
+  },
+  {
+    title: "Select the wind speed in your prefered location if applicable",
+    cards: [
       { 
-        text: "Wind speed (100m)​", 
+        text: "​", 
         dynamicInputs: [
           { type: "checkbox", label: "High area ​", value: false },
           { type: "checkbox", label: "Moderate area​", value: false },
         ]
-      },
-      { text: "Solar irradiance​" ,
+      }
+        ]
+         ,
+  },
+  {
+    title: "Select the solar irradiance in your prefered location if applicable",
+    cards: [
+      { text: "​" ,
         dynamicInputs: [
           { type: "checkbox", label: "High area (> 4.4 PVOUT)​", value: false },
           { type: "checkbox", label: "Low area​", value: false },
         ]
-      },
-      { text: "Annual Rainfall (mm)​", dynamicInputs: [
-          { type: "checkbox", label: "> 2500​", value: false },
-          { type: "checkbox", label: "1750 - 2500​", value: false },
-          { type: "checkbox", label: "< 2500​", value: false },
-        ] },
-      { text: "Distance from the coast (m)​", dynamicInputs: [
-          { type: "checkbox", label: "0m - 200m", value: false },
-          { type: "checkbox", label: "200m - 400m", value: false },
-          { type: "checkbox", label: "400m - 600m", value: false },
-          { type: "checkbox", label: "600m - 800m", value: false },
-        ]},
-        {
-          text: "Natural Environment ", dynamicInputs: [
-            { type: "checkbox", label: "Proximity to Department of Wildlife Conservation Areas", value: false },
-            { type: "checkbox", label: "Proximity to Forest Department Protected Areas", value: false },
-            { type: "checkbox", label: "Proximity to Environmentally Sensitive Areas", value: false },
-            { type: "checkbox", label: "Proximity to Mangrove Forests", value: false },
-          ]        }
+      }
+    ],
+  },
+  {
+    title: "Select the annual rainfall in your prefered location if applicable",
+    cards: [
+      { text: "​", dynamicInputs: [
+        { type: "checkbox", label: "> 2500 mm​", value: false },
+        { type: "checkbox", label: "1750 mm - 2500 mm​", value: false },
+        { type: "checkbox", label: "< 2500 mm​", value: false },
+      ] }
+    
+    ],
+  },
+  {
+    title: "Do you want a location that is near the coast",
+    cards: [
+      { text: " ​", dynamicInputs: [
+        { type: "checkbox", label: "0m - 200m", value: false },
+        { type: "checkbox", label: "200m - 400m", value: false },
+        { type: "checkbox", label: "400m - 600m", value: false },
+        { type: "checkbox", label: "600m - 800m", value: false },
+      ]}
+    
+    ],
+  },
+  {
+    title: "Is your location near natural environment and biodiversity hotspots",
+    cards: [
+      {
+        text: " ", dynamicInputs: [
+          { type: "checkbox", label: "Proximity to Department of Wildlife Conservation Areas", value: false },
+          { type: "checkbox", label: "Proximity to Forest Department Protected Areas", value: false },
+          { type: "checkbox", label: "Proximity to Environmentally Sensitive Areas", value: false },
+          { type: "checkbox", label: "Proximity to Mangrove Forests", value: false },
+        ]        }
+    
     ],
   },
   
