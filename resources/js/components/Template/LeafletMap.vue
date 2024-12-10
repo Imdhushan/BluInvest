@@ -126,12 +126,32 @@ onMounted(() => {
   //   attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
   // });
 
-  const osmBaseLayer =  L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+  const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors',
+  });
+
+  // const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  //   attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+  // });
+
+  const satelliteLayer =  L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
   subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
   attribution: '© Google Maps',
 });
 
-  osmBaseLayer.addTo(map.value);
+  satelliteLayer.addTo(map.value);
+
+  //osmBaseLayer.addTo(map.value);
+
+  
+
+  const baseLayers = {
+    "Satellite View": satelliteLayer,
+    "Normal View (OSM)": osmBaseLayer,
+  };
+
+  L.control.layers(baseLayers).addTo(map.value);
 
   // Add the query layer group to the map
   queryLayerGroup.addTo(map.value);
