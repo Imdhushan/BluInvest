@@ -7,93 +7,35 @@
       </div>
     </div> -->
 
-    <section class="light" style="background-color: #2196F3">
+<section class="py-6 overflow-hidden  light" style="background-color: #1A237E">
 
 <div class="container">
-    <div class="row">
-        <div class="col-xl-8 col-lg-8">
+  <card class="mb-3 ">
+    <card-body>
+    <div class="row g-1 flex-center">
+        <div class="col-xl-7 col-lg-7">
+          
             <LeafletMap @mapReady="initializeMap" :filters="filters"
              />
+             
 
 
         </div>
-        <div class="col-xl-4 col-lg-4">
-            <card class="mb-3 ">
-                <card-body>
-                    <h4>Final Selection Summary</h4>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item"  v-if="completed">
-                            <h2 class="accordion-header" id="heading1">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                     INFRASTRUCTURE
-                                </button>
-                            </h2>
-                            <div class="accordion-collapse collapse show" id="collapse1" aria-labelledby="heading1" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <table class="table table-bordered">
-                                        <thead>
-                                        <!-- <tr><th colspan="3" class="text-left">INFRASTRUCTURE</th></tr> -->
-                                        </thead>
-                                        <tbody>
-                                        <tr><td colspan="3" class="text-left fw-bold">Accessibility</td></tr>
-                                        <tr v-for="(distance, roadType) in finalSelections.INFRASTRUCTURE.Accessibility" :key="roadType">
-                                        <td colspan="2">{{ roadType }}</td>
-                                        <td>{{ distance.join(", ") }}</td>
-                                        </tr>
-
-                                        <tr><td colspan="3" class="text-left fw-bold">Groundwater</td></tr>
-                                        <tr>
-                                        <td colspan="2">Availability of groundwater</td>
-                                        <td>{{ finalSelections.INFRASTRUCTURE.Groundwater["Availability of groundwater"] }}</td>
-                                        </tr>
-
-                                        <tr><td colspan="3" class="text-left fw-bold">Accommodation Facilities</td></tr>
-                                        <tr>
-                                        <td colspan="2">Tourist Hotels</td>
-                                        <td>{{ finalSelections.INFRASTRUCTURE["Accommodation Facilities"]["Tourist Hotels"] }}</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                Natural Resources and Land Use
-                            </button>
-                            </h2>
-                            <div class="accordion-collapse collapse" id="collapse2" aria-labelledby="heading2" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Focus on sustainable resource management and land use for a thriving environment.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">How much do disputes costs?</button>
-                            </h2>
-                            <div class="accordion-collapse collapse" id="collapse3" aria-labelledby="heading3" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">Disputed payments (also known as chargebacks) incur a $15.00 fee. If the customer’s bank resolves the dispute in your favor, the fee is fully refunded.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">Is there a fee to use Apple Pay or Google Pay?</button>
-                            </h2>
-                            <div class="accordion-collapse collapse" id="collapse4" aria-labelledby="heading4" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">There are no additional fees for using our mobile SDKs or to accept payments using consumer wallets like Apple Pay or Google Pay.</div>
-                            </div>
-                        </div> -->
-                    </div>
+        <div class="col-xl-5 col-lg-5">
+           
+          <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl" :bgColor="bgColor"/>
+  <hr class="p-0 m-0"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl" :bgColor="bgColor"/>
 
 
 
 
-                </card-body>
-            </card>
+
+               
         </div>
     </div>
+  </card-body>
+</card>
 </div>
 </section>
 
@@ -111,6 +53,11 @@ import { Loader } from "@googlemaps/js-api-loader";
 import {applyMapLegend, showHideLegends} from "../../composables/map/layers/SpatialListFunctions";
 
 import refactorGeometrytoGeoJSON from "../../composables/map/refactorGeometrytoGeoJSON";
+
+import InfrastructureSection from './TourismSector/InfrastructureSection.vue';
+  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './TourismSector/infrastructureCards.js'
+  import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './TourismSector/naturalResourcesCards.js'
+
 //
 // const selectedAttribute =ref();
 // const attributeValue =ref();
@@ -141,6 +88,7 @@ const retrieveFromLocalStorage = () => {
   // }
 };
 
+const bgColor="black";
 
   const mapInstance = ref(null); // Leaflet map instance
 

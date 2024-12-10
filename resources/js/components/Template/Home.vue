@@ -1,5 +1,5 @@
 <template>
-  <section class="light" style="background-color: #1A237E
+  <section class="py-7 overflow-hidden  light" style="background-color: #1A237E
 ">
     <div class="container">
       <div class="row flex-center">

@@ -3,34 +3,35 @@
     <div id="map"></div>
 
 <!--    &lt;!&ndash; Query Modal &ndash;&gt;-->
-<!--    <div class="modal fade" id="queryModal" tabindex="-1" aria-labelledby="queryModalLabel" aria-hidden="true">-->
-<!--      <div class="modal-dialog">-->
-<!--        <div class="modal-content">-->
-<!--          <div class="modal-header">-->
-<!--            <h5 class="modal-title" id="queryModalLabel">Query Layer by Attribute</h5>-->
-<!--            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
-<!--          </div>-->
-<!--          <div class="modal-body">-->
-<!--            <form id="queryForm">-->
-<!--              <div class="mb-3">-->
-<!--                <label for="attributeSelect" class="form-label">Select Attribute</label>-->
-<!--                <select class="form-select" v-model="selectedAttribute">-->
-<!--                  <option v-for="attribute in attributes" :key="attribute" :value="attribute">{{ attribute }}</option>-->
-<!--                </select>-->
-<!--              </div>-->
-<!--              <div class="mb-3">-->
-<!--                <label for="attributeValue" class="form-label">Enter Value</label>-->
-<!--                <input type="text" class="form-control" v-model="attributeValue" placeholder="Enter value to query" />-->
-<!--              </div>-->
-<!--            </form>-->
-<!--          </div>-->
-<!--          <div class="modal-footer">-->
-<!--            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--            <button type="button" class="btn btn-primary" @click="applyQuery">Apply Query</button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+<!-- <div class="modal fade" id="queryModal" tabindex="-1" aria-labelledby="queryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="queryModalLabel">Query Layer by Attribute</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="queryForm">
+          <div class="mb-3">
+            <label for="attributeSelect" class="form-label">Select Attribute</label>
+            <select class="form-select" v-model="selectedAttribute">
+              <option v-for="attribute in attributes" :key="attribute" :value="attribute">{{ attribute }}</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="attributeValue" class="form-label">Enter Value</label>
+            <input type="text" class="form-control" v-model="attributeValue" placeholder="Enter value to query" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" @click="applyQuery">Apply Query</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
   </div>
 </template>
 
@@ -116,10 +117,19 @@ onMounted(() => {
   map.value = L.map('map').setView([6.9271, 79.8612], 7); // Centered on Sri Lanka
 
   // Add base layer (OpenStreetMap)
-  const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap contributors',
-  });
+  // const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //   maxZoom: 19,
+  //   attribution: '© OpenStreetMap contributors',
+  // });
+
+  // const osmBaseLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  //   attribution: 'Tiles © Esri — Source: Esri, Maxar, Earthstar Geographics, and the GIS User Community',
+  // });
+
+  const osmBaseLayer =  L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+  attribution: '© Google Maps',
+});
 
   osmBaseLayer.addTo(map.value);
 
@@ -147,7 +157,7 @@ watch(() => props.filters, (data, oldEvent) => {
 /* Map container styling */
 #map {
   width: 100%;
-  height: 90vh;
+  height: 85vh;
 }
 
 

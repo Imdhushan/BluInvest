@@ -1,5 +1,5 @@
 <template>
-  <section :key="componentKey" class="pt-2 pb-2 light" style="background-color: #1A237E">
+  <section :key="componentKey" class="pt-2 pb-2 light"  :style="{ backgroundColor: bgColor }">
     <div
       v-if="backgroundImage"
       class="bg-holder overlay bg-holder-natural natural-overlay"
@@ -7,7 +7,7 @@
     ></div>
     <div class="container">
       <div class="row flex-center">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-xl-start mt-3">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-xl-start mt-3 mb-3">
           <h4 class="text-white fw-light merienda">
             {{ title }}
           </h4>
@@ -57,7 +57,6 @@
           </button>
           <button v-if="currentSectionIndex === sectionsData.length - 1" @click="completeProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button>
           <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
-
         </div>
       </div>
     </div>
@@ -84,6 +83,11 @@ const props = defineProps({
     required: false,
     default: '',
   },
+  bgColor:{
+    type: String,
+    required: false,
+    default: '#1A237E',
+  }
 
 });
 

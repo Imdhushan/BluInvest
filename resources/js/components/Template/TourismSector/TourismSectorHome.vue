@@ -30,12 +30,25 @@
     </div>
     </div>
   </section>
+  <section class="py-0 overflow-hidden light" id="banner" style="background-color: #1A237E">
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-2 pt-0 pb-xl-2 ">
+
+          <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
+  <hr class="p-0 m-0"/>
+  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
+
+
+        </div>
+      </div>
+    </div>
+   
+  </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
-  <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
-  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
-
+  
 
   <!-- <QuestionSection title="Natural Resources and Land Use"
   description="Focus on sustainable resource management and land use for a thriving environment."
