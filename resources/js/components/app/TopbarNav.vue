@@ -50,7 +50,7 @@ onMounted(() => {
                 </div>
                 
               </li>
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">
+              <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">
                 Invest</a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="apps">
                   
@@ -59,17 +59,50 @@ onMounted(() => {
                           <div class="nav flex-column">
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/tourism">Tourism</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/conservation">Conservation</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
-                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
+                            <p class="nav-link text-700 mb-0 fw-bold">Energy</p>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Solar </a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/wind">Wind </a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
-                            <!-- <p class="nav-link text-700 mb-0 fw-bold">Support Desk</p><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/table-view.html">Table view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/card-view.html">Card view</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contacts.html">Contacts</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/contact-details.html">Contact details</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/tickets-preview.html">Tickets preview</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/quick-links.html">Quick links</a><a class="nav-link py-1 link-600 fw-medium" href="../app/support-desk/reports.html">Reports</a> -->
                          
                      
                       </div>
                     
                 </div>
-              </li>
+              </li> -->
+              <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="apps">
+    Invest
+  </a>
+  <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="apps">
+    <div class="nav flex-column">
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/tourism">Tourism</a>
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/conservation">Conservation</a>
+      
+      <!-- Energy Dropdown -->
+      <div class="dropdown">
+        <a
+          class="nav-link py-1 link-600 fw-medium dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Energy
+        </a>
+        <div class="dropdown-menu dropdown-menu-end border-0">
+          <a class="dropdown-item link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
+          <a class="dropdown-item link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
+        </div>
+      </div>
+      
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
+    </div>
+  </div>
+</li>
+
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">
                 Regulations </a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="pagess">
@@ -192,5 +225,16 @@ onMounted(() => {
   font-weight: 700;
   font-style: italic;
 }
+
+.dropdown-menu .dropdown-menu {
+  top: 0;
+  left: 100%; /* Aligns to the right of the parent */
+  margin-top: -0.125rem; /* Adjusts vertical alignment */
+}
+
+.dropdown-menu-end {
+  right: auto; /* Ensures alignment respects right placement */
+}
+
 
 </style>
