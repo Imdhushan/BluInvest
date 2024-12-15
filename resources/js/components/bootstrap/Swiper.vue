@@ -16,8 +16,8 @@
         <h3>{{ slide.title }}</h3>
         <p> {{ truncateText(slide.content, 30) }}</p>
         
-        <button class="btn btn-outline-light border-2 rounded-pill mt-4 fs-0 py-2 btn-sm " type="button"  @click="storeInLocalStorage()">
-        <router-link to="/tourismsector/event-tourism" class="text-info">Read More</router-link>
+        <button class="btn btn-outline-light border-2 rounded-pill mt-1 fs-0 py-0 btn-sm " type="button"  @click="storeInLocalStorage()">
+        <router-link to="/tourismsector/event-tourism" class="text-info ">Read More</router-link>
 
       </button>
       </div>
@@ -63,7 +63,7 @@ function truncateText(text, wordLimit) {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  background: rgba(255, 255, 255, 0.7); /* Transparent white background */
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -86,5 +86,6 @@ function truncateText(text, wordLimit) {
   font-size: 1rem;
   line-height: 1.5;
   color: #1f1e1e;
+  font-weight: 500;
 }
 </style>

@@ -294,7 +294,7 @@ onMounted(() => {
 .hover-effect:hover img {
   transform: scale(1.1);
 }
-
+/* 
 .overlay-text {
   position: absolute;
   bottom: 0;
@@ -306,7 +306,36 @@ onMounted(() => {
   padding: 10px;
   opacity: 0;
   transition: opacity 0.5s ease;
+} */
+
+/* Style for overlay-text: always visible */
+.overlay-text {
+  position: absolute; /* Ensures text stays over the image */
+  bottom: 0; /* Adjust to place text inside the image at the bottom */
+  left: 0; /* Center horizontally */
+  right: 0;
+  color: white; /* Text color */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding:  10px; /* Add padding around the text */
+  text-align: center;
+  z-index: 10; /* Ensure text appears above the image */
+  transition: all 0.3s ease; /* Smooth transition on hover */
 }
+
+/* Wrapper for the parent post1 */
+.post1 {
+  position: relative; /* Ensure overlay-text stays relative to this */
+  display: block;
+}
+
+/* On hover, add a slight effect to text (optional) */
+.post1:hover .overlay-text {
+  background-color: rgba(255, 255, 255, 0.8); /* Change background on hover */
+  color: black; /* Change text color on hover */
+}
+
 
 .hover-effect:hover .overlay-text {
   opacity: 1;

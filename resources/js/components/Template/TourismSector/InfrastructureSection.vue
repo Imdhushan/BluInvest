@@ -24,7 +24,10 @@
                 <div
                   v-for="(input, inputIndex) in card.dynamicInputs"
                   :key="inputIndex"
-                  class="form-check  text-white  col-md-3 col-lg-3 col-sm-12"
+                  :class="[
+    'form-check text-white col-sm-12 mt-1',
+    card.dynamicInputs.length < 4 ? 'col-md-12 col-lg-12' : 'col-md-3 col-lg-3'
+  ]"
                 >
                   <input
                     type="checkbox"
@@ -37,6 +40,7 @@
                     {{ input.label }}
                   </label>
                 </div>
+                <hr style="color:rgba(255, 255, 255, 0.7);"/>
               </div>
             </div>
           <!-- </div> -->

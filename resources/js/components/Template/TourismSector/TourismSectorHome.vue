@@ -31,7 +31,7 @@
     </div>
     </div>
   </section>
-  <section class="py-0 overflow-hidden light" id="banner" style="background-color: #1A237E">
+  <section class="py-4 overflow-hidden light" id="banner" style="background-color: #1A237E">
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 pb-2 pt-0 pb-xl-2">
