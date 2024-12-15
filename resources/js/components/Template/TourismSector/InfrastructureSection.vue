@@ -1,73 +1,81 @@
 <template>
-  <section :key="componentKey" class="pt-2 pb-2 light"  :style="{ backgroundColor: bgColor }">
+  <section :key="componentKey" class="pt-2 pb-2 light" :style="{ backgroundColor: bgColor }">
     <div
       v-if="backgroundImage"
       class="bg-holder overlay bg-holder-natural natural-overlay"
       :style="{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: 'center bottom' }"
     ></div>
     <div class="container">
-      <div class="row flex-center">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 text-xl-start mt-3 mb-3">
-          <h4 class="text-white fw-light merienda">
-            {{ title }}
-          </h4>
-          <p class="text-white text-200">
-            {{ description }}          </p>
-          <h5 class="text-white  merienda">
-            {{ currentSection.title || "No Section" }}:
-            <br />
-            <span class="text-info fw-light anton-sc-regular">{{ currentCardText || "No Card Available" }}</span>
-          </h5>
-
-          <div class="d-flex flex-wrap  align-items-center pa-10 ml-5">
-            <!-- Render dynamic checkboxes based on the current step and card -->
-            <div
-              v-for="(input, index) in currentDynamicInputs"
-              :key="index"
-              class="form-check me-3 text-white"
-            >
-              <input
-                type="checkbox"
-                :id="`${input.label}-${index}`"
-                :checked="isChecked(currentCardText, input.label)"
-                @change="handleCheckboxChange(currentCardText, input.label, $event.target.checked)"
-                class="form-check-input text-white"
-              />
-              <label :for="`${input.label}-${index}`">{{ input.label }}</label>
+      <div class="row">
+        <!-- Loop through two sections at a time -->
+        <div
+          v-for="(section, index) in currentSections"
+          :key="index"
+          class="col-xl-12 col-lg-12 col-md-12 col-sm-12  mt-3 mb-3"
+        >
+          <!-- <div class="text-xl-start"> -->
+            <h4 class="text-white fw-light merienda">
+              {{ section.title || "No Section" }}
+            </h4>
+            <div v-for="(card, cardIndex) in section.cards" :key="cardIndex">
+              <h5 class="text-info fw-light anton-sc-regular">{{ card.text || "No Card Available" }}</h5>
+              <div class=" align-items-right pa-10 ml-5 me-3 row">
+                <!-- Render dynamic checkboxes -->
+                <div
+                  v-for="(input, inputIndex) in card.dynamicInputs"
+                  :key="inputIndex"
+                  class="form-check  text-white  col-md-3 col-lg-3 col-sm-12"
+                >
+                  <input
+                    type="checkbox"
+                    :id="`${input.label}-${cardIndex}-${inputIndex}`"
+                    :checked="isChecked(card.text, input.label)"
+                    @change="handleCheckboxChange(card.text, input.label, $event.target.checked)"
+                    class="form-check-input text-white"
+                  />
+                  <label :for="`${input.label}-${cardIndex}-${inputIndex}`">
+                    {{ input.label }}
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <!-- Navigation Buttons -->
-          <button v-if="currentCard > 1" @click="prevCard" class="btn btn-outline-light btn-sm mx-2 my-2">Back</button>
-          <button v-if="currentCard < totalCardsInCurrentSection" @click="nextCard" class="btn btn-outline-light btn-sm mx-2 my-2">Next</button>
-          <button @click="skipCard" class="btn btn-outline-danger btn-sm mx-2 my-2">Skip</button>
-          <button
-            v-if="currentCard === totalCardsInCurrentSection && currentSectionIndex < sectionsData.length - 1"
-            @click="goToNextSection"
-            class="btn btn-outline-light btn-sm mx-2 my-2"
-          >
-            Next Section
-          </button>
-          <button
-            v-if="currentSectionIndex > 0 && currentCard === 1"
-            @click="goToPreviousSection"
-            class="btn btn-outline-warning btn-sm mx-2 my-2"
-          >
-            Back Section
-          </button>
-          <button v-if="currentSectionIndex === sectionsData.length - 1" @click="completeProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Done</button>
-          <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
+          <!-- </div> -->
         </div>
       </div>
+      <!-- Navigation Buttons -->
+      <!-- <div class="row flex-center mt-3"> -->
+        <button v-if="currentSectionIndex > 0" @click="prevSections" class="btn btn-outline-warning btn-sm mx-2">
+          Previous Sections
+        </button>
+        <button
+          v-if="currentSectionIndex < totalSections - 2"
+          @click="nextSections"
+          class="btn btn-outline-success btn-sm mx-2"
+        >
+          Next Sections
+        </button>
+        
+        
+        <button @click="reSetProcess" class="btn btn-outline-light btn-sm mx-2">Reset</button>
+        <button
+          v-if="currentSectionIndex === totalSections - 1"
+          @click="handleDone"
+          class="btn btn-outline-success btn-sm mx-2"
+        >
+          Done
+        </button>
+      <!-- </div> -->
     </div>
   </section>
 </template>
+
+
 <script setup>
 import { ref, computed, defineProps } from "vue";
 
 const props = defineProps({
   sections: {
-    type: Object, // Account for a nested structure
+    type: Array,
     required: true,
   },
   title: {
@@ -81,30 +89,30 @@ const props = defineProps({
   backgroundImage: {
     type: String,
     required: false,
-    default: '',
+    default: "",
   },
-  bgColor:{
+  bgColor: {
     type: String,
     required: false,
-    default: '#1A237E',
-  }
-
+    default: "#1A237E",
+  },
 });
 
-// Handle nested or flat structure
-const sectionsData = computed(() => props.sections.sections || props.sections || []);
+const emit = defineEmits(["process-complete"]);
+
+function handleDone() {
+  emit("process-complete"); // Emit the event to the parent
+}
 
 // State variables
 const currentSectionIndex = ref(0);
-const currentCard = ref(1);
 const selections = ref({});
 
 // Computed properties
-const currentSection = computed(() => sectionsData.value[currentSectionIndex.value] || {});
-const currentCards = computed(() => currentSection.value.cards || []);
-const currentCardText = computed(() => currentCards.value[currentCard.value - 1]?.text || "");
-const currentDynamicInputs = computed(() => currentCards.value[currentCard.value - 1]?.dynamicInputs || []);
-const totalCardsInCurrentSection = computed(() => currentCards.value.length);
+const currentSections = computed(() => {
+  return props.sections.slice(currentSectionIndex.value, currentSectionIndex.value + 2);
+});
+const totalSections = computed(() => props.sections.length);
 
 // Helpers
 const isChecked = (cardText, label) => selections.value[cardText]?.includes(label);
@@ -120,43 +128,28 @@ const handleCheckboxChange = (cardText, label, isSelected) => {
 };
 
 // Navigation
-const nextCard = () => {
-  if (currentCard.value < totalCardsInCurrentSection.value) currentCard.value++;
-};
-const prevCard = () => {
-  if (currentCard.value > 1) currentCard.value--;
-};
-const skipCard = () => {
-  if (currentCard.value < totalCardsInCurrentSection.value) {
-    currentCard.value++;
-  } else {
-    goToNextSection();
+const nextSections = () => {
+  if (currentSectionIndex.value < totalSections.value - 2) {
+    currentSectionIndex.value += 2;
   }
 };
-const goToNextSection = () => {
-  if (currentSectionIndex.value < sectionsData.value.length - 1) {
-    currentSectionIndex.value++;
-    currentCard.value = 1;
-  }
-};
-const goToPreviousSection = () => {
+const prevSections = () => {
   if (currentSectionIndex.value > 0) {
-    currentSectionIndex.value--;
-    currentCard.value = 1;
+    currentSectionIndex.value -= 2;
   }
 };
 
-// Complete process
 const completeProcess = () => {
-  console.log("Selections:", selections.value);
-  alert("Survey completed!");
+  console.log("Survey completed. Selections:", selections.value);
+  alert("You have successfully completed the survey!");
 };
+
+
 
 // Reset process
 const componentKey = ref(0);
 const reSetProcess = () => {
   currentSectionIndex.value = 0;
-  currentCard.value = 1;
   selections.value = {};
   componentKey.value++;
 };

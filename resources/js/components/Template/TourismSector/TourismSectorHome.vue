@@ -1,5 +1,5 @@
 <template>
-  <section class="py-0 overflow-hidden light" id="banner">
+  <section class="py-5 overflow-hidden light" id="banner">
     <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/malindabandaralk.jpg);background-position: center bottom;"></div>
     <div class="container">
       <div class="row flex-center">
@@ -14,9 +14,10 @@
             Sri Lanka, the Pearl of the Indian Ocean, is a traveller's dream — a fascinating fusion of rich cultural heritage, natural wonders, warm hospitality, and exciting investing potential. From golden beaches to misty mountains, bustling cities to serene villages, this tropical paradise offers experiences that stay etched in your memory! Explore what makes Sri Lanka the perfect destination for exploration, relaxation, and opportunities beyond the ordinary!
 
 
-
-
           </p>
+
+          <Swiper :sliderContent="tourism"/>
+
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
@@ -33,14 +34,32 @@
   <section class="py-0 overflow-hidden light" id="banner" style="background-color: #1A237E">
     <div class="container">
       <div class="row flex-center">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pb-2 pt-0 pb-xl-2 ">
+        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 pb-2 pt-0 pb-xl-2">
+          <card class=" light p-0 mt-2">
+            <card-body class="p-1 ">
+          <LeafletMap @mapReady="initializeMap" :filters="filters"
+             />
+            </card-body>
+           </card>
+             
+        </div>
+        <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
 
-          <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
-  <hr class="p-0 m-0"/>
-  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
-
+          <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"
+          @process-complete="retrieveFromLocalStorage"
+          />
+          <!-- <hr class="p-0 m-0"/> -->
+          <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
+          <!-- <button
+          @click="retrieveFromLocalStorage"
+          
+          class="btn btn-outline-success btn-sm mx-2 mt-2 "
+        >
+          Done
+        </button> -->
 
         </div>
+        
       </div>
     </div>
    
@@ -56,16 +75,15 @@
 
 
 
-  <section class="light bg-dark">
+  <!-- <section class="light bg-dark">
 
 <div class="bg-holder overlay" style="background-image:url(/assets/img/generic/bg-2.jpg);background-position: center top;">
 </div>
-<!--/.bg-holder-->
 
 <div class="container">
   <div class="row justify-content-center text-center">
     <div class="col-lg-9">
-      <!-- <p class="fs-2 fs-sm-3 text-white">Access Sri Lanka’s Government Circulars and Documents. All the official forms, guidelines, and regulatory documents related to Blue Economy investments are available here.</p> -->
+      <p class="fs-2 fs-sm-3 text-white">Access Sri Lanka’s Government Circulars and Documents. All the official forms, guidelines, and regulatory documents related to Blue Economy investments are available here.</p>
       <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button"  @click="storeInLocalStorage()">
         <router-link to="/map/analyze" class="text-info">Explore Map</router-link>
 
@@ -73,9 +91,8 @@
     </div>
   </div>
 </div>
-<!-- end of .container-->
 
-</section>
+</section> -->
 
 
  
@@ -87,6 +104,25 @@
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
+ 
+  import LeafletMap from "../LeafletMap.vue";
+import Swiper from '../../bootstrap/Swiper.vue';
+import tourism from '../SwiperContent/tourism.json';
+
+
+
+const filters = ref([]);
+
+
+const retrieveFromLocalStorage = () => {
+  filters.value =  [
+    { attribute: 'Beach_a', value: '1' }, // Beaches
+    { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
+    { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
+    { attribute: 'Surfing', value: '1' }, // Surfing Areas
+    { attribute: 'Lagoon', value: '1' }, // Lagoons
+  ];
+}
 
 
   console.log('title',infrastructureTitle);

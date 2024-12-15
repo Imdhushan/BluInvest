@@ -127,7 +127,7 @@ onMounted(() => {
   // });
 
   const osmBaseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 20,
     attribution: '© OpenStreetMap contributors',
   });
 
@@ -177,7 +177,7 @@ watch(() => props.filters, (data, oldEvent) => {
 /* Map container styling */
 #map {
   width: 100%;
-  height: 85vh;
+  height: 90vh;
 }
 
 

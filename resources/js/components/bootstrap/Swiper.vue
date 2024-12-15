@@ -1,0 +1,90 @@
+<template>
+  <swiper
+    :spaceBetween="30"
+    :centeredSlides="true"
+    :autoplay="{
+      delay: 3000,
+      disableOnInteraction: false,
+    }"
+    :pagination="{ clickable: true }"
+    :navigation="true"
+    :modules="[Autoplay, Pagination, Navigation]"
+    class="mySwiper"
+  >
+    <swiper-slide v-for="(slide, index) in sliderContent" :key="index">
+      <div class="text-slide">
+        <h3>{{ slide.title }}</h3>
+        <p> {{ truncateText(slide.content, 30) }}</p>
+        
+        <button class="btn btn-outline-light border-2 rounded-pill mt-4 fs-0 py-2 btn-sm " type="button"  @click="storeInLocalStorage()">
+        <router-link to="/tourismsector/event-tourism" class="text-info">Read More</router-link>
+
+      </button>
+      </div>
+    </swiper-slide>
+  </swiper>
+</template>
+
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// Define the prop
+defineProps({
+  sliderContent: {
+    type: Array,
+    required: true,
+  },
+});
+
+function truncateText(text, wordLimit) {
+  if (!text) return ""; // Handle empty content
+  const words = text.split(" "); // Split the content into words
+  if (words.length > wordLimit) {
+    return words.slice(0, wordLimit).join(" ") + "..."; // Truncate and add ellipsis
+  }
+  return text; // If within the limit, return the full content
+}
+
+</script>
+
+<style scoped>
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5); /* Transparent white background */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 300px; /* Set a fixed height for the card */
+  box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.text-slide {
+  max-width: 800px;
+  overflow: hidden;
+}
+
+.text-slide h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.text-slide p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1f1e1e;
+}
+</style>

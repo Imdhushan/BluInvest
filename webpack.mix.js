@@ -30,7 +30,7 @@ mix.copy('node_modules/@mdi/font/fonts/', 'dist/fonts/')
 // Extend Mix Webpack Config for TypeScript
 mix.webpackConfig({
     resolve: {
-        extensions: ['.js', '.json', '.vue', '.ts'],
+        extensions: [".*", ".wasm", ".mjs", ".js", ".jsx", ".json", ".vue", ".ts", ".css"],
         alias: {
             '@': path.resolve('resources/js'),
         },
