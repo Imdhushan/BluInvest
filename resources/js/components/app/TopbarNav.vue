@@ -103,7 +103,7 @@ onMounted(() => {
   </div>
 </li>
 
-              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">
+              <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="pagess">
                 Regulations </a>
                 <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="pagess">
                   
@@ -114,13 +114,12 @@ onMounted(() => {
                             <a class="nav-link py-1 link-600 fw-medium" href="/regulation/conservation">Conservation</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/regulation/energy">Energy</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/regulation/boat">Boat Building</a>
-                            <!-- <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/regulation/tourism">Marine Industries</a> -->
                           </div>
                         </div>
                         
                        
                       
-              </li>
+              </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link " href="#" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">Services</a>
                 
