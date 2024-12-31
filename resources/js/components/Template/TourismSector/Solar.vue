@@ -1,102 +1,227 @@
 <template>
-  <div id="page">
-    <!-- Banner Section -->
-    <section class="py-0 overflow-hidden light" id="banner">
-      <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/solor.jpeg);background-position: center bottom;"></div>
-      <div class="container">
-        <div class="row flex-center pt-4 pt-lg-8 pb-lg-9 pb-xl-0">
-          <div class="col-md-12 col-lg-12 col-xl-12 pb-7 pb-xl-3 text-justify text-lg-start">
-        
-            <h1 class="text-white fw-light">SOLAR ENERGY</h1>
-            <p class="text-white fw-light text-600 opacity-0">
-              Solar energy presents a transformative solution for reducing carbon emissions and meeting the growing energy demands of Sri Lanka and the wider region. With its high solar irradiance, Sri Lanka is positioned as a central hub for renewable energy — supplying power not only to its own needs but also to neighbouring markets. This is particularly crucial as the region undergoes a “just energy transition” from fossil fuels to renewable sources.
-<br/>
-By leveraging solar power, countries in the region can significantly reduce their reliance 
-on fossil fuels, improve energy security, and contribute 
-to the global commitment to achieving net-zero emissions. 
-Investments in solar energy ensure long-term cost efficiency 
-while aligning with the region's goals for sustainable development and 
-clean energy. Solar power is not just an environmentally responsible choice — it 
-is a strategic route to a resilient, self-sufficient energy future for the region as a whole.
-<br></p>
-<p class="text-white fw-light text-600 opacity-0">Investing in solar energy offers several key benefits:</p>
-<ul class="text-white fw-light text-600 opacity-0">
-<li>Ensures long-term, stable returns, driven by the growing demand for renewable energy.</li>
-<li>Government incentives aimed at reducing carbon footprints enhance the investment's value.</li>
-<li>Solar projects typically have predictable cash flows, offering a degree of financial certainty.</li>
-<li>Typically less volatile compared to other industries, making it a safer investment.</li>
-</ul>
-<p  class="text-white fw-light text-600 opacity-0">With the tool, you can conveniently discover optimal locations for solar energy projects.
-            </p>
-          </div>
+  <section class="py-3 overflow-hidden light" id="banner">
+    <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/solar-panes-sri-lanka.jpg);background-position: center bottom;"></div>
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+          
+          <h1 class="text-white ">ENERGY</h1>
+          <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka’s Renewable Energy Potential</h4>
+          
+          <p class=" text-white  text-600 opacity-10">
+           
+            Sri Lanka is uniquely positioned to become a renewable energy powerhouse due to the island’s abundant solar irradiance and exceptional wind potential. With an average solar energy generation capacity of 4-6 kWh per square meter per day and vast coastal winds offering an estimated 56GW of offshore wind energy, the nation has the resources to efficiently transform its energy landscape. These renewable energy sources cater to domestic needs and hold the potential to supply power to neighbouring markets, driving regional collaboration in sustainable energy development.
+
+          </p>
+
+          <Swiper :sliderContent="enargy"/>
+
         </div>
-      </div>
-    </section>
-
-    <!-- Dynamic Sections -->
-    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
-  <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
-
-
-    <!-- Access to Documents -->
-    <section class="light bg-dark">
-      <div class="bg-holder overlay" style="background-image:url(/assets/img/generic/bg-2.jpg);background-position: center top;"></div>
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-9">
-            <p class="fs-2 fs-sm-3 text-white">
-              Access government policies, plans, and updates regarding solar energy projects and renewable energy advancements in Sri Lanka.
-            </p>
-            <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2">
-              <router-link to="/map/analyze" class="text-info">Explore Map</router-link>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
+        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
+  <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
+  <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
   
+    
+
+    </div>
+
+    </div>
+    </div>
+  </section>
+  <section class="py-4 overflow-hidden light" id="banner" style="background-color: #1A237E">
+    <div class="container">
+      <div class="row flex-center">
+        <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5 pb-2 pt-0 pb-xl-2">
+          <card class=" light p-0 mt-2">
+            <card-body class="p-1 ">
+          <LeafletMap @mapReady="initializeMap" :filters="filters"
+             />
+            </card-body>
+           </card>
+             
+        </div>
+        <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+
+          <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"
+          @process-complete="retrieveFromLocalStorage"
+          />
+          <!-- <hr class="p-0 m-0"/> -->
+          <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
+          <!-- <button
+          @click="retrieveFromLocalStorage"
+          
+          class="btn btn-outline-success btn-sm mx-2 mt-2 "
+        >
+          Done
+        </button> -->
+
+        </div>
+        
+      </div>
+    </div>
+   
+  </section>
+
+  <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
+  <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
+  
+
+  <!-- <QuestionSection title="Natural Resources and Land Use"
+  description="Focus on sustainable resource management and land use for a thriving environment."
+  :naturalResourcesCards="infrastructureCards"/> -->
+
+
+
+  <!-- <section class="light bg-dark">
+
+<div class="bg-holder overlay" style="background-image:url(/assets/img/generic/bg-2.jpg);background-position: center top;">
+</div>
+
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      <p class="fs-2 fs-sm-3 text-white">Access Sri Lanka’s Government Circulars and Documents. All the official forms, guidelines, and regulatory documents related to Blue Economy investments are available here.</p>
+      <button class="btn btn-outline-light border-2 rounded-pill btn-lg mt-4 fs-0 py-2" type="button"  @click="storeInLocalStorage()">
+        <router-link to="/map/analyze" class="text-info">Explore Map</router-link>
+
+      </button>
+    </div>
   </div>
+</div>
+
+</section> -->
+
+
+ 
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import InfrastructureSection from './InfrastructureSection.vue';
-import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import { ref, computed, watch ,onMounted} from 'vue';
+  
+  import InfrastructureSection from './InfrastructureSection.vue';
+  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './boatCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
+ 
+  import LeafletMap from "../LeafletMap.vue";
+import Swiper from '../../bootstrap/Swiper.vue';
+import enargy from '../SwiperContent/enargy.json';
 
-const handleDone = () => {
-  console.log('Infrastructure section complete');
-};
-</script>
 
-<style scoped>
-.bg-holder {
-  position: relative;
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+const filters = ref([]);
+
+
+const retrieveFromLocalStorage = () => {
+  filters.value =  [
+    { attribute: 'Beach_a', value: '1' }, // Beaches
+    { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
+    { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
+    { attribute: 'Surfing', value: '1' }, // Surfing Areas
+    { attribute: 'Lagoon', value: '1' }, // Lagoons
+  ];
 }
-.overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+
+
+  console.log('title',infrastructureTitle);
+
+   const popupData = {
+    "torist_map-u-colombo": {
+      title: "Colombo",
+      id: "colombo",
+      description: "Feel the pulse of Sri Lanka in Colombo, a bustling city where modern skyscrapers rise alongside colonial landmarks and bustling street markets."
+    },
+    // Add more locations
+  };
+
+  let activePopup = null;
+
+  Object.keys(popupData).forEach((id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.style.cursor = "pointer";
+
+      element.addEventListener("mouseenter", (event) => {
+        if (activePopup) activePopup.remove();
+
+        const { title, description } = popupData[id];
+        const popup = document.createElement("div");
+        popup.className = "popup";
+        popup.style.position = "absolute";
+        popup.style.left = `${event.pageX + 10}px`;
+        popup.style.top = `${event.pageY + 10}px`;
+        popup.style.background = "rgba(0, 0, 0, 0.8)";
+        popup.style.color = "white";
+        popup.style.padding = "15px";
+        popup.style.borderRadius = "5px";
+        popup.style.zIndex = "1000";
+        popup.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.2)";
+        popup.style.maxWidth = "250px";
+
+        const titleElement = document.createElement("h4");
+        titleElement.style.margin = "0 0 10px 0";
+        titleElement.style.color = "#FFD700";
+        titleElement.style.fontSize = "16px";
+        titleElement.innerText = title;
+
+        const descriptionElement = document.createElement("p");
+        descriptionElement.style.margin = "0";
+        descriptionElement.style.fontSize = "14px";
+        descriptionElement.style.lineHeight = "1.4";
+        descriptionElement.innerText = description;
+
+        popup.appendChild(titleElement);
+        popup.appendChild(descriptionElement);
+
+        document.body.appendChild(popup);
+        activePopup = popup;
+      });
+
+      element.addEventListener("mouseleave", () => {
+        if (activePopup) {
+          activePopup.remove();
+          activePopup = null;
+        }
+      });
+    } else {
+      console.error(`Element with ID '${id}' not found in the SVG.`);
+    }
+  });
+  
+  </script>
+  
+  <style scoped>
+  .popup {
+    font-family: Arial, sans-serif;
+  }
+
+  #map-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust as per your needs */
+    margin: 0 auto;
+  }
+
+  .merienda {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
-.text-facebook {
-  color: #3b5998;
-}
-.text-twitter {
-  color: #1da1f2;
-}
-.text-google-plus {
-  color: #db4a39;
-}
-.text-linkedin {
-  color: #0077b5;
-}
-</style>
+
+.bg-holder-natural.natural-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
+  
+  .bg-holder-natural.natural-overlay > * {
+    position: relative;
+    z-index: 2; /* Ensures the content inside the div is above the overlay */
+  }
+  </style>
+  

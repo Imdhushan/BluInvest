@@ -36,13 +36,13 @@ const infrastructureSectionsData = [
     ],
   },
   {
-    title: "Security & Life Saving",
+    title: "Do you need security and life saving services in the area",
     cards: [
     { text: " ", dynamicInputs: [ { type: "checkbox", label: "Locations of Police Marine Units", value: false }, { type: "checkbox", label: "Locations of Tourist Police Units", value: false }, { type: "checkbox", label: "Police Life Saving Units ", value: false } ] }
     ],
   },
   {
-    title: "Other Infrastructure",
+    title: "Do you need schools/hospitals/banks near your location",
     cards: [
     { text: " ", dynamicInputs: [ { type: "checkbox", label: "Proximity to school", value: false }, { type: "checkbox", label: "Proximity to hospital", value: false }, { type: "checkbox", label: "Availability of banks/ATMs ", value: false } ] }
     ],
@@ -128,6 +128,44 @@ const infrastructureSectionsData = [
     
     ],
   },
+  {
+    title: "Is your location near marine biodiversity and recreation activities",
+    cards: [
+      {
+        text: " ", dynamicInputs: [
+          { type: "checkbox", label: "Whales", value: false },
+          { type: "checkbox", label: "Dolphins", value: false },
+          { type: "checkbox", label: "Sharks", value: false },
+          { type: "checkbox", label: "Coral reefs", value: false },
+          { type: "checkbox", label: "Seagrass", value: false },
+          { type: "checkbox", label: "Bi-valve", value: false },
+          { type: "checkbox", label: "Mud flats", value: false },
+          { type: "checkbox", label: "Sand dune", value: false },
+          { type: "checkbox", label: "Lagoon", value: false },
+          { type: "checkbox", label: "Estuary", value: false },
+          { type: "checkbox", label: "Bathing site", value: false },
+          { type: "checkbox", label: "Surfing area", value: false },
+          { type: "checkbox", label: "River mouth", value: false },
+          { type: "checkbox", label: "Beach area", value: false },
+
+        ]        }
+    
+    ],
+  },
+  {
+    title: "Is your location near terrestrial or coastal archeological sites",
+    cards: [
+      {
+        text: " ", dynamicInputs: [
+          { type: "checkbox", label: "Proximity to Terrestrial / Coastal Archeological Sites", value: false },
+         
+
+        ]        }
+    
+    ],
+  },
+  
+  
   
 ];
 

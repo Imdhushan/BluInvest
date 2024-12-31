@@ -100,7 +100,7 @@
   import { ref, computed, watch ,onMounted} from 'vue';
   
   import InfrastructureSection from './InfrastructureSection.vue';
-  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './boatCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
  
   import LeafletMap from "../LeafletMap.vue";

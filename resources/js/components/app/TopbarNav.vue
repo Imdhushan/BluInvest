@@ -79,11 +79,20 @@ onMounted(() => {
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/tourism">Tourism</a>
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/conservation">Conservation</a>
       
+      
+      
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
       <!-- Energy Dropdown -->
       <div class="dropdown">
-        <a
+        <div class="nav flex-column">
+                            <p class="nav-link text-700 mb-0 fw-bold" >Energy</p>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
+                            <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
+                          </div>
+        <!-- <a
           class="nav-link py-1 link-600 fw-medium dropdown-toggle"
-          href="#"
+          href="/tourismsector/solar"
           role="button"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
@@ -94,11 +103,8 @@ onMounted(() => {
         <div class="dropdown-menu dropdown-menu-end border-0">
           <a class="dropdown-item link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
           <a class="dropdown-item link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
-        </div>
+        </div> -->
       </div>
-      
-      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
-      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
     </div>
   </div>
 </li>

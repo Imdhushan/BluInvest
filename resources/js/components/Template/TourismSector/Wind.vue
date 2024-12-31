@@ -22,7 +22,6 @@ Use the tool to conveniently explore the ideal location for wind energy investme
       </div>
     </section>
 
-    <InfrastructureSection :sections="infrastructureSectionsData" :title="infrastructureTitle" :description="infrastructureDescription" :backgroundImage="infrastructureImageUrl"/>
   <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/>
 
 

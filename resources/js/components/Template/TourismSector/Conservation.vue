@@ -104,7 +104,7 @@ A holistic, place-based approach — combining government efforts with private s
   import { ref, computed, watch ,onMounted} from 'vue';
   
   import InfrastructureSection from './InfrastructureSection.vue';
-  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
+  import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './conservationCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
  
   import LeafletMap from "../LeafletMap.vue";
