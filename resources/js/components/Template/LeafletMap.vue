@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="row">
+      <div class="col-md-12 col-lg-12 text-center">
+        <h5>Zoom to your preferred Locations</h5>
+      </div>
+    </div>
     <div id="map"></div>
 
 <!--    &lt;!&ndash; Query Modal &ndash;&gt;-->

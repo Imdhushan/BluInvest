@@ -5,7 +5,7 @@
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
           
-          <h1 class="text-white ">ENERGY</h1>
+          <h1 class="text-white ">SUSTAINABLE ENERGY</h1>
           <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka’s Renewable Energy Potential</h4>
           
           <p class=" text-white  text-600 opacity-10">

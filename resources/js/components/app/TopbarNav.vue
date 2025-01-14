@@ -83,13 +83,15 @@ onMounted(() => {
       
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Sustainable Energy</a>
+     
       <!-- Energy Dropdown -->
-      <div class="dropdown">
+      <!-- <div class="dropdown">
         <div class="nav flex-column">
                             <p class="nav-link text-700 mb-0 fw-bold" >Energy</p>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
                             <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
-                          </div>
+                          </div> -->
         <!-- <a
           class="nav-link py-1 link-600 fw-medium dropdown-toggle"
           href="/tourismsector/solar"
@@ -104,7 +106,7 @@ onMounted(() => {
           <a class="dropdown-item link-600 fw-medium" href="/tourismsector/solar">Solar Energy</a>
           <a class="dropdown-item link-600 fw-medium" href="/tourismsector/wind">Wind Energy</a>
         </div> -->
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </li>

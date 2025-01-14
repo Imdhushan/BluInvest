@@ -26,7 +26,15 @@
                   :key="inputIndex"
                   :class="[
     'form-check text-white col-sm-12 mt-1',
-    card.dynamicInputs.length < 4 ? 'col-md-12 col-lg-12' : 'col-md-3 col-lg-3'
+    
+    card.dynamicInputs.length === 6 
+    ? 'col-md-4 col-lg-4' 
+    : card.dynamicInputs.length === 4 && input.label.split(' ').length > 3 
+      ? 'col-md-12 col-lg-12 col-sm-12' 
+      : card.dynamicInputs.length <= 3 
+        ? 'col-md-12 col-lg-12 col-sm-12' 
+        : 'col-md-3 col-lg-3' 
+
   ]"
                 >
                   <input

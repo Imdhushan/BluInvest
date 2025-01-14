@@ -14,8 +14,9 @@ export default {
   <div class="position-absolute btn-back-to-top bg-dark"><a class="text-600" href="#banner" data-bs-offset-top="0"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
   <div class="row">
     <div class="col-lg-4">
-      <h5 class="text-uppercase text-white opacity-85 mb-3">Our Mission</h5>
-      <p class="text-600">Sri Lanka's Financial Ministry and UNDP are committed to driving sustainable growth through Blue Economy initiatives. By providing comprehensive resources and support, we aim to create opportunities for investors to contribute to the prosperity of Sri Lanka while ensuring environmental protection.</p>
+      <h5 class="text-uppercase text-white opacity-85 mb-3">COMITMENT</h5>
+      <p class="text-600">
+        The Ministry of Finance (MoF), Sri Lanka, in collaboration with the UNDP, is dedicated to advancing the Blue Economy as a cornerstone of sustainable growth. Led by MoF, the Government of Sri Lanka is committed to facilitating essential infrastructure development, fostering investment opportunities, and implementing robust regulatory frameworks in support of maximizing blue economy growth. This commitment aims to attract investors to support Sri Lanka's economic prosperity while prioritizing environmental sustainability, ensuring a balanced and forward-thinking approach to the nation's maritime resources and industries.      </p>
       <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white" href="#!"><span class="fab fa-medium-m"></span></a></div>
     </div>
     <div class="col ">
@@ -23,7 +24,8 @@ export default {
         <div class="col-lg-6 col-md-3">
           <h5 class="text-uppercase text-white opacity-85 mb-3">Partners</h5>
           <ul class="list-unstyled">
-            <li class="mb-1">Our initiatives are supported by a strong network of partners dedicated to sustainable development and growth within Sri Lanka’s Blue Economy. Together, we work to provide resources, expertise, and guidance for impactful investment opportunities</li>
+            <li class="mb-1">
+              Sri Lanka's Ministry of Finance collaborates with over 35 line agencies to drive the development of the country's Blue Economy. This extensive network of partners provides coordinated resources, specialized expertise, and strategic guidance to support impactful investment opportunities. Together, they aim to ensure sustainable growth and development across the maritime sector, reinforcing Sri Lanka's commitment to harnessing its oceanic resources responsibly and effectively. (Can we add a link to a separate page that lists out all the partners?)             </li>
             <!-- <li class="mb-1">UNDP (United Nations Development Programme): A key driver in fostering sustainable development across Sri Lanka, UNDP works closely with the government and private sector to implement Blue Economy projects that align with global sustainability goals.</li>
             <li class="mb-1">UDA (Urban Development Authority): The UDA plays a pivotal role in planning and managing the infrastructure development necessary for the success of land and marine-based investments, ensuring long-term sustainability and growth.</li>
             <li class="mb-1">Sri Lanka Financial Ministry: As the primary government entity for economic management, the Financial Ministry oversees policies and initiatives that create a favorable environment for investors in Sri Lanka's Blue Economy.</li> -->
