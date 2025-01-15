@@ -26,14 +26,14 @@
                   :key="inputIndex"
                   :class="[
     'form-check text-white col-sm-12 mt-1',
-    
-    card.dynamicInputs.length === 6 
-    ? 'col-md-4 col-lg-4' 
-    : card.dynamicInputs.length === 4 && input.label.split(' ').length > 3 
-      ? 'col-md-12 col-lg-12 col-sm-12' 
-      : card.dynamicInputs.length <= 3 
-        ? 'col-md-12 col-lg-12 col-sm-12' 
-        : 'col-md-3 col-lg-3' 
+
+    card.dynamicInputs.length === 6
+    ? 'col-md-4 col-lg-4'
+    : card.dynamicInputs.length === 4 && input.label.split(' ').length > 3
+      ? 'col-md-12 col-lg-12 col-sm-12'
+      : card.dynamicInputs.length <= 3
+        ? 'col-md-12 col-lg-12 col-sm-12'
+        : 'col-md-3 col-lg-3'
 
   ]"
                 >
@@ -66,8 +66,8 @@
         >
           Next Sections
         </button>
-        
-        
+
+
         <button @click="reSetProcess" class="btn btn-outline-light btn-sm mx-2">Reset</button>
         <button
           v-if="currentSectionIndex === totalSections - 1"
@@ -113,6 +113,17 @@ const props = defineProps({
 const emit = defineEmits(["process-complete"]);
 
 function handleDone() {
+
+  const formattedSelections = {
+    // [props.title]: cards.value.map(card => ({
+    //   title: card.title,
+    //   text: card.text,
+    //   dynamicInputs: card.dynamicInputs.map(input => ({
+    //     label: input.label,
+    //     value: input.value
+    //   }))
+    // }))
+  };
   emit("process-complete"); // Emit the event to the parent
 }
 
@@ -193,7 +204,7 @@ const reSetProcess = () => {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
     z-index: 1; /* Ensures the overlay is above the background image */
   }
-  
+
   .bg-holder-natural.natural-overlay > * {
     position: relative;
     z-index: 2; /* Ensures the content inside the div is above the overlay */

@@ -4,13 +4,13 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
-          
+
           <h1 class="text-white ">TOURISM</h1>
           <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka: A Timeless Paradise for Every Traveller</h4>
           <h4  class="text-white  merienda">Ayubowan!</h4>
-          
+
           <p class=" text-white  text-600 opacity-10">
-           
+
             Sri Lanka, the Pearl of the Indian Ocean, is a traveller's dream — a fascinating fusion of rich cultural heritage, natural wonders, warm hospitality, and exciting investing potential. From golden beaches to misty mountains, bustling cities to serene villages, this tropical paradise offers experiences that stay etched in your memory! Explore what makes Sri Lanka the perfect destination for exploration, relaxation, and opportunities beyond the ordinary!
 
 
@@ -23,8 +23,8 @@
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
   <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
-  
-    
+
+
 
     </div>
 
@@ -41,7 +41,7 @@
              />
             </card-body>
            </card>
-             
+
         </div>
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
 
@@ -52,22 +52,22 @@
           <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
           <!-- <button
           @click="retrieveFromLocalStorage"
-          
+
           class="btn btn-outline-success btn-sm mx-2 mt-2 "
         >
           Done
         </button> -->
 
         </div>
-        
+
       </div>
     </div>
-   
+
   </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
-  
+
 
   <!-- <QuestionSection title="Natural Resources and Land Use"
   description="Focus on sustainable resource management and land use for a thriving environment."
@@ -95,16 +95,16 @@
 </section> -->
 
 
- 
+
 </template>
 
 <script setup>
   import { ref, computed, watch ,onMounted} from 'vue';
-  
+
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
- 
+
   import LeafletMap from "../LeafletMap.vue";
 import Swiper from '../../bootstrap/Swiper.vue';
 import tourism from '../SwiperContent/tourism.json';
@@ -114,18 +114,18 @@ import tourism from '../SwiperContent/tourism.json';
 const filters = ref([]);
 
 
-const retrieveFromLocalStorage = () => {
-  filters.value =  [
-    { attribute: 'Beach_a', value: '1' }, // Beaches
-    { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
-    { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
-    { attribute: 'Surfing', value: '1' }, // Surfing Areas
-    { attribute: 'Lagoon', value: '1' }, // Lagoons
-  ];
-}
+const retrieveFromLocalStorage = (filters) => {
+//   filters.value =  [
+//     { attribute: 'Beach_a', value: '1' }, // Beaches
+//     { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
+//     { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
+//     { attribute: 'Surfing', value: '1' }, // Surfing Areas
+//     { attribute: 'Lagoon', value: '1' }, // Lagoons
+//   ];
+// }
 
 
-  console.log('title',infrastructureTitle);
+  console.log('filters',filters.value);
 
    const popupData = {
     "torist_map-u-colombo": {
@@ -189,9 +189,9 @@ const retrieveFromLocalStorage = () => {
       console.error(`Element with ID '${id}' not found in the SVG.`);
     }
   });
-  
+
   </script>
-  
+
   <style scoped>
   .popup {
     font-family: Arial, sans-serif;
@@ -220,10 +220,9 @@ const retrieveFromLocalStorage = () => {
     background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
     z-index: 1; /* Ensures the overlay is above the background image */
   }
-  
+
   .bg-holder-natural.natural-overlay > * {
     position: relative;
     z-index: 2; /* Ensures the content inside the div is above the overlay */
   }
   </style>
-  

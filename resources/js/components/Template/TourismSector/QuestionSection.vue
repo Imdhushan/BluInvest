@@ -10,7 +10,7 @@
               <button @click="reSetProcess" class="btn btn-outline-success btn-sm mx-2 my-2">Reset</button>
             </h4>
             <p class="text-white text-200">{{ description }}</p>
-  
+
             <!-- Loop through the sections (e.g., Accessibility, Main road, etc.) -->
             <div v-if="currentCardData">
               <h5 class="text-white fw-light">{{ currentCardData.title }}</h5>
@@ -25,7 +25,7 @@
                 <label :for="`${input.label}-${inputIndex}`">{{ input.label }}</label>
               </div>
             </div>
-  
+
             <!-- Navigation Buttons -->
             <div class="button-group mt-3">
               <button v-if="currentCard > 1" @click="prevCard" class="btn btn-outline-light btn-sm mx-2 my-2">Back</button>
@@ -38,10 +38,10 @@
       </div>
     </section>
   </template>
-  
+
   <script setup>
   import { ref, computed, onMounted } from 'vue';
-  
+
   // Props passed from parent component
   const props = defineProps({
     title: {
@@ -57,7 +57,8 @@
       required: true
     }
   });
-  
+  const emits = defineEmits(["process-complete"]);
+
   // Cards state handling
   const cards = ref(JSON.parse(JSON.stringify(props.naturalResourcesCards)));
   const currentCard = ref(1);
@@ -66,7 +67,7 @@
   const completed = ref(false);
   const finalSelections = ref({});
   const componentKey2 = ref(0);
-  
+
   // Load stored selections from localStorage on mounted
   onMounted(() => {
     const storedSelections = localStorage.getItem("formattedSelections");
@@ -79,7 +80,7 @@
       }
     }
   });
-  
+
   // Function to handle process completion
   const completeProcess = () => {
     const formattedSelections = {
@@ -92,44 +93,44 @@
         }))
       }))
     };
-  
+    emits('process-complete', formattedSelections);
+
     console.log("Final selections JSON:", formattedSelections);
-    alert("Survey completed! JSON saved to localStorage.");
+    // alert("Survey completed! JSON saved to localStorage.");
     localStorage.setItem("formattedSelections", JSON.stringify(formattedSelections));
   };
-  
+
   // Function to reset the process
   const reSetProcess = () => {
-    alert("Survey reset!");
+    // alert("Survey reset!");
     currentCard.value = 1;
     finalSelections.value = {};
     localStorage.removeItem('formattedSelections');
-  
+
     cards.value.forEach(card => {
       card.dynamicInputs.forEach(input => {
         input.value = false;
       });
     });
-  
+
     componentKey2.value += 1;
   };
-  
+
   // Navigation functions
   const nextCard = () => {
     if (currentCard.value < totalCards.value) currentCard.value++;
   };
-  
+
   const prevCard = () => {
     if (currentCard.value > 1) currentCard.value--;
   };
-  
+
   const skipCard = () => {
     if (currentCard.value < totalCards.value) currentCard.value++;
   };
-  
+
   // Toggle checkbox value
   const toggleCheckbox = (input) => {
     input.value = !input.value;
   };
   </script>
-  
