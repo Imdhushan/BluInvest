@@ -114,15 +114,15 @@ import tourism from '../SwiperContent/tourism.json';
 const filters = ref([]);
 
 
-const retrieveFromLocalStorage = (filters) => {
-//   filters.value =  [
-//     { attribute: 'Beach_a', value: '1' }, // Beaches
-//     { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
-//     { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
-//     { attribute: 'Surfing', value: '1' }, // Surfing Areas
-//     { attribute: 'Lagoon', value: '1' }, // Lagoons
-//   ];
-// }
+const retrieveFromLocalStorage = () => {
+  filters.value =  [
+    { attribute: 'Beach_a', value: '1' }, // Beaches
+    { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
+    { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
+    { attribute: 'Surfing', value: '1' }, // Surfing Areas
+    { attribute: 'Lagoon', value: '1' }, // Lagoons
+  ];
+}
 
 
   console.log('filters',filters.value);

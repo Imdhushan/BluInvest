@@ -4,12 +4,12 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
-          
+
           <h1 class="text-white ">BOAT BUILDING</h1>
           <h4 class="text-white fw-light opacity-5 merienda">Explore Sri Lanka, a Prime Destination for Boat-Building</h4>
-          
+
           <p class=" text-white text-justify  text-600 opacity-10">
-           
+
             Sri Lanka’s strategic location at the crossroads of the Indian Ocean offers unparalleled advantages for the growth of nautical tourism and boat-building. Sri Lanka's maritime industry currently contributes 1.4% to the national GDP and provides direct employment to 115,000 individuals and supports another 100,000 through related industries. The boat manufacturing industry alone has generated export income exceeding USD $200 million from 2019 to 2023. With abundant natural resources and some of the finest harbours in Asia, Sri Lanka is uniquely positioned to capitalise on the thriving global market for yachts and marine tourism. The Chamber of Marine Industries of Sri Lanka is charting a course for a USD 2 billion maritime economy, solidifying Sri Lanka’s position as a premier maritime hub in the Indian Ocean.
           </p>
 
@@ -18,10 +18,10 @@
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
-  <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
+  <iframe  src="https://phpdemo.gsentry.cloud/BoadBuiding.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
-  
-    
+
+
 
     </div>
 
@@ -38,7 +38,7 @@
              />
             </card-body>
            </card>
-             
+
         </div>
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
 
@@ -49,22 +49,22 @@
           <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
           <!-- <button
           @click="retrieveFromLocalStorage"
-          
+
           class="btn btn-outline-success btn-sm mx-2 mt-2 "
         >
           Done
         </button> -->
 
         </div>
-        
+
       </div>
     </div>
-   
+
   </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
-  
+
 
   <!-- <QuestionSection title="Natural Resources and Land Use"
   description="Focus on sustainable resource management and land use for a thriving environment."
@@ -92,16 +92,16 @@
 </section> -->
 
 
- 
+
 </template>
 
 <script setup>
   import { ref, computed, watch ,onMounted} from 'vue';
-  
+
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './boatCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
- 
+
   import LeafletMap from "../LeafletMap.vue";
 import Swiper from '../../bootstrap/Swiper.vue';
 import boat from '../SwiperContent/boat.json';
@@ -186,9 +186,9 @@ const retrieveFromLocalStorage = () => {
       console.error(`Element with ID '${id}' not found in the SVG.`);
     }
   });
-  
+
   </script>
-  
+
   <style scoped>
   .popup {
     font-family: Arial, sans-serif;
@@ -217,10 +217,9 @@ const retrieveFromLocalStorage = () => {
     background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
     z-index: 1; /* Ensures the overlay is above the background image */
   }
-  
+
   .bg-holder-natural.natural-overlay > * {
     position: relative;
     z-index: 2; /* Ensures the content inside the div is above the overlay */
   }
   </style>
-  

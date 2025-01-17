@@ -4,12 +4,12 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
-          
+
           <h1 class="text-white ">SUSTAINABLE ENERGY</h1>
           <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka’s Renewable Energy Potential</h4>
-          
+
           <p class=" text-white  text-600 opacity-10">
-           
+
             Sri Lanka is uniquely positioned to become a renewable energy powerhouse due to the island’s abundant solar irradiance and exceptional wind potential. With an average solar energy generation capacity of 4-6 kWh per square meter per day and vast coastal winds offering an estimated 56GW of offshore wind energy, the nation has the resources to efficiently transform its energy landscape. These renewable energy sources cater to domestic needs and hold the potential to supply power to neighbouring markets, driving regional collaboration in sustainable energy development.
 
           </p>
@@ -19,10 +19,10 @@
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
-  <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
+  <iframe  src="https://phpdemo.gsentry.cloud/energy.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
-  
-    
+
+
 
     </div>
 
@@ -39,7 +39,7 @@
              />
             </card-body>
            </card>
-             
+
         </div>
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
 
@@ -50,22 +50,22 @@
           <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
           <!-- <button
           @click="retrieveFromLocalStorage"
-          
+
           class="btn btn-outline-success btn-sm mx-2 mt-2 "
         >
           Done
         </button> -->
 
         </div>
-        
+
       </div>
     </div>
-   
+
   </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
-  
+
 
   <!-- <QuestionSection title="Natural Resources and Land Use"
   description="Focus on sustainable resource management and land use for a thriving environment."
@@ -93,16 +93,16 @@
 </section> -->
 
 
- 
+
 </template>
 
 <script setup>
   import { ref, computed, watch ,onMounted} from 'vue';
-  
+
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './boatCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
- 
+
   import LeafletMap from "../LeafletMap.vue";
 import Swiper from '../../bootstrap/Swiper.vue';
 import enargy from '../SwiperContent/enargy.json';
@@ -187,9 +187,9 @@ const retrieveFromLocalStorage = () => {
       console.error(`Element with ID '${id}' not found in the SVG.`);
     }
   });
-  
+
   </script>
-  
+
   <style scoped>
   .popup {
     font-family: Arial, sans-serif;
@@ -218,10 +218,9 @@ const retrieveFromLocalStorage = () => {
     background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
     z-index: 1; /* Ensures the overlay is above the background image */
   }
-  
+
   .bg-holder-natural.natural-overlay > * {
     position: relative;
     z-index: 2; /* Ensures the content inside the div is above the overlay */
   }
   </style>
-  
