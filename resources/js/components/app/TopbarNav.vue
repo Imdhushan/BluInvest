@@ -129,11 +129,11 @@ onMounted(() => {
                       
               </li> -->
               <li class="nav-item dropdown">
-                <a class="nav-link " href="#" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">Services</a>
+                <a class="nav-link " href="/tourismsector/services" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">Services</a>
                 
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link " href="#" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">SME Hub</a>
+                <a class="nav-link " href="/tourismsector/smehub" role="button" aria-haspopup="true" aria-expanded="false" id="moduless">SME Hub</a>
                 
               </li>
               <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="documentations">Documentation</a>

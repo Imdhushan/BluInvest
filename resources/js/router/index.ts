@@ -27,6 +27,9 @@ const router = createRouter({
 
       { path: '/tourismsector/aboutbluinvest:', component: () => import('../components/Template/AboutUs/WtBluInv.vue'), meta: { requiresAuth: false} },
       { path: '/tourismsector/howtousebluinvest', component: () => import('../components/Template/AboutUs/HTUBluInv.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/services', component: () => import('../components/Template/AboutUs/Services.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/smehub', component: () => import('../components/Template/AboutUs/SMEHub.vue'), meta: { requiresAuth: false} },
+
       { path: '/tourismsector/event-tourism', component: () => import('../components/Template/AboutUs/EventsTourism.vue'), meta: { requiresAuth: false} },
 
 

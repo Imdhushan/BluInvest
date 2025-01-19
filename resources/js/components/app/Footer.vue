@@ -38,6 +38,14 @@ export default {
         <div class="col-lg-6 mt-5 mt-md-0">
           <h5 class="text-uppercase text-white opacity-85 mb-3"> Insights & Updates</h5>
           <ul class="list-unstyled">
+
+            
+            <li>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.ft.lk/opinion/Sri-Lanka-s-maritime-transformation-Strategic-vision-for-2024-2029/14-769361#:~:text=This%20ambitious%20initiative%20focuses%20on,hub%20in%20the%20Indian%20Ocean 
+"> Sri Lanka Maritime Transformation - Strategic Vision for 2024-2029</a></h5>
+              <p class="text-600 opacity-50" > <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">Voyage Sri Lanka</a> </p>
+            </li>
+
             <li>
               <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> New Investment Strategies for 2024</a></h5>
               <p class="text-600 opacity-50"> Blue Economy opportunities. </p>

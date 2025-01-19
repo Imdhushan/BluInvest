@@ -14,6 +14,7 @@
     <swiper-slide v-for="(slide, index) in sliderContent" :key="index">
       <div class="text-slide">
         <h3>{{ slide.title }}</h3>
+        <img :src="slide.image" alt="Slide Image" class="slide-image" v-if="slide.image" />
         <p> {{ truncateText(slide.content, 30) }}</p>
         
         <button class="btn btn-outline-light border-2 rounded-pill mt-1 fs-0 py-0 btn-sm " type="button"  @click="storeInLocalStorage()">
@@ -87,5 +88,12 @@ function truncateText(text, wordLimit) {
   line-height: 1.5;
   color: #1f1e1e;
   font-weight: 500;
+}
+
+.slide-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
 }
 </style>
