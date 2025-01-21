@@ -99,7 +99,7 @@
 </template>
 
 <script setup>
-  import { ref, computed, watch ,onMounted} from 'vue';
+  import { toRaw,ref, computed, watch ,onMounted} from 'vue';
 
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './infrastructureCards.js'
@@ -114,14 +114,34 @@ import tourism from '../SwiperContent/tourism.json';
 const filters = ref([]);
 
 
-const retrieveFromLocalStorage = () => {
-  filters.value =  [
-    { attribute: 'Beach_a', value: '1' }, // Beaches
-    { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
-    { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
-    { attribute: 'Surfing', value: '1' }, // Surfing Areas
-    { attribute: 'Lagoon', value: '1' }, // Lagoons
-  ];
+const retrieveFromLocalStorage = (eventData) => {
+
+
+  const unwrappedData = toRaw(eventData);
+
+  if (Array.isArray(unwrappedData)) {
+    filters.value = unwrappedData; // Assign the unwrapped array
+    console.log("Filters updated:", filters.value);
+  } else {
+    console.error("Event data is not an array:", eventData);
+    filters.value = []; // Fallback to an empty array
+  }
+
+  // console.log("Event Data Received:", eventData);
+  // if (Array.isArray(eventData)) {
+  //   filters.value = eventData; // Assign only if it's an array
+  // } else {
+  //   console.error("Event data is not an array:", eventData);
+  //   filters.value = []; // Fallback to an empty array
+  // }
+ // filters.value = eventData
+  // filters.value =  [
+  //   { attribute: 'Beach_a', value: '1' }, // Beaches
+  //   { attribute: 'Sta_Hot', value: '1' }, // Standard Hotels
+  //   { attribute: 'Tou_hot', value: '1' }, // Tourist Hotels
+  //   { attribute: 'Surfing', value: '1' }, // Surfing Areas
+  //   { attribute: 'Lagoon', value: '1' }, // Lagoons
+  // ];
 }
 
 

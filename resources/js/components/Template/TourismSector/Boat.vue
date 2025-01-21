@@ -103,8 +103,8 @@
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
 
   import LeafletMap from "../LeafletMap.vue";
-import Swiper from '../../bootstrap/Swiper.vue';
-import boat from '../SwiperContent/boat.json';
+  import Swiper from '../../bootstrap/Swiper.vue';
+  import boat from '../SwiperContent/boat.json';
 
 
 
