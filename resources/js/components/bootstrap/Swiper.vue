@@ -15,10 +15,11 @@
       <div class="text-slide">
         <h3>{{ slide.title }}</h3>
         <img :src="slide.image" alt="Slide Image" class="slide-image" v-if="slide.image" />
-        <p> {{ truncateText(slide.content, 30) }}</p>
+        <p> {{ truncateText(slide.content, truncateLimit) }}</p>
         
         <button class="btn btn-outline-light border-2 rounded-pill mt-1 fs-0 py-0 btn-sm " type="button"  @click="storeInLocalStorage()">
-        <router-link to="/tourismsector/event-tourism" class="text-info ">Read More</router-link>
+        <router-link :to="defaultRoute" class="text-info "  
+        target="_blank">Read More</router-link>
 
       </button>
       </div>
@@ -40,6 +41,14 @@ defineProps({
     type: Array,
     required: true,
   },
+  truncateLimit: {
+    type: Number,
+    default: 30, // Default to 30 if no value is provided
+  },
+  defaultRoute: {
+      type: String,
+      default: "/tourismsector/event-tourism"
+    }
 });
 
 function truncateText(text, wordLimit) {

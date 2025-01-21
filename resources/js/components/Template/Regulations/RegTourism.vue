@@ -58,6 +58,29 @@
             </li>
           </ol>
 
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Documents</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(doc, index) in documents" :key="index">
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ formatName(doc) }}</td>
+                  <td>
+                    <a :href="`${basePath}/${doc}`"  class="text-decoration-none">
+                      <i class="bi bi-download"></i> Download
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
       </div>
     </div>
@@ -65,10 +88,31 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
+
+const basePath = "/assets/pdf/tourisum";
+
+const documents = [
+  "Regulatory Framework - Whale Watching.pdf",
+  "Guideline for Whale and Dolphin Watching – Water Based Adventure Tourism Activities.pdf",
+  "Guideline for Sailing - Water Based Adventure.pdf",
+  "Guidelines for Leisure Boat_Small Vessel Operators.pdf",
+  "Guidelines for Waterfront and Island Developments for Tourism and Recreational Activities.pdf",
+  "Guidelines for Development of Floating Facilities for Tourism and Recreational Purposes.pdf",
+  "Guidelines for Siting Over Water Structures (Water bungalows).pdf"
+];
+
+const formatName = (filename) => {
+  return filename.replace(".pdf", "");
+};
 </script>
 
 <style scoped>
+.bi-download {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
 .right-enter-active, .right-leave-active {
   transition: transform 0.8s ease;
 }

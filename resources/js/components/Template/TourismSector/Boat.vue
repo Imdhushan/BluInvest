@@ -61,6 +61,19 @@
     </div>
 
   </section>
+  <section>
+    <div class="container-flude">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h4  class="text-dark  merienda"> Regulations and Guidelines</h4>
+          <br/>
+
+<Swiper :sliderContent="boatRegulation" :truncateLimit="1000" :defaultRoute="defaultRoute"/>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
@@ -105,8 +118,10 @@
   import LeafletMap from "../LeafletMap.vue";
   import Swiper from '../../bootstrap/Swiper.vue';
   import boat from '../SwiperContent/boat.json';
+  import boatRegulation from '../SwiperContent/boatRegulation.json';
+  
 
-
+  const defaultRoute ="/regulation/boat";
 
 const filters = ref([]);
 
