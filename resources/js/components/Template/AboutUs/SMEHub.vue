@@ -56,12 +56,12 @@ const services = ref([
       and export revenue. With strategic investments, the country can meet the growing demand for seaweed while fostering 
       environmental sustainability.`,
   },
-  {
-    title: "Related Documents",
-    description: `Spatial Planning for Marine Investments: A paper by the Ministry of Finance, Planning and Economic Development and UNDP.`,
-    link: "https://www.undp.org/srilanka/publications/sri-lankas-blue-economy-position-paper-undp-sri-lanka-lakshman-kadirgamar-institute-international-relations-and-strategic",
-    linkText: "Sri Lanka's Blue Economy: A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies."
-  }
+  // {
+  //   title: "Related Documents",
+  //   description: `Spatial Planning for Marine Investments: A paper by the Ministry of Finance, Planning and Economic Development and UNDP.`,
+  //   link: "https://www.undp.org/srilanka/publications/sri-lankas-blue-economy-position-paper-undp-sri-lanka-lakshman-kadirgamar-institute-international-relations-and-strategic",
+  //   linkText: "Sri Lanka's Blue Economy: A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies."
+  // }
 ]);
 </script>
 

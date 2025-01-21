@@ -83,7 +83,7 @@ onMounted(() => {
       
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/boat">Boat Building</a>
       <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/marine">Marine Industries</a>
-      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/solar">Sustainable Energy</a>
+      <a class="nav-link py-1 link-600 fw-medium" href="/tourismsector/energy">Sustainable Energy</a>
      
       <!-- Energy Dropdown -->
       <!-- <div class="dropdown">

@@ -6,18 +6,16 @@
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
           
           <h1 class="text-white ">MARINE INDUSTRIES</h1>
-          <h4 class="text-white fw-light opacity-5 merienda">
+          <!-- <h4 class="text-white fw-light opacity-5 merienda">
             -----------------
-          </h4>
+          </h4> -->
           
           <p class=" text-white  text-600 opacity-10">
-           
-            Sri Lanka’s rich marine ecosystems, including coral reefs, mangroves, seagrass beds, and mudflats, offer significant opportunities for sustainable conservation initiatives. Focusing on restoring coral reefs, protecting vital mangrove forests, and supporting blue carbon projects in seagrass meadows and mudflats, you can foster biodiversity and enhance coastal resilience.
+            Sri Lanka’s marine industries are rapidly becoming a cornerstone of its economy, benefiting from the country's strategic location along key global trade routes and its large number of marine resources. As the nation continues to develop its blue economy, various sectors within the marine industry are experiencing significant growth, supported by government initiatives, innovation, and rising global demand. From fish processing to ship repairs and maritime logistics, these industries are creating new opportunities for economic development, job creation, and sustainable practices.
 
-A holistic, place-based approach — combining government efforts with private sector innovation — is key to scaling these conservation projects. Public-private partnerships can drive impactful actions such as pollution control, sustainable marine protected area management, and community-driven conservation strategies. Leveraging these marine assets ensures a sustainable future, where both ecosystems and local economies thrive, aligning with international sustainability goals and safeguarding Sri Lanka’s marine heritage for generations to come.
           </p>
 
-          <Swiper :sliderContent="marine"/>
+          <Swiper :sliderContent="marine" :defaultRoute="sliderContentURL"/>
 
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
@@ -111,6 +109,7 @@ import Swiper from '../../bootstrap/Swiper.vue';
 import marine from '../SwiperContent/marine.json';
 
 
+const sliderContentURL="/tourismsector/event-marine"; 
 
 const filters = ref([]);
 

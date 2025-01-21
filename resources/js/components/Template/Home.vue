@@ -4,8 +4,8 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-lg-7 col-md-12 col-sm-12 text-center text-xl-start mt-0 pt-0">
-          <h5 class="text-white fw-light opacity-5 merienda">Welcome to Sri Lanka</h5>
-          <h4 class="text-white fw-light anton-sc-regular">Interested in investing in Sri Lanka's Blue Economy ?</h4>
+          <!-- <h5 class="text-white fw-light opacity-5 merienda">Welcome to Sri Lanka</h5> -->
+          <h4 class="text-white fw-light text-justify">Interested in investing in Sri Lanka's Blue Economy ?</h4>
           <!-- <p class="text-white">Explore what awaits you with BluInvest</p> -->
           <p class="text-white text-justify">
             Join BluInvest and make a positive impact while securing your investment! Be part of an initiative dedicated to maximising your business potential by leveraging Sri Lanka's marine frontier. Explore BluInvest—an Interactive investment opportunity mapping tool—to discover prime locations for tourism, boat building, conservation, and other high-growth marine sectors with promising returns.</p>

@@ -25,7 +25,7 @@ export default {
           <h5 class="text-uppercase text-white opacity-85 mb-3">Partners</h5>
           <ul class="list-unstyled">
             <li class="mb-1">
-              Sri Lanka's Ministry of Finance collaborates with over 35 line agencies to drive the development of the country's Blue Economy. This extensive network of partners provides coordinated resources, specialized expertise, and strategic guidance to support impactful investment opportunities. Together, they aim to ensure sustainable growth and development across the maritime sector, reinforcing Sri Lanka's commitment to harnessing its oceanic resources responsibly and effectively. (Can we add a link to a separate page that lists out all the partners?)             </li>
+              Sri Lanka's Ministry of Finance collaborates with over 35 line agencies to drive the development of the country's Blue Economy. This extensive network of partners provides coordinated resources, specialized expertise, and strategic guidance to support impactful investment opportunities. Together, they aim to ensure sustainable growth and development across the maritime sector, reinforcing Sri Lanka's commitment to harnessing its oceanic resources responsibly and effectively.</li>
             <!-- <li class="mb-1">UNDP (United Nations Development Programme): A key driver in fostering sustainable development across Sri Lanka, UNDP works closely with the government and private sector to implement Blue Economy projects that align with global sustainability goals.</li>
             <li class="mb-1">UDA (Urban Development Authority): The UDA plays a pivotal role in planning and managing the infrastructure development necessary for the success of land and marine-based investments, ensuring long-term sustainability and growth.</li>
             <li class="mb-1">Sri Lanka Financial Ministry: As the primary government entity for economic management, the Financial Ministry oversees policies and initiatives that create a favorable environment for investors in Sri Lanka's Blue Economy.</li> -->
@@ -50,13 +50,18 @@ export default {
               <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> New Investment Strategies for 2024</a></h5>
               <p class="text-600 opacity-50"> Blue Economy opportunities. </p>
             </li>
+            
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Sustainable Development Goals in Action</a></h5>
-              <p class="text-600 opacity-50">Projects align with global sustainability targets.</p>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Spatial Planning for Marine Investments</a></h5>
+              <p class="text-600 opacity-50">A paper by the Ministry of Finance, Planning and Economic Development and UNDP.</p>
             </li>
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> A Look Back at 2023's Progress</a></h5>
-              <p class="text-600 opacity-50">Blue Economy projects.</p>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Sri Lanka's Blue Economy</a></h5>
+              <p class="text-600 opacity-50">
+                <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">
+                  A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies.
+                </a>
+              </p>
             </li>
             <!-- <li>
               <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> The New Falcon Theme</a></h5>

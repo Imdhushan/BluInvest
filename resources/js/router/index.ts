@@ -15,6 +15,9 @@ const router = createRouter({
       { path: '/tourismsector/wind', component: () => import('../components/Template/TourismSector/Wind.vue'), meta: { requiresAuth: false} },
       { path: '/tourismsector/boat', component: () => import('../components/Template/TourismSector/Boat.vue'), meta: { requiresAuth: false} },
       { path: '/tourismsector/marine', component: () => import('../components/Template/TourismSector/Marine.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/energy', component: () => import('../components/Template/TourismSector/SustainableEnergy.vue'), meta: { requiresAuth: false} },
+
+
 
 
       { path: '/regulation/energy', component: () => import('../components/Template/Regulations/RegEnergy.vue'), meta: { requiresAuth: false} },
@@ -31,6 +34,11 @@ const router = createRouter({
       { path: '/tourismsector/smehub', component: () => import('../components/Template/AboutUs/SMEHub.vue'), meta: { requiresAuth: false} },
 
       { path: '/tourismsector/event-tourism', component: () => import('../components/Template/AboutUs/EventsTourism.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/event-energy', component: () => import('../components/Template/AboutUs/EventsEnergy.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/event-marine', component: () => import('../components/Template/AboutUs/EventsMarine.vue'), meta: { requiresAuth: false} },
+
+      { path: '/tourismsector/event-conservation', component: () => import('../components/Template/AboutUs/EventsConservation.vue'), meta: { requiresAuth: false} },
+
 
 
       { path: '/map', component: () => import('../components/Template/masterMap.vue'), meta: { requiresAuth: false} },

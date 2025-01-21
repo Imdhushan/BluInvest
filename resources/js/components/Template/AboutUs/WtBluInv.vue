@@ -34,10 +34,10 @@
 
           <br />
           <!-- Loop through the sections array -->
-          <div v-for="(section, index) in sections" :key="index" class="mb-4">
+          <!-- <div v-for="(section, index) in sections" :key="index" class="mb-4">
             <h3 style="color:#0b1727">{{ section.title }}</h3>
             <p style="color:#0b1727">{{ section.content }}</p>
-          </div>
+          </div> -->
 
 
           

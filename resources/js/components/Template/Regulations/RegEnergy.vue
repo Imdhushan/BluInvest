@@ -10,113 +10,48 @@
     </div>
   </section>
 
-  <section class="py-0 overflow-hidden light" id="banner">
+  <section class="py-0 overflow-hidden light" id="regulations">
     <div class="container">
       <div class="row flex-center pt-3 pt-lg-8 pb-lg-9 pb-xl-0">
-
         <div class="renewable-energy-regulations">
-    <h1>Regulations Pertaining to Renewable Energy Projects</h1>
+          <h1>Regulations Pertaining to Renewable Energy Projects</h1>
 
-    <section class="regulation">
-      <h2>1. Coastal Conservation and Coastal Resources Management Act (No. 57 of 1981, amended in 1988 and 2011)</h2>
-      <ul>
-        <li><strong>Purpose:</strong> Governs development activities within the coastal zone, including land within 300 meters of the high-water mark and adjoining marine areas.</li>
-        <li><strong>Permit Requirement:</strong> Developers must obtain a permit from the Coast Conservation and Coastal Resource Management Department (CCD) for any construction or alteration in coastal zones.</li>
-        <li><strong>EIA Requirement:</strong> Environmental Impact Assessments (EIA) are mandatory for significant projects, including renewable energy installations like wind farms or solar parks.</li>
-      </ul>
-    </section>
+          <section v-for="(regulation, index) in regulations" :key="index" class="regulation">
+            <h2>{{ regulation.title }}</h2>
+            <ul>
+              <li v-for="(point, idx) in regulation.points" :key="idx">{{ point }}</li>
+            </ul>
+          </section>
 
-    <section class="regulation">
-      <h2>2. National Environmental Act (No. 47 of 1980, amended in 1988)</h2>
-      <ul>
-        <li><strong>Enforcing Authority:</strong> Central Environmental Authority (CEA).</li>
-        <li><strong>EIA/IEE Requirement:</strong> Renewable energy projects must conduct Environmental Impact Assessments (EIA) or Initial Environmental Examinations (IEE) based on the project's scale and location.</li>
-        <li><strong>Collaboration:</strong> The CEA works with the CCD to ensure environmental compliance in coastal regions.</li>
-      </ul>
-    </section>
+          <section class="guidelines">
+            <h2>Guidelines for Renewable Energy Development</h2>
+            <ul>
+              <li v-for="(guideline, index) in guidelines" :key="index">{{ guideline }}</li>
+            </ul>
+          </section>
 
-    <section class="regulation">
-      <h2>3. Sri Lanka Electricity Act, No. 36 of 2024</h2>
-      <ul>
-        <li><strong>Licensing and Regulation:</strong> Renewable energy projects must comply with the licensing requirements outlined in this Act, with necessary approvals from the Public Utilities Commission of Sri Lanka (PUCSL).</li>
-        <li><strong>Grid Connection:</strong> Projects intending to feed electricity into the national grid must follow technical standards and regulations for grid connections.</li>
-        <li><strong>Tariffs and Pricing:</strong> The Act sets tariffs and determines the rates for selling electricity to the grid.</li>
-        <li><strong>Sustainability and Environmental Compliance:</strong> Compliance with environmental and sustainability standards is essential, especially for projects in ecologically sensitive coastal areas.</li>
-        <li><strong>Policy Support:</strong> Amendments to the Act may encourage renewable energy development by providing incentives or removing regulatory barriers.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>4. Sri Lanka Sustainable Energy Authority Act (No. 35 of 2007)</h2>
-      <ul>
-        <li><strong>Purpose:</strong> Establishes the regulatory framework for renewable energy development in Sri Lanka.</li>
-        <li><strong>Promoting Renewables:</strong> The Sri Lanka Sustainable Energy Authority (SLSEA) promotes renewable energy projects and ensures compliance with environmental and safety standards.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>5. Marine Pollution Prevention Act (No. 35 of 2008)</h2>
-      <ul>
-        <li><strong>Purpose:</strong> Ensures that renewable energy projects in coastal and marine areas prevent pollution of the marine environment.</li>
-        <li><strong>Offshore Projects:</strong> Offshore wind farms must ensure that construction and operation activities do not harm marine ecosystems.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>6. Fisheries and Aquatic Resources Act (No. 2 of 1996)</h2>
-      <ul>
-        <li><strong>Regulation:</strong> Renewable energy projects in coastal and marine areas must comply with this Act to avoid interfering with fishing zones and aquatic resources.</li>
-        <li><strong>Oversight:</strong> The Department of Fisheries and Aquatic Resources ensures that such projects do not disrupt traditional fishing practices.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>7. Local Government and Urban Development Regulations</h2>
-      <ul>
-        <li><strong>Approval Requirement:</strong> Developers must obtain approval from local government bodies for land use in coastal areas.</li>
-        <li><strong>Urban Development Plans:</strong> Renewable energy projects may need to align with urban development plans, particularly in densely populated or tourist-heavy coastal zones.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>8. Sri Lanka Ports Authority Regulations</h2>
-      <ul>
-        <li><strong>Offshore Projects:</strong> Renewable energy projects near ports or harbors must obtain approval from the Sri Lanka Ports Authority (SLPA), particularly for offshore energy projects.</li>
-      </ul>
-    </section>
-
-    <section class="regulation">
-      <h2>9. Biodiversity Protection Regulations</h2>
-      <ul>
-        <li><strong>Protection of Biodiversity:</strong> Renewable energy projects must consider the protection of biodiversity, especially in environmental protection zones or sanctuaries.</li>
-        <li><strong>Compliance:</strong> Projects must adhere to national biodiversity action plans and international environmental conventions.</li>
-      </ul>
-    </section>
-
-    <section class="guidelines">
-      <h2>Guidelines for Renewable Energy Development (Issued by Coast Conservation Department)</h2>
-      <ul>
-        <li><strong>EIA/IEE Requirement:</strong> Conduct an EIA or IEE to identify potential environmental, social, and ecological impacts. Consider the following:
-          <ul>
-            <li>Sensitive coastal habitats and ecosystems</li>
-            <li>Wildlife migration routes</li>
-            <li>Significant archaeological sites/resources</li>
-            <li>Traditional fishing practices</li>
-            <li>Water quality</li>
-          </ul>
-        </li>
-        <li><strong>Cumulative Impacts:</strong> Consider cumulative impacts from existing or planned coastal developments.</li>
-        <li><strong>Avoid Sensitive Areas:</strong> Ensure proposed sites are not located in protected or conservation areas.</li>
-        <li><strong>Coastal Land Grading:</strong> Keep grading to a minimum to avoid altering the physical nature of coastal landforms.</li>
-        <li><strong>Stakeholder Engagement:</strong> Engage local communities and stakeholders early in the planning process to incorporate local knowledge and address concerns.</li>
-        <li><strong>Aesthetic Design:</strong> Consider the aesthetics of wind turbines and solar installations to minimize visual impacts.</li>
-        <li><strong>Noise Pollution Mitigation:</strong> Implement noise mitigation strategies for wind turbines and protect wildlife.</li>
-        <li><strong>Ecosystem Restoration:</strong> Support ecosystem restoration projects to offset unavoidable environmental impacts.</li>
-        <li><strong>Offshore Project Safety:</strong> Ensure offshore projects adhere to safety standards and minimize risks to marine traffic.</li>
-        <li><strong>Monitoring Program:</strong> Establish a monitoring program to track the environmental and social impacts of the projects.</li>
-        <li><strong>Decommissioning Plan:</strong> Develop a plan for decommissioning and site restoration after the project ends.</li>
-      </ul>
-    </section>
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Documents</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(doc, index) in documents" :key="index">
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ formatName(doc) }}</td>
+                  <td>
+                    <a :href="`${basePath}/${doc}`" class="text-decoration-none">
+                      <i class="bi bi-download"></i> Download
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -126,6 +61,103 @@
 <script>
 export default {
   name: 'RenewableEnergyRegulations',
+  data() {
+    return {
+      basePath: "/assets/pdf/tourisum",
+      documents: [
+        "Guidelines for Renewable Energy Development.pdf",
+      ],
+      regulations: [
+        {
+          title: "1. Coastal Conservation and Coastal Resources Management Act (No. 57 of 1981, amended in 1988 and 2011)",
+          points: [
+            "Purpose: Governs development activities within the coastal zone, including land within 300 meters of the high-water mark and adjoining marine areas.",
+            "Permit Requirement: Developers must obtain a permit from the Coast Conservation and Coastal Resource Management Department (CCD) for any construction or alteration in coastal zones.",
+            "EIA Requirement: Environmental Impact Assessments (EIA) are mandatory for significant projects, including renewable energy installations like wind farms or solar parks."
+          ]
+        },
+        {
+          title: "2. National Environmental Act (No. 47 of 1980, amended in 1988)",
+          points: [
+            "Enforcing Authority: Central Environmental Authority (CEA).",
+            "EIA/IEE Requirement: Renewable energy projects must conduct Environmental Impact Assessments (EIA) or Initial Environmental Examinations (IEE) based on the project's scale and location.",
+            "Collaboration: The CEA works with the CCD to ensure environmental compliance in coastal regions."
+          ]
+        },
+        {
+          title: "3. Sri Lanka Electricity Act (No. 20 of 2009, amended in 2013)",
+          points: [
+            "Regulates licensing and grid connection for renewable energy projects.",
+            "Determines tariffs for electricity sold to the national grid.",
+            "Supports the development of sustainable and renewable energy sources."
+          ]
+        },
+        {
+          title: "4. Sri Lanka Sustainable Energy Authority Act (No. 35 of 2007)",
+          points: [
+            "Establishes the regulatory framework for renewable energy in Sri Lanka.",
+            "Promotes adherence to environmental and safety standards.",
+            "Encourages the integration of renewable energy into the national energy mix."
+          ]
+        },
+        {
+          title: "5. Marine Pollution Prevention Act (No. 35 of 2008)",
+          points: [
+            "Ensures renewable energy projects in marine areas prevent pollution.",
+            "Mandates that offshore installations minimize harm to marine ecosystems.",
+            "Regulates waste management and discharge from energy projects."
+          ]
+        },
+        {
+          title: "6. Fisheries and Aquatic Resources Act (No. 2 of 1996, amended in 2004)",
+          points: [
+            "Requires renewable energy projects to avoid interference with fishing activities.",
+            "Mandates consultations with the Department of Fisheries and Aquatic Resources.",
+            "Ensures that aquatic ecosystems are preserved during project development."
+          ]
+        },
+        {
+          title: "7. Local Government and Urban Development Regulations",
+          points: [
+            "Developers must obtain local government approval for coastal land use.",
+            "Projects should align with urban development plans, especially in tourism-heavy zones.",
+            "Focus on sustainable and environmentally friendly development."
+          ]
+        },
+        {
+          title: "8. Sri Lanka Ports Authority Regulations",
+          points: [
+            "Offshore renewable energy projects near ports require approval from the Sri Lanka Ports Authority (SLPA).",
+            "Ensures that projects do not interfere with port operations or navigation routes.",
+            "Coordinates with other regulatory bodies for integrated management."
+          ]
+        },
+        {
+          title: "9. Biodiversity Protection Regulations",
+          points: [
+            "Renewable energy projects must comply with national biodiversity action plans.",
+            "Avoidance of protected and sensitive ecological areas is mandatory.",
+            "Ensures adherence to international biodiversity conventions."
+          ]
+        }
+      ],
+      guidelines: [
+        "Conduct an EIA or IEE to identify potential environmental, social, and ecological impacts.",
+        "Consider cumulative impacts from existing or planned coastal developments.",
+        "Ensure proposed sites are not located in protected or conservation areas.",
+        "Keep grading to a minimum to avoid altering the physical nature of coastal landforms.",
+        "Engage local communities and stakeholders early in the planning process to incorporate local knowledge and address concerns.",
+        "Support ecosystem restoration projects to offset unavoidable environmental impacts.",
+        "Establish a monitoring program to track the environmental and social impacts of the projects.",
+        "Develop a plan for decommissioning and site restoration after the project ends."
+      ]
+    };
+  },
+  methods: {
+    formatName(filename) {
+      return filename.replace(".pdf", "");
+    }
+  }
 };
 </script>
 

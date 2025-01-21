@@ -18,7 +18,7 @@
 A holistic, place-based approach — combining government efforts with private sector innovation — is key to scaling these conservation projects. Public-private partnerships can drive impactful actions such as pollution control, sustainable marine protected area management, and community-driven conservation strategies. Leveraging these marine assets ensures a sustainable future, where both ecosystems and local economies thrive, aligning with international sustainability goals and safeguarding Sri Lanka’s marine heritage for generations to come.
           </p>
 
-          <Swiper :sliderContent="conservation"/>
+          <Swiper :sliderContent="conservation" :defaultRoute="sliderContentURL"/>
 
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
@@ -67,6 +67,20 @@ A holistic, place-based approach — combining government efforts with private s
    
   </section>
 
+  <section>
+    <div class="container-flude">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h4  class="text-dark  merienda"> Regulations and Guidelines</h4>
+          <br/>
+
+          <Swiper :sliderContent="conservationRegulation" :truncateLimit="1000" :defaultRoute="defaultRoute"/>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
   
@@ -110,8 +124,11 @@ A holistic, place-based approach — combining government efforts with private s
   import LeafletMap from "../LeafletMap.vue";
 import Swiper from '../../bootstrap/Swiper.vue';
 import conservation from '../SwiperContent/conservation.json';
+import conservationRegulation from '../SwiperContent/conservationRegulation.json';
 
 
+const defaultRoute="/regulation/conservation"
+const sliderContentURL = "/tourismsector/event-conservation"
 
 const filters = ref([]);
 
