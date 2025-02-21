@@ -11,10 +11,13 @@
           <br />
           <div v-for="(service, index) in services" :key="index" class="service-item">
             <h4 class="service-item-title">{{ service.title }}</h4>
+            <br />
             <p class="lead">{{ service.description }}</p>
+            
             <span v-if="service.link">
                <a :href="service.link" target="_blank">{{ service.linkText }}</a>
             </span>
+            <br />
           </div>
         </div>
       </div>

@@ -13,8 +13,8 @@
           <p class=" text-white  text-600 opacity-10">
            
             Sri Lanka’s rich marine ecosystems, including coral reefs, mangroves, seagrass beds, and mudflats, offer significant opportunities for sustainable conservation initiatives. Focusing on restoring coral reefs, protecting vital mangrove forests, and supporting blue carbon projects in seagrass meadows and mudflats, you can foster biodiversity and enhance coastal resilience.
-            <br/>
-
+          </p>
+            <p class=" text-white  text-600 opacity-10">
 A holistic, place-based approach — combining government efforts with private sector innovation — is key to scaling these conservation projects. Public-private partnerships can drive impactful actions such as pollution control, sustainable marine protected area management, and community-driven conservation strategies. Leveraging these marine assets ensures a sustainable future, where both ecosystems and local economies thrive, aligning with international sustainability goals and safeguarding Sri Lanka’s marine heritage for generations to come.
           </p>
 

@@ -36,6 +36,7 @@ const router = createRouter({
       { path: '/tourismsector/event-tourism', component: () => import('../components/Template/AboutUs/EventsTourism.vue'), meta: { requiresAuth: false} },
       { path: '/tourismsector/event-energy', component: () => import('../components/Template/AboutUs/EventsEnergy.vue'), meta: { requiresAuth: false} },
       { path: '/tourismsector/event-marine', component: () => import('../components/Template/AboutUs/EventsMarine.vue'), meta: { requiresAuth: false} },
+      { path: '/tourismsector/event-boat', component: () => import('../components/Template/AboutUs/EventsBoat.vue'), meta: { requiresAuth: false} },
 
       { path: '/tourismsector/event-conservation', component: () => import('../components/Template/AboutUs/EventsConservation.vue'), meta: { requiresAuth: false} },
 

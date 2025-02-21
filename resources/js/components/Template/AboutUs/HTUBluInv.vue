@@ -2,8 +2,8 @@
 
 
     <section class="py-0 overflow-hidden light" id="banner">
-        <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/malindabandaralk.jpg);background-position: center bottom;"></div>
-        <div class="container">
+      <div class="bg-holder overlay" style="background-image:url(/assets/img/mare-1200x900.jpg); background-position: center bottom;"></div>
+      <div class="container">
           <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
             <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">
               <!-- <h1 class="text-white fw-light">What is BluInvest</h1> -->
@@ -27,18 +27,33 @@
             </p>
             <ol class="lead">
               <li><strong>Click on an investment area that interests you</strong></li>
+              <br/>
               <p>Hover over the map and discover opportunities for boat building, marine conservation, and a variety of marine industry sectors. </p>
+              <br/>
               <li><strong>This will take you to a questionnaire</strong></li>
+              <br/>
               <p>Please select your preferred options for Infrastructure, Natural Resources and land Use, Natural Environment and Biodiversity, 
                 Biodiversity and recreation, and Marine Archeology.</p>
+                <br/>
                 <li><strong>Optimal locations will be generated</strong></li>
-                <p>Once the questionnaire is completed, our GIS tool will generate the ideal locations for your blue business venture. </p>
+                <br/>
+                <p>Once the questionnaire is completed, our GIS tool will generate the ideal 
+                  locations for your blue business venture. </p>
+                  <br/>
                 <li><strong>Zoom in on suggested locations</strong></li>
-                <p>Zoom in on these locations to learn more about the availability and feasibility of your preferred investment idea in a select location.</p>
-                <li><strong>Learn about the corresponding rules, laws & regulations for your investment</strong></li>
-                <p>Next, take a look at the comprehensive regulatory framework for investments in Sri Lanka.</p>
+                <br/>
+                <p>Zoom in on these locations to learn more about the 
+                  availability and feasibility of your preferred investment
+                   idea in a select location.</p>
+                   <br/>
+                <li><strong>Learn about the corresponding
+                   rules, laws & regulations for your investment</strong></li>
+                   <br/>
+                <p>Next, take a look at the comprehensive regulatory framework for 
+                  investments in Sri Lanka.</p>
+                  <br/>
             </ol>
-            <p class="lead">For further information on what we offer investors at BluInvest, contact the Ministry of Finance via any of the hotlines below.</p>
+            <p class="">For further information on what we offer investors at BluInvest, contact the Ministry of Finance via any of the hotlines below.</p>
             <address>
               GIS Unit, National Planning Department, 1st Floor,
               The Secretariat,Colombo 1

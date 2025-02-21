@@ -19,12 +19,15 @@
           <br />
           <div v-for="(service, index) in services" :key="index" class="service-item">
             <h4 class="service-item-title">{{ service.title }}</h4>
+            <br>
             <p class="lead">
               {{ service.description }}
-              <span>Learn more at: 
+              <br/><br/>
+              <span >Learn more at: 
                 <a :href="service.link" target="_blank">{{ service.linkText }}</a>
               </span>
             </p>
+            <br/>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <section class="py-0 overflow-hidden light" id="banner">
-    <div class="bg-holder overlay" style="background-image:url(/assets/img/shutterstock_243102907-550x360.jpg);background-position: center bottom;"></div>
+    <div class="bg-holder overlay" style="background-image:url(/assets/img/mare-1200x900.jpg); background-position: center bottom;"></div>
     <div class="container">
       <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
         <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9 text-center text-lg-start">

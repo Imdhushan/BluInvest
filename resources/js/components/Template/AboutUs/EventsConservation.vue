@@ -23,7 +23,9 @@
       
         <div v-for="(slide, index) in tourism" :key="index" class="mb-4">
             <h3 class="fs-2" style="color:#0b1727">{{ slide.title }}</h3>
+            <br>
             <p class="lead" v-if="slide.content">{{ slide.content }}</p>
+            <br>
           </div>
 
     </div>

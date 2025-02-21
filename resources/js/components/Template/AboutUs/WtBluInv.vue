@@ -22,10 +22,16 @@
 
             <p style="color:#0b1727">
             In Sri Lanka, the journey towards sustainable blue economy investments is built on a collaborative and practical approach. Recognising the challenges of fully implementing Marine Spatial Planning (MSP), a strategy was developed to combine development and conservation efforts, aligned with the Paris Agreement.
-            <br>
+            </p>
 
-            Guided by the National Physical Planning Policy – 2048, this process involved multi-sectoral collaboration, with over 50 agencies pooling data and insights. A Strategic Environment Assessment (SEA) framework was used to identify key areas for investment, address environmental conflicts, and integrate disaster risk reduction and conservation measures from the start.
-            <br>
+           <p style="color:#0b1727">
+
+            Guided by the National Physical Planning Policy – 2048, this process involved multi-sectoral collaboration, with over 50 agencies pooling data and insights. A Strategic Environment Assessment 
+            (SEA) framework was used to identify key areas for investment, 
+            address environmental conflicts, and integrate disaster risk reduction 
+            and conservation measures from the start.
+          </p>
+            <p style="color:#0b1727">
             A key outcome is the creation of the “Blue Opportunity Mapping Too” (BOM Tool), a GIS-based system that highlights optimal locations for sustainable investments and conservation projects. This dynamic tool is supported by a new GIS Data Analytics and Operations Centre, which ensures informed decision-making and continuous monitoring of coastal and marine resources.
             </p>
             <br>

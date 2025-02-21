@@ -14,10 +14,20 @@ export default {
   <div class="position-absolute btn-back-to-top bg-dark"><a class="text-600" href="#banner" data-bs-offset-top="0"><span class="fas fa-chevron-up" data-fa-transform="rotate-45"></span></a></div>
   <div class="row">
     <div class="col-lg-4">
-      <h5 class="text-uppercase text-white opacity-85 mb-3">COMITMENT</h5>
+      <h5 class="text-uppercase text-white opacity-85 mb-3">COMMITMENT</h5>
       <p class="text-600">
-        The Ministry of Finance (MoF), Sri Lanka, in collaboration with the UNDP, is dedicated to advancing the Blue Economy as a cornerstone of sustainable growth. Led by MoF, the Government of Sri Lanka is committed to facilitating essential infrastructure development, fostering investment opportunities, and implementing robust regulatory frameworks in support of maximizing blue economy growth. This commitment aims to attract investors to support Sri Lanka's economic prosperity while prioritizing environmental sustainability, ensuring a balanced and forward-thinking approach to the nation's maritime resources and industries.      </p>
-      <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white" href="#!"><span class="fab fa-medium-m"></span></a></div>
+
+        The Ministry of Finance of the Government of Sri Lanka in collaboration with the United Nations Development Programme (UNDP), is dedicated to advancing Sri Lanka’s 
+        Blue Economy as a cornerstone of sustainable growth. The Government together with our partners is committed to facilitating essential infrastructure development, 
+        fostering investment opportunities, and implementing robust 
+        regulatory frameworks to maximize blue economy growth. This commitment 
+        aims to attract investors to support Sri Lanka's economic 
+        prosperity while prioritizing environmental sustainability, 
+        ensuring a balanced and forward-thinking approach to the nation's maritime 
+        resources and industries.
+  
+          </p>
+      <!-- <div class="icon-group mt-4"><a class="icon-item bg-white text-facebook" href="#!"><span class="fab fa-facebook-f"></span></a><a class="icon-item bg-white text-twitter" href="#!"><span class="fab fa-twitter"></span></a><a class="icon-item bg-white text-google-plus" href="#!"><span class="fab fa-google-plus-g"></span></a><a class="icon-item bg-white text-linkedin" href="#!"><span class="fab fa-linkedin-in"></span></a><a class="icon-item bg-white" href="#!"><span class="fab fa-medium-m"></span></a></div> -->
     </div>
     <div class="col ">
       <div class="row mt-5 mt-lg-0">
@@ -42,26 +52,39 @@ export default {
             
             <li>
               <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.ft.lk/opinion/Sri-Lanka-s-maritime-transformation-Strategic-vision-for-2024-2029/14-769361#:~:text=This%20ambitious%20initiative%20focuses%20on,hub%20in%20the%20Indian%20Ocean 
-"> Sri Lanka Maritime Transformation - Strategic Vision for 2024-2029</a></h5>
-              <p class="text-600 opacity-50" > <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">Voyage Sri Lanka</a> </p>
+"> Sri Lanka Maritime Transformation - Strategic Vision for 2024-2029 </a></h5>
+<br>
+              <!-- <p class="text-600 opacity-50" > <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">Voyage Sri Lanka</a> </p> -->
             </li>
 
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> New Investment Strategies for 2024</a></h5>
-              <p class="text-600 opacity-50"> Blue Economy opportunities. </p>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="#!">
+                New Investment Strategies for 2024
+                </a></h5>
+                <br>
+              <!-- <p class="text-600 opacity-50"> Blue Economy opportunities. </p> -->
             </li>
             
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Spatial Planning for Marine Investments</a></h5>
-              <p class="text-600 opacity-50">A paper by the Ministry of Finance, Planning and Economic Development and UNDP.</p>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="#!">
+                Spatial Planning for Marine Investments: a paper by the Ministry of Finance, Planning and Economic Development and UNDP
+
+                </a></h5>
+                <br>
+              <!-- <p class="text-600 opacity-50">A paper by the Ministry of Finance, Planning and Economic Development and UNDP.</p> -->
             </li>
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> Sri Lanka's Blue Economy</a></h5>
-              <p class="text-600 opacity-50">
-                <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">
+              <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.undp.org/sites/g/files/zskgke326/files/2023-12/blue_economy_position_paper_undp_and_lki.pdf"> 
+                A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies
+
+
+              </a></h5>
+              <br>
+              <!-- <p class="text-600 opacity-50">
+                <a href="https://www.undp.org/sites/g/files/zskgke326/files/2023-12/blue_economy_position_paper_undp_and_lki.pdf"  class="text-600 opacity-50">
                   A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies.
                 </a>
-              </p>
+              </p> -->
             </li>
             <!-- <li>
               <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> The New Falcon Theme</a></h5>
