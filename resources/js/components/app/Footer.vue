@@ -51,30 +51,21 @@ export default {
 
             
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.ft.lk/opinion/Sri-Lanka-s-maritime-transformation-Strategic-vision-for-2024-2029/14-769361#:~:text=This%20ambitious%20initiative%20focuses%20on,hub%20in%20the%20Indian%20Ocean 
-"> Sri Lanka Maritime Transformation - Strategic Vision for 2024-2029 </a></h5>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="/assets/pdf/Business Case for Nautical Tourism.pdf"> Sri Lanka Maritime Transformation - Strategic Vision for 2024-2029 </a></h5>
 <br>
               <!-- <p class="text-600 opacity-50" > <a href="https://voyagesrilanka.lk/"  class="text-600 opacity-50">Voyage Sri Lanka</a> </p> -->
             </li>
 
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!">
+              <h5 class="fs-0 mb-0"><a class="link-600" href="https://voyagesrilanka.lk/">
                 New Investment Strategies for 2024
                 </a></h5>
                 <br>
               <!-- <p class="text-600 opacity-50"> Blue Economy opportunities. </p> -->
             </li>
-            
             <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="#!">
-                Spatial Planning for Marine Investments: a paper by the Ministry of Finance, Planning and Economic Development and UNDP
-
-                </a></h5>
-                <br>
-              <!-- <p class="text-600 opacity-50">A paper by the Ministry of Finance, Planning and Economic Development and UNDP.</p> -->
-            </li>
-            <li>
-              <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.undp.org/sites/g/files/zskgke326/files/2023-12/blue_economy_position_paper_undp_and_lki.pdf"> 
+              <h5 class="fs-0 mb-0"><a class="link-600" href="https://www.undp.org/sites/g/files/zskgke326/files/2023-
+12/blue_economy_position_paper_undp_and_lki.pdf"> 
                 A position paper by UNDP Sri Lanka & Lakshman Kadirgamar Institute of International Relations and Strategic Studies
 
 
@@ -86,6 +77,16 @@ export default {
                 </a>
               </p> -->
             </li>
+            
+            <li>
+              <h5 class="fs-0 mb-0"><a class="link-600" href="#">
+                Spatial Planning for Marine Investments: a paper by the Ministry of Finance, Planning and Economic Development and UNDP
+
+                </a></h5>
+                <br>
+              <!-- <p class="text-600 opacity-50">A paper by the Ministry of Finance, Planning and Economic Development and UNDP.</p> -->
+            </li>
+           
             <!-- <li>
               <h5 class="fs-0 mb-0"><a class="link-600" href="#!"> The New Falcon Theme</a></h5>
               <p class="text-600 opacity-50">Dec 23 &bull; 10min read </p>

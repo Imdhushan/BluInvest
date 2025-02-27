@@ -20,10 +20,10 @@
     <div class="container">
       <div class="row justify-content-center text-justify" >
         <div class="col-lg-10 col-xl-9 col-xxl-8">
-          
             <div v-for="(slide, index) in tourism" :key="index" class="mb-4">
                 <h3 class="fs-2" style="color:#0b1727">{{ slide.title }}</h3>
                 <p class="lead" v-if="slide.content">{{ slide.content }}</p>
+                
               </div>
     
         </div>

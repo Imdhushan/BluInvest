@@ -23,38 +23,105 @@
           <h3>Key Regulations Governing Nautical Tourism</h3> -->
           
           <ol>
-            <li><strong>Coast Conservation and Coastal Resource Management Act No. 57 of 1981:</strong>
+            <li><strong>
+              <a href="https://citizenslanka.org/wp-content/uploads/2016/02/Coast-Conservation-Act-No-57-of-1981-E.pdf" target="_blank" rel="noopener noreferrer">
+              Coast Conservation and Coastal Resource Management Act No. 57 of 1981:
+            </a>
+            </strong>
               <p>This act regulates development activities in coastal zones, focusing on conservation and sustainable use of coastal resources. It mandates permits for development projects in coastal areas to ensure environmental standards are met.</p>
             </li>
-            <li><strong>Tourism Act No. 38 of 2005:</strong>
+            <li><strong>
+              <a href="https://www.sltda.gov.lk/storage/documents/705ea88c529f9a0eb40cb7e6d34389ed.
+pdf" target="_blank" rel="noopener noreferrer">
+
+              Tourism Act No. 38 of 2005:
+            </a>
+            </strong>
               <p>The Sri Lanka Tourism Development Authority (SLTDA) regulates the tourism sector, including nautical tourism. Operators must be licensed and comply with safety, environmental, and operational standards.</p>
             </li>
-            <li><strong>Marine Pollution Prevention Act No. 35 of 2008:</strong>
+            <li><strong>
+              <a href="https://env.gov.lk/web/images/downloads/acts/marine_pollution_prevention_act_n
+o_35_of_2008.pdf" target="_blank" rel="noopener noreferrer">
+              Marine Pollution Prevention Act No. 35 of 2008:
+              </a>
+            </strong>
               <p>This act ensures that all nautical tourism activities comply with regulations designed to prevent marine pollution, including waste management and fuel spill prevention on vessels.</p>
             </li>
-            <li><strong>Sri Lanka Ports Authority Act No. 51 of 1979:</strong>
+            <li><strong>
+              <a href="https://www.commonlii.org/lk/legis/num_act/slpaa51o1979355/" target="_blank" rel="noopener noreferrer">
+              Sri Lanka Ports Authority Act No. 51 of 1979:
+            </a>
+            </strong>
               <p>This act regulates activities in ports and harbors, including those used for nautical tourism. Operators must comply with docking and mooring regulations and port safety standards.</p>
             </li>
-            <li><strong>Merchant Shipping Act No. 52 of 1971:</strong>
+            <li><strong>
+              <a href="https://www.commonlii.org/lk/legis/num_act/msa52o1971231/" target="_blank" rel="noopener noreferrer">
+
+              Merchant Shipping Act No. 52 of 1971:
+              </a>
+            </strong>
               <p>This act governs the registration and safety of vessels, including those used for tourism. Operators must ensure that vessels meet safety and seaworthiness standards.</p>
             </li>
-            <li><strong>Fisheries and Aquatic Resources Act No. 2 of 1996:</strong>
+            <li><strong>
+              <a href="https://citizenslanka.org/wp-content/uploads/2016/02/Fisheries-and-Aquatic-
+Resources-Act-No-2-of-1996-E.pdf" target="_blank" rel="noopener noreferrer">
+
+              Fisheries and Aquatic Resources Act No. 2 of 1996:
+              </a>
+            </strong>
               <p>Nautical tourism activities should avoid interference with fishing operations. This act ensures that tourism does not negatively impact the livelihoods of fishing communities or marine biodiversity.</p>
             </li>
-            <li><strong>National Environmental Act No. 47 of 1980:</strong>
+            <li><strong>
+              <a href="https://www.cea.lk/web/images/pdf/acts/act47-80.pdf" target="_blank">
+              National Environmental Act No. 47 of 1980:
+            </a>
+            </strong>
               <p>Any project that may significantly impact the environment, including nautical tourism infrastructure, requires an Environmental Impact Assessment (EIA) to ensure sustainability.</p>
             </li>
-            <li><strong>Customs Ordinance:</strong>
+            <li><strong>
+              <a href="https://www.customs.gov.lk/about-us/customs-law/" target="_blank">
+
+              Customs Ordinance:
+              </a>
+            </strong>
               <p>Vessels entering Sri Lanka's waters for tourism purposes must comply with customs regulations, including clearance procedures for foreign vessels.</p>
             </li>
             <li><strong>Sri Lanka Navy and Coast Guard Regulations:</strong>
-              <p>These agencies ensure maritime security and regulate safe navigational practices for nautical tourism operators within Sri Lanka's territorial waters.</p>
+              <p>
+                The Sri Lanka Navy and Coast Guard ensure maritime security and safety,
+particularly in coastal and territorial waters.
+              </p>
+              <p>
+                Nautical tourism operators must follow navigational and security guidelines
+issued by the Navy and Coast Guard, particularly in restricted or sensitive areas.
+              </p>
+              <p>
+                These agencies also enforce anti-piracy regulations and monitor illegal activities,
+                ensuring the safety of tourists.
+              </p>
             </li>
             <li><strong>Wildlife Protection Laws:</strong>
-              <p>Marine parks and protected areas require permits for tourism activities, ensuring that species like whales and dolphins are protected from disturbance during tours.</p>
+              <a href="https://citizenslanka.org/wp-content/uploads/2016/02/Fauna-
+and-Flora-Protection-Ordinance-No-02-of-1937-E.pdf" target="_blank">
+              <p>Nautical tourism activities that involve visits to marine national parks or protected
+areas must comply with the Fauna and Flora Protection Ordinance (No. 2 of
+
+1937, as amended).</p>
+              </a>
+              <p>Permits are required for activities in protected marine environments, such as
+                whale and dolphin watching, which are popular nautical tourism attractions.</p>
             </li>
             <li><strong>International Maritime Conventions:</strong>
-              <p>Sri Lanka is a signatory to various international conventions under the IMO, and operators must adhere to global standards for safety, security, and environmental protection.</p>
+              <p>
+                Sri Lanka is a signatory to various international conventions under the
+International Maritime Organization (IMO), which set global standards for the
+safety, security, and environmental performance of vessels.
+              </p>
+              <p>
+                Nautical tourism operators must ensure that their vessels comply with these
+international standards, particularly regarding safety, pollution prevention, and
+crew training.
+              </p>
             </li>
           </ol>
 

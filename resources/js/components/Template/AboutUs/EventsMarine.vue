@@ -24,9 +24,12 @@
         <div v-for="(slide, index) in tourism" :key="index" class="mb-4">
             <h3 class="fs-2" style="color:#0b1727">{{ slide.title }}</h3>
             <br>
-            <p class="lead" v-if="slide.content">{{ slide.content }}</p>
+            <!-- <p class="lead" v-if="slide.content">{{ slide.content }}</p> -->
+            <p class="lead" v-if="slide.content" v-html="slide.content"></p>
+            <!--  -->
             <br>
           </div>
+          <Swiper :sliderContent='maritimeimg'/>
 
     </div>
     
@@ -43,6 +46,10 @@
   <script setup>
   import { ref, computed,onMounted } from 'vue';
   import tourism from "../SwiperContent/marine.json" 
+  import maritimeimg from "../SwiperContent/maritimeimg.json" 
+  import Swiper from '../../bootstrap/Swiper.vue';
+
+
   //const slides = ref([]);
 
 // Fetch the JSON data on component mount

@@ -8,7 +8,11 @@
           <h4 class="text-white fw-light text-justify">Invest in Sri Lanka's Blue Economy!</h4>
           <!-- <p class="text-white">Explore what awaits you with BluInvest</p> --> 
           <p class="text-white text-justify">
-            Join BluInvest and make a positive impact while securing your investment! Be part of an initiative dedicated to maximising your business potential by leveraging Sri Lanka's marine frontier. Explore BluInvest—an Interactive investment opportunity mapping tool—to discover prime locations for tourism, boat building, conservation, and other high-growth marine sectors with promising returns.</p>
+            Join BluInvest and make a positive impact while securing your investment! Be part of an initiative dedicated to maximising your business potential by leveraging Sri Lanka's marine frontier. Explore BluInvest—an Interactive investment opportunity mapping tool—to discover prime locations for
+            <a href="/tourismsector/tourism"  class="text-white  text-decoration-none"> tourism </a>,
+            <a href="/tourismsector/boat" class="text-white  text-decoration-none"> boat building</a>,
+              <a href="/tourismsector/conservation" class="text-white  text-decoration-none">  conservation</a>, 
+               and other high-growth marine sectors with promising returns.</p>
               <p class="text-white text-justify">Invest in a thriving blue economy and pave the way for both business success and a healthier planet.</p>
           <div>
             <div class="row mx-n1">
@@ -25,12 +29,13 @@
                 </a>
               </div>
               <div class="col-4 p-1">
-                <a class="post1 hover-effect" href="/tourismsector/marine" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Marine.png" alt="" />
-                  <div class="overlay-text">Marine Industries</div>
+                <a class="post1 hover-effect" href="/tourismsector/conservation" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/financ_new.png" alt="" />
+                  <div class="overlay-text">Conservation</div>
 
                 </a>
               </div>
+              
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/wind" data-gallery="gallery-1">
                   <img class="img-fluid rounded" src="/assets/img/Wind_new.png" alt="" />
@@ -44,12 +49,13 @@
                 </a>
               </div>
               <div class="col-4 p-1">
-                <a class="post1 hover-effect" href="/tourismsector/conservation" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/financ_new.png" alt="" />
-                  <div class="overlay-text">Conservation</div>
+                <a class="post1 hover-effect" href="/tourismsector/marine" data-gallery="gallery-1">
+                  <img class="img-fluid rounded" src="/assets/img/Marine.png" alt="" />
+                  <div class="overlay-text">Marine Industries</div>
 
                 </a>
               </div>
+             
             </div>
           </div>
 

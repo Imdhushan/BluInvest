@@ -17,7 +17,10 @@
           <h1>Regulations Pertaining to Renewable Energy Projects</h1>
 
           <section v-for="(regulation, index) in regulations" :key="index" class="regulation">
+            <a :href="regulation.linktitle"  target="_blank" class="text-decoration-none">
+
             <h2>{{ regulation.title }}</h2>
+            </a>
             <ul>
               <li v-for="(point, idx) in regulation.points" :key="idx">{{ point }}</li>
             </ul>
@@ -69,75 +72,85 @@ export default {
       ],
       regulations: [
         {
+          linktitle:"https://citizenslanka.org/wp-content/uploads/2016/02/Coast-Conservation-Act-No-57-of-1981-E.pdf",
           title: "1. Coastal Conservation and Coastal Resources Management Act (No. 57 of 1981, amended in 1988 and 2011)",
           points: [
-            "Purpose: Governs development activities within the coastal zone, including land within 300 meters of the high-water mark and adjoining marine areas.",
-            "Permit Requirement: Developers must obtain a permit from the Coast Conservation and Coastal Resource Management Department (CCD) for any construction or alteration in coastal zones.",
-            "EIA Requirement: Environmental Impact Assessments (EIA) are mandatory for significant projects, including renewable energy installations like wind farms or solar parks."
+            "This act governs development activities in the coastal zone, which includes land within 300 meters of the high-water mark and adjoining marine areas.",
+            "Developers must obtain a permit from the Coast Conservation and Coastal Resource Management Department (CCD) for any construction or alteration in coastal zones.",
+            "Environmental Impact Assessments (EIA) are mandatory for significant projects, including renewable energy installations like wind farms or solar parks."
           ]
         },
         {
+          linktitle:"https://www.cea.lk/web/images/pdf/acts/act56-88.pdf",
           title: "2. National Environmental Act (No. 47 of 1980, amended in 1988)",
           points: [
-            "Enforcing Authority: Central Environmental Authority (CEA).",
-            "EIA/IEE Requirement: Renewable energy projects must conduct Environmental Impact Assessments (EIA) or Initial Environmental Examinations (IEE) based on the project's scale and location.",
-            "Collaboration: The CEA works with the CCD to ensure environmental compliance in coastal regions."
+            "The Central Environmental Authority (CEA) enforces this act, requiring renewable energy projects to conduct EIAs or Initial Environmental Examinations (IEE) depending on the scale and location.",
+            "The CEA works closely with the CCD in coastal regions to ensure that renewable energy projects do not adversely affect the environment.",
           ]
         },
         {
-          title: "3. Sri Lanka Electricity Act (No. 20 of 2009, amended in 2013)",
+          linktitle:"https://www.parliament.lk/uploads/acts/gbills/english/6347.pdf ",
+
+          title: "3. Sri Lanka Electricity Act, No. 36 of 2024",
           points: [
-            "Regulates licensing and grid connection for renewable energy projects.",
-            "Determines tariffs for electricity sold to the national grid.",
-            "Supports the development of sustainable and renewable energy sources."
+            "Licensing and Regulation: Renewable energy projects, including those in coastal areas, would likely need to comply with the licensing requirements outlined in the Act. This would include obtaining necessary approvals from the Public Utilities Commission of Sri Lanka (PUCSL).",
+            "Grid Connection: If a renewable energy project intends to feed electricity into the national grid, it must adhere to the regulations governing grid connections, technical standards, and the responsibilities of the project developers.",
+            "Tariffs and Pricing: The Act outlines the process for setting tariffs and may influence the financial viability of renewable energy projects by determining the rates at which electricity can be sold to the grid.",
+            "Sustainability and Environmental Compliance: While the Act itself may not directly address environmental concerns, compliance with environmental standards and sustainability practices is crucial for projects, especially in ecologically sensitive coastal areas.",
+            "Policy Support for Renewables: Any amendments or directives under this Act that encourage the development of renewable energy could impact projects in coastal areas by providing incentives or removing regulatory barriers."
           ]
         },
         {
+          linktitle:"https://www.energy.gov.lk/images/about-us/inception/2007-act-no-35-sri-lanka-sustainable-energy-authority-e.pdf ",
+
           title: "4. Sri Lanka Sustainable Energy Authority Act (No. 35 of 2007)",
           points: [
-            "Establishes the regulatory framework for renewable energy in Sri Lanka.",
-            "Promotes adherence to environmental and safety standards.",
-            "Encourages the integration of renewable energy into the national energy mix."
+            "This act provides a regulatory framework for the development of renewable energy sources.",
+            "The Sri Lanka Sustainable Energy Authority (SLSEA) promotes renewable energy projects, including solar, wind, and bioenergy, and ensures compliance with environmental and safety standards."
           ]
         },
         {
-          title: "5. Marine Pollution Prevention Act (No. 35 of 2008)",
+          linktitle:"https://env.gov.lk/web/images/downloads/acts/marine_pollution_prevention_act_no_35_of_2008.pdf ",
+
+          title: "5. Marine Pollution Prevention Act (No. 35 of 2008) ",
           points: [
-            "Ensures renewable energy projects in marine areas prevent pollution.",
-            "Mandates that offshore installations minimize harm to marine ecosystems.",
-            "Regulates waste management and discharge from energy projects."
+            "Projects located in coastal and marine areas must comply with this act to prevent pollution of the marine environment.",
+            "Renewable energy projects such as offshore wind farms must ensure that construction and operation activities do not harm marine ecosystems."
           ]
         },
         {
-          title: "6. Fisheries and Aquatic Resources Act (No. 2 of 1996, amended in 2004)",
+          linktitle:"https://citizenslanka.org/wp-content/uploads/2016/02/Fisheries-and-Aquatic-Resources-Act-No-2-of-1996-E.pdf",
+
+          title: "6. Fisheries and Aquatic Resources Act (No. 2 of 1996)",
           points: [
-            "Requires renewable energy projects to avoid interference with fishing activities.",
-            "Mandates consultations with the Department of Fisheries and Aquatic Resources.",
-            "Ensures that aquatic ecosystems are preserved during project development."
+            "Renewable energy projects in coastal and marine areas that overlap with fishing zones must adhere to the regulations outlined in this act.",
+            "The Department of Fisheries and Aquatic Resources oversees activities that may impact fishing and aquatic resources, ensuring that such projects do not interfere with traditional livelihoods."
           ]
         },
         {
+          linktitle:"",
+
           title: "7. Local Government and Urban Development Regulations",
           points: [
-            "Developers must obtain local government approval for coastal land use.",
-            "Projects should align with urban development plans, especially in tourism-heavy zones.",
-            "Focus on sustainable and environmentally friendly development."
+            "Local authorities also regulate land use in coastal areas. Developers must obtain approval from relevant local government bodies.",
+            "In certain cases, renewable energy projects may need to align with urban development plans, especially in densely populated or touristic coastal areas."
           ]
         },
         {
+          linktitle:"",
+
           title: "8. Sri Lanka Ports Authority Regulations",
           points: [
-            "Offshore renewable energy projects near ports require approval from the Sri Lanka Ports Authority (SLPA).",
-            "Ensures that projects do not interfere with port operations or navigation routes.",
-            "Coordinates with other regulatory bodies for integrated management."
+            "If a renewable energy project is planned near a port or harbor, approvals from the Sri Lanka Ports Authority (SLPA) are required, particularly for offshore energy projects."
           ]
         },
         {
+          linktitle:"",
+
           title: "9. Biodiversity Protection Regulations",
           points: [
-            "Renewable energy projects must comply with national biodiversity action plans.",
-            "Avoidance of protected and sensitive ecological areas is mandatory.",
-            "Ensures adherence to international biodiversity conventions."
+            "Renewable energy projects must consider the protection of biodiversity, particularly in areas designated as environmental protection zones or sanctuaries.",
+            "Compliance with national biodiversity action plans and international commitments under conventions is required."
           ]
         }
       ],

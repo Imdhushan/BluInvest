@@ -28,6 +28,8 @@
             <br>
           </div>
 
+          <Swiper :sliderContent='conservationimg'/>
+
     </div>
     
   </div>
@@ -43,6 +45,8 @@
   <script setup>
   import { ref, computed,onMounted } from 'vue';
   import tourism from "../SwiperContent/conservation.json" 
+  import conservationimg from "../SwiperContent/conservationimg.json" 
+  import Swiper from '../../bootstrap/Swiper.vue';
   //const slides = ref([]);
 
 // Fetch the JSON data on component mount

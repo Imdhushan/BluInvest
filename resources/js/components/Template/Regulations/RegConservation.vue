@@ -20,19 +20,42 @@
             Sri Lanka has a well-established framework for conservation projects, governed by several key laws and initiatives aimed at protecting biodiversity while supporting sustainable development. Below are the key regulations governing conservation projects in Sri Lanka:
           </p>
 
-          <h3>Key Regulations Governing Conservation Projects</h3>
+          <!-- <h3>Key Regulations Governing Conservation Projects</h3> -->
           
           <ol>
-            <li><strong>Coast Conservation and Coastal Resource Management Act No. 57 of 1981:</strong>
+            <li>
+
+              <strong>
+                <a href="https://www.documents.gov.lk/view/acts/1981/9/57-1981_E.pdf  " target="_blank">
+
+                Coast Conservation and Coastal Resource Management Act No. 57 of 1981:
+                </a>
+              </strong>
+
               <p>This act regulates development activities in coastal zones, focusing on conservation and sustainable use of coastal resources. It mandates permits for development projects in coastal areas to ensure environmental standards are met.</p>
             </li>
-            <li><strong>Fauna and Flora Protection Ordinance No. 2 of 1937:</strong>
+            <li><strong>
+              <a href="https://citizenslanka.org/wp-content/uploads/2016/02/Fauna-and-Flora-Protection-Ordinance-No-02-of-1937-E.pdf " target="_blank">
+
+              Fauna and Flora Protection Ordinance No. 2 of 1937:
+              </a>
+            </strong>
               <p>This ordinance is a foundational legal framework for wildlife and biodiversity conservation in Sri Lanka. It has been amended several times to strengthen protections, including restrictions on wildlife trade under the Convention on International Trade in Endangered Species (CITES).</p>
             </li>
-            <li><strong>National Environment Act No. 47 of 1980:</strong>
+            <li><strong>
+              <a href="https://www.cea.lk/web/images/pdf/acts/act47-80.pdf " target="_blank">
+
+              National Environment Act No. 47 of 1980:
+              </a>
+            </strong>
               <p>This act governs environmental management and protection, mandating Environmental Impact Assessments (EIAs) for activities with potential environmental impacts. It also ensures the implementation of sustainable development practices across sectors.</p>
             </li>
-            <li><strong>Forest Ordinance No. 16 of 1907:</strong>
+            <li><strong>
+              <a href="https://citizenslanka.org/wp-content/uploads/2016/02/Forest-Ordinance-No-16-of-1907-E.pdf " target="_blank">
+
+              Forest Ordinance No. 16 of 1907:
+            </a>
+          </strong>
               <p>The Forest Ordinance governs the conservation and management of forests in Sri Lanka. It has been amended to protect forest reserves and address issues such as deforestation and illegal logging.</p>
             </li>
           </ol>

@@ -15,7 +15,9 @@
       <div class="text-slide">
         <h3>{{ slide.title }}</h3>
         <img :src="slide.image" alt="Slide Image" class="slide-image" v-if="slide.image" />
-        <p> {{ truncateText(slide.content, truncateLimit) }}</p>
+        <!-- <p> {{ truncateText(slide.content, truncateLimit) }}</p> -->
+        <p v-html="truncateText(slide.content, truncateLimit)"></p>
+
         
         <button class="btn btn-outline-light border-2 rounded-pill mt-1 fs-0 py-0 btn-sm " type="button"  @click="storeInLocalStorage()">
         <router-link :to="defaultRoute" class="text-info "  
