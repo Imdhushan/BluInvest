@@ -124,11 +124,11 @@ const fetchTourismLarge = () => {
                 </div>
               </div>
             `;
-            layer.bindPopup(popupContent, {
-              className: 'custom-popup',
-              offset: L.point(0, -10),
-              closeButton: true,
-            });
+            // layer.bindPopup(popupContent, {
+            //   className: 'custom-popup',
+            //   offset: L.point(0, -10),
+            //   closeButton: true,
+            // });
           },
         });
 
