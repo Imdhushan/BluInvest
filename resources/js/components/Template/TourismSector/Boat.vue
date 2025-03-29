@@ -1,18 +1,18 @@
 <template>
   <section class="py-6 overflow-hidden light" id="banner">
-    <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/BoatBulding.jpg);background-position: center bottom;"></div>
+    <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/Boat_new.png);background-position: center bottom;"></div>
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+          <div class="content-box p-4 mb-3">
+            <h1 class="text-white ">BOAT BUILDING</h1>
+            <h4 class="text-white fw-light opacity-5 ">Explore Sri Lanka, a Prime Destination for Boat-Building</h4>
 
-          <h1 class="text-white ">BOAT BUILDING</h1>
-          <h4 class="text-white fw-light opacity-5 merienda">Explore Sri Lanka, a Prime Destination for Boat-Building</h4>
+            <p class=" text-white   text-600 opacity-10 text-justify">
 
-          <p class=" text-white   text-600 opacity-10">
-
-            Sri Lanka’s strategic location at the crossroads of the Indian Ocean offers unparalleled advantages for the growth of nautical tourism and boat-building. Sri Lanka's maritime industry currently contributes 1.4% to the national GDP and provides direct employment to 115,000 individuals and supports another 100,000 through related industries. The boat manufacturing industry alone has generated export income exceeding USD $200 million from 2019 to 2023. With abundant natural resources and some of the finest harbours in Asia, Sri Lanka is uniquely positioned to capitalise on the thriving global market for yachts and marine tourism. The Chamber of Marine Industries of Sri Lanka is charting a course for a USD 2 billion maritime economy, solidifying Sri Lanka’s position as a premier maritime hub in the Indian Ocean.
-          </p>
-
+              Sri Lanka’s strategic location at the crossroads of the Indian Ocean offers unparalleled advantages for the growth of nautical tourism and boat-building. Sri Lanka's maritime industry currently contributes 1.4% to the national GDP and provides direct employment to 115,000 individuals and supports another 100,000 through related industries. The boat manufacturing industry alone has generated export income exceeding USD $200 million from 2019 to 2023. With abundant natural resources and some of the finest harbours in Asia, Sri Lanka is uniquely positioned to capitalise on the thriving global market for yachts and marine tourism. The Chamber of Marine Industries of Sri Lanka is charting a course for a USD 2 billion maritime economy, solidifying Sri Lanka’s position as a premier maritime hub in the Indian Ocean.
+            </p>
+          </div>
           <Swiper :sliderContent="boat" :defaultRoute="sliderContentURL"/>
 
         </div>
@@ -206,6 +206,13 @@ const retrieveFromLocalStorage = () => {
   </script>
 
   <style scoped>
+
+.content-box {
+  background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
+  border-radius: 10px; /* Optional: smooth corners */
+  padding: 20px; /* Add padding inside */
+}
+
   .popup {
     font-family: Arial, sans-serif;
   }

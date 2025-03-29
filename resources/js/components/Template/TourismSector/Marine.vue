@@ -4,17 +4,17 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
-          
-          <h1 class="text-white ">MARINE INDUSTRIES</h1>
-          <!-- <h4 class="text-white fw-light opacity-5 merienda">
-            -----------------
-          </h4> -->
-          
-          <p class=" text-white  text-600 opacity-10">
-            Sri Lanka’s marine industries are rapidly becoming a cornerstone of its economy, benefiting from the country's strategic location along key global trade routes and its large number of marine resources. As the nation continues to develop its blue economy, various sectors within the marine industry are experiencing significant growth, supported by government initiatives, innovation, and rising global demand. From fish processing to ship repairs and maritime logistics, these industries are creating new opportunities for economic development, job creation, and sustainable practices.
+          <div class="content-box p-4 mb-3">
+            <h1 class="text-white ">MARINE INDUSTRIES</h1>
+            <!-- <h4 class="text-white fw-light opacity-5 merienda">
+              -----------------
+            </h4> -->
+            
+            <p class=" text-white  text-600 opacity-10">
+              Sri Lanka’s marine industries are rapidly becoming a cornerstone of its economy, benefiting from the country's strategic location along key global trade routes and its large number of marine resources. As the nation continues to develop its blue economy, various sectors within the marine industry are experiencing significant growth, supported by government initiatives, innovation, and rising global demand. From fish processing to ship repairs and maritime logistics, these industries are creating new opportunities for economic development, job creation, and sustainable practices.
 
-          </p>
-
+            </p>
+          </div>
           <Swiper :sliderContent="marine" :defaultRoute="sliderContentURL"/>
 
         </div>
@@ -193,6 +193,12 @@ const retrieveFromLocalStorage = () => {
   </script>
   
   <style scoped>
+   .content-box {
+  background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
+  border-radius: 10px; /* Optional: smooth corners */
+  padding: 20px; /* Add padding inside */
+}
+
   .popup {
     font-family: Arial, sans-serif;
   }

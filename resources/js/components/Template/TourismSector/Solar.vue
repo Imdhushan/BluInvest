@@ -4,16 +4,18 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+          <div class="content-box p-4 mb-3">
 
-          <h1 class="text-white ">SUSTAINABLE ENERGY</h1>
-          <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka’s Renewable Energy Potential</h4>
+            <h1 class="text-white ">SUSTAINABLE ENERGY</h1>
+            <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka’s Renewable Energy Potential</h4>
 
-          <p class=" text-white  text-600 opacity-10">
+            <p class=" text-white  text-600 opacity-10 text-justify">
 
-            Sri Lanka is uniquely positioned to become a renewable energy powerhouse due to the island’s abundant solar irradiance and exceptional wind potential. With an average solar energy generation capacity of 4-6 kWh per square meter per day and vast coastal winds offering an estimated 56GW of offshore wind energy, the nation has the resources to efficiently transform its energy landscape. These renewable energy sources cater to domestic needs and hold the potential to supply power to neighbouring markets, driving regional collaboration in sustainable energy development.
+              Sri Lanka is uniquely positioned to become a renewable energy powerhouse due to the island’s abundant solar irradiance and exceptional wind potential. With an average solar energy generation capacity of 4-6 kWh per square meter per day and vast coastal winds offering an estimated 56GW of offshore wind energy, the nation has the resources to efficiently transform its energy landscape. These renewable energy sources cater to domestic needs and hold the potential to supply power to neighbouring markets, driving regional collaboration in sustainable energy development.
 
-          </p>
+            </p>
 
+          </div>
           <Swiper :sliderContent="enargy"/>
 
         </div>
@@ -191,6 +193,13 @@ const retrieveFromLocalStorage = () => {
   </script>
 
   <style scoped>
+
+.content-box {
+  background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
+  border-radius: 10px; /* Optional: smooth corners */
+  padding: 20px; /* Add padding inside */
+}
+
   .popup {
     font-family: Arial, sans-serif;
   }

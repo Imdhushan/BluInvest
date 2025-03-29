@@ -1,22 +1,23 @@
 <template>
   <section class="py-5 overflow-hidden light" id="banner">
-    <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/financ.jpeg);background-position: center bottom;"></div>
+    <div class="bg-holder overlay bg-holder-natural natural-overlay" style="background-image:url(/assets/img/coral.jpg);background-position: center bottom;"></div>
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
-          
-          <h1 class="text-white ">CONSERVATION</h1>
-          <h4 class="text-white fw-light opacity-5 merienda">
-            A Holistic Approach to Marine Sustainability
-          </h4>
-          
-          <p class=" text-white  text-600 opacity-10">
-           
-            Sri Lanka’s rich marine ecosystems, including coral reefs, mangroves, seagrass beds, and mudflats, offer significant opportunities for sustainable conservation initiatives. Focusing on restoring coral reefs, protecting vital mangrove forests, and supporting blue carbon projects in seagrass meadows and mudflats, you can foster biodiversity and enhance coastal resilience.
-          </p>
-            <p class=" text-white  text-600 opacity-10">
-A holistic, place-based approach — combining government efforts with private sector innovation — is key to scaling these conservation projects. Public-private partnerships can drive impactful actions such as pollution control, sustainable marine protected area management, and community-driven conservation strategies. Leveraging these marine assets ensures a sustainable future, where both ecosystems and local economies thrive, aligning with international sustainability goals and safeguarding Sri Lanka’s marine heritage for generations to come.
-          </p>
+          <div class="content-box p-4 mb-3">
+            <h1 class="text-white ">CONSERVATION</h1>
+            <h4 class="text-white fw-light opacity-5 ">
+              A Holistic Approach to Marine Sustainability
+            </h4>
+            
+            <p class=" text-white  text-600 opacity-10 text-justify">
+            
+              Sri Lanka’s rich marine ecosystems, including coral reefs, mangroves, seagrass beds, and mudflats, offer significant opportunities for sustainable conservation initiatives. Focusing on restoring coral reefs, protecting vital mangrove forests, and supporting blue carbon projects in seagrass meadows and mudflats, you can foster biodiversity and enhance coastal resilience.
+            </p>
+              <p class=" text-white  text-600 opacity-10 text-justify">
+  A holistic, place-based approach — combining government efforts with private sector innovation — is key to scaling these conservation projects. Public-private partnerships can drive impactful actions such as pollution control, sustainable marine protected area management, and community-driven conservation strategies. Leveraging these marine assets ensures a sustainable future, where both ecosystems and local economies thrive, aligning with international sustainability goals and safeguarding Sri Lanka’s marine heritage for generations to come.
+            </p>
+          </div>
 
           <Swiper :sliderContent="conservation" :defaultRoute="sliderContentURL"/>
 
@@ -212,6 +213,13 @@ const retrieveFromLocalStorage = () => {
   </script>
   
   <style scoped>
+
+.content-box {
+  background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
+  border-radius: 10px; /* Optional: smooth corners */
+  padding: 20px; /* Add padding inside */
+}
+
   .popup {
     font-family: Arial, sans-serif;
   }

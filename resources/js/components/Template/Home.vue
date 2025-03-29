@@ -1,6 +1,8 @@
 <template>
   <section class="py-7 overflow-hidden  light" style="background-color: #1A237E
 ">
+    <!-- <div class="bg-holder overlay " style="background-image:url(/assets/img/7512262_12032.jpg);background-position: center bottom;"></div> -->
+
     <div class="container">
       <div class="row flex-center">
         <div class="col-lg-7 col-md-12 col-sm-12 text-center text-xl-start mt-0 pt-0">
@@ -18,39 +20,39 @@
             <div class="row mx-n1">
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/tourism" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Test_1.png" alt="" />
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/malindabandaralk.jpg" alt="" />
                   <div class="overlay-text">Tourism</div>
                 </a>
               </div>
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/boat" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Boat_new.png" alt="" />
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/Boat_new.png" alt="" />
                   <div class="overlay-text">Boat Building</div>
                 </a>
               </div>
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/conservation" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/financ_new.png" alt="" />
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/coral.jpg" alt="" />
                   <div class="overlay-text">Conservation</div>
 
                 </a>
               </div>
               
               <div class="col-4 p-1">
-                <a class="post1 hover-effect" href="/tourismsector/wind" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Wind_new.png" alt="" />
+                <a class="post1 hover-effect" href="/tourismsector/energy" data-gallery="gallery-1">
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/Wind_new.png" alt="" />
                   <div class="overlay-text">Wind Energy</div>
                 </a>
               </div>
               <div class="col-4 p-1">
-                <a class="post1 hover-effect" href="/tourismsector/solar" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Solar_new.png" alt="" />
+                <a class="post1 hover-effect" href="/tourismsector/energy" data-gallery="gallery-1">
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/solar-panes-sri-lanka.jpg" alt="" />
                   <div class="overlay-text">Solar Energy</div>
                 </a>
               </div>
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/marine" data-gallery="gallery-1">
-                  <img class="img-fluid rounded" src="/assets/img/Marine.png" alt="" />
+                  <img class="img-fluid rounded fixed-height" src="/assets/img/pexels-tomfisk-4603274.jpg" alt="" />
                   <div class="overlay-text">Marine Industries</div>
 
                 </a>
@@ -283,6 +285,12 @@ onMounted(() => {
 </script>
 
 <style scoped>
+
+.fixed-height {
+  height: 130px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures image fits inside without distortion */
+  width: 100%; /* Makes sure images fill the column width */
+}
 
 .hover-effect {
   position: relative;

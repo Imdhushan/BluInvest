@@ -260,6 +260,10 @@ onMounted(() => {
 </template>
 
 <style>
+.navbar {
+  background-color: #0b1727 !important; /* Change this to your preferred color */
+}
+
 /* Add any custom styles here */
 .philosopher-regular {
   font-family: "Philosopher", sans-serif;

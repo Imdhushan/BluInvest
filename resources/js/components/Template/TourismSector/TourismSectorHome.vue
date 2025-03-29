@@ -4,17 +4,18 @@
     <div class="container">
       <div class="row flex-center">
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
+          <div class="content-box p-4 mb-3">
+            <h1 class="text-white ">TOURISM</h1>
+            <h4 class="text-white fw-light opacity-5 ">Sri Lanka: A Timeless Paradise for Every Traveller</h4>
+            <h4  class="text-white  ">Ayubowan!</h4>
 
-          <h1 class="text-white ">TOURISM</h1>
-          <h4 class="text-white fw-light opacity-5 merienda">Sri Lanka: A Timeless Paradise for Every Traveller</h4>
-          <h4  class="text-white  merienda">Ayubowan!</h4>
+            <p class=" text-white  text-600 opacity-10 text-justify">
 
-          <p class=" text-white  text-600 opacity-10">
-
-            Sri Lanka, the Pearl of the Indian Ocean, is a traveller's dream — a fascinating fusion of rich cultural heritage, natural wonders, warm hospitality, and exciting investing potential. From golden beaches to misty mountains, bustling cities to serene villages, this tropical paradise offers experiences that stay etched in your memory! Explore what makes Sri Lanka the perfect destination for exploration, relaxation, and opportunities beyond the ordinary!
+              Sri Lanka, the Pearl of the Indian Ocean, is a traveller's dream — a fascinating fusion of rich cultural heritage, natural wonders, warm hospitality, and exciting investing potential. From golden beaches to misty mountains, bustling cities to serene villages, this tropical paradise offers experiences that stay etched in your memory! Explore what makes Sri Lanka the perfect destination for exploration, relaxation, and opportunities beyond the ordinary!
 
 
-          </p>
+            </p>
+          </div>
 
           <Swiper :sliderContent="tourism"/>
 
@@ -228,6 +229,12 @@ const retrieveFromLocalStorage = (eventData) => {
   </script>
 
   <style scoped>
+  .content-box {
+  background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
+  border-radius: 10px; /* Optional: smooth corners */
+  padding: 20px; /* Add padding inside */
+}
+
   .popup {
     font-family: Arial, sans-serif;
   }
