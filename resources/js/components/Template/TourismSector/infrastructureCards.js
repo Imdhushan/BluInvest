@@ -7,32 +7,36 @@ const infrastructureSectionsData = [
   {
     title: "What kind of facilities do you need in the area",
     cards: [
-    { text: "Proximity to the main road ", dynamicInputs: [ 
-      { type: "checkbox", label: "0m - 200m", value: false,attribute: 'Main_road' },
-       { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'Main_road'}, 
-       { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'Main_road'}, 
-       { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'Main_road'} ] },
+    { text: "Proximity to the main road ", dynamicInputs: [
+      { type: "checkbox", label: "0m - 200m", value: false,attribute: 'MR_200m' },
+       { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'MR_400m'},
+       { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'MR_600m'},
+       { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'MR_800m'} ] },
 
-    { text: "Proximity to secondary roads", dynamicInputs: [ 
-      { type: "checkbox", label: "0m - 200m", value: false ,attribute: 'Se_raod' },
-       { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'Se_raod' }, 
-       { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'Se_raod' }, 
-       { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'Se_raod' } ] },
+    { text: "Proximity to secondary roads", dynamicInputs: [
+      { type: "checkbox", label: "0m - 200m", value: false ,attribute: 'SR_200m' },
+       { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'SR_400m' },
+       { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'SR_600m' },
+       { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'SR_800m' } ] },
 
-    { text: "Proximity to a track", dynamicInputs: [ 
-      { type: "checkbox", label: "0m - 200m", value: false ,attribute: 'By_raod' },
-       { type: "checkbox", label: "200m - 400m", value: false,attribute: 'By_raod' }, 
-       { type: "checkbox", label: "400m - 600m", value: false,attribute: 'By_raod' },
-        { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'By_raod'} ] },
+    { text: "Proximity to a track", dynamicInputs: [
+      { type: "checkbox", label: "0m - 200m", value: false  },
+       { type: "checkbox", label: "200m - 400m", value: false },
+       { type: "checkbox", label: "400m - 600m", value: false },
+        { type: "checkbox", label: "600m - 800m", value: false } ] },
 
       { text: "Proximity to a highway",
        dynamicInputs:
-        [ { type: "checkbox", label: "0m - 200m", value: false,attribute: 'Highway' }, 
-        { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'Highway'},
-         { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'Highway'}, 
-         { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'Highway'} 
+        [ { type: "checkbox", label: "0km - 2.5km", value: false,attribute: 'HW_2_5km' },
+        { type: "checkbox", label: "2.5km - 5km", value: false ,attribute: 'HW_5km'},
+         { type: "checkbox", label: "5km - 7.5km", value: false ,attribute: 'HW_7_5km'},
+         { type: "checkbox", label: "7.5km - 10km", value: false ,attribute: 'HW_10km'}
         ] },
-  { text: "Proximity to a railway", dynamicInputs: [ { type: "checkbox", label: "0m - 200m", value: false,attribute:'Railway' }, { type: "checkbox", label: "200m - 400m", value: false }, { type: "checkbox", label: "400m - 600m", value: false }, { type: "checkbox", label: "600m - 800m", value: false } ] }
+  { text: "Proximity to a railway", dynamicInputs: [
+      { type: "checkbox", label: "0km - 2.5km", value: false,attribute:'RS_2_5km' },
+      { type: "checkbox", label: "2.5km - 5km", value: false,attribute:'RS_5km' },
+      { type: "checkbox", label: "5km - 7.5km", value: false,attribute:'RS_7_5km' },
+      { type: "checkbox", label: "7.5km - 10km", value: false,attribute:'RS_10km' } ] }
 
     ],
   },
@@ -44,32 +48,32 @@ const infrastructureSectionsData = [
   {
     title: "Do you require accomodation facilities in the area",
     cards: [
-    { text: " ", dynamicInputs: [ { type: "checkbox", label: "Classified Hotels( 1-5 Star)", value: false,attribute: 'Sta_Hot' }, 
-      { type: "checkbox", label: "Tourist Hotels", value: false ,attribute: 'Tou_hot'}, 
-      { type: "checkbox", label: "Boutique Hotels & Villas", value: false,attribute: 'Bou_hot'}, 
+    { text: " ", dynamicInputs: [ { type: "checkbox", label: "Classified Hotels( 1-5 Star)", value: false,attribute: 'Sta_Hot' },
+      { type: "checkbox", label: "Tourist Hotels", value: false ,attribute: 'Tou_hot'},
+      { type: "checkbox", label: "Boutique Hotels & Villas", value: false,attribute: 'Bou_hot'},
       { type: "checkbox", label: "Guest Houses", value: false,attribute: 'Gue_hou' },
-       { type: "checkbox", label: "Bungalows", value: false,attribute: 'Bangalo' }, 
+       { type: "checkbox", label: "Bungalows", value: false,attribute: 'Bangalo' },
       { type: "checkbox", label: "Home Stay Units", value: false ,attribute: 'Home_st'} ] }
     ],
   },
-  
+
   {
     title: "Do you need security and life saving services in the area",
     cards: [
-      { 
+      {
         text: " ",
         dynamicInputs: [
           { type: "checkbox", label: "Locations of Police Marine Units", value: false, attribute: 'Po_ma_un' },
           { type: "checkbox", label: "Locations of Tourist Police Units", value: false, attribute: 'To_po_un' },
           { type: "checkbox", label: "Police Life Saving Units", value: false, attribute: 'Po_li_Sa_un' }
-        ] 
+        ]
       }
     ],
   },
   {
     title: "Do you need schools/hospitals/banks near your location",
     cards: [
-      { 
+      {
         text: " ",
         dynamicInputs: [
           { type: "checkbox", label: "Proximity to school", value: false, attribute: 'School' },
@@ -82,8 +86,8 @@ const infrastructureSectionsData = [
   {
     title: "Are you looking for certain types of land based on their uses",
     cards: [
-      { 
-        text: "​", 
+      {
+        text: "​",
         dynamicInputs: [
           { type: "checkbox", label: "Agricultural land​", value: false, attribute: 'Ag_land' },
           { type: "checkbox", label: "Built Up Area​", value: false, attribute: 'Bu_up_a' },
@@ -100,8 +104,8 @@ const infrastructureSectionsData = [
   {
     title: "Select the wind speed in your preferred location if applicable",
     cards: [
-      { 
-        text: "​", 
+      {
+        text: "​",
         dynamicInputs: [
           { type: "checkbox", label: "High area ​", value: false, attribute: 'High_area' },
           { type: "checkbox", label: "Moderate area​", value: false, attribute: 'Moderate_area' },
@@ -124,24 +128,24 @@ const infrastructureSectionsData = [
     title: "Select the annual rainfall in your prefered location if applicable",
     cards: [
       { text: "​", dynamicInputs: [
-        { type: "checkbox", label: "> 2500 mm​", value: false },
-        { type: "checkbox", label: "1750 mm - 2500 mm​", value: false },
-        { type: "checkbox", label: "< 2500 mm​", value: false },
+        { type: "checkbox", label: "> 2500 mm​", value: false,attribute: 'Rainfall' },
+        { type: "checkbox", label: "1750 mm - 2500 mm​", value: false,attribute: 'Rainfall' },
+        { type: "checkbox", label: "< 2500 mm​", value: false,attribute: 'Rainfall' },
       ] }
-    
+
     ],
   },
   {
     title: "Do you want a location that is near the coast",
     cards: [
       { text: " ​", dynamicInputs: [
-        { type: "checkbox", label: "0m - 200m", value: false,attribute: '0_200' },
-        { type: "checkbox", label: "200m - 400m", value: false,attribute: '200_400' },
-        { type: "checkbox", label: "400m - 600m", value: false,attribute: '400_600' },
-        { type: "checkbox", label: "600m - 800m", value: false,attribute: '600_800' },
-        { type: "checkbox", label: "800m - 1000m", value: false,attribute: '800_1000' },
+        { type: "checkbox", label: "0m - 200m", value: false,attribute: 'C_0_200' },
+        { type: "checkbox", label: "200m - 400m", value: false,attribute: 'C_200_400' },
+        { type: "checkbox", label: "400m - 600m", value: false,attribute: 'C_400_600' },
+        { type: "checkbox", label: "600m - 800m", value: false,attribute: 'C_600_800' },
+        { type: "checkbox", label: "800m - 1000m", value: false,attribute: 'C_800_1000' },
       ]}
-    
+
     ],
   },
   {
@@ -154,7 +158,7 @@ const infrastructureSectionsData = [
           { type: "checkbox", label: "Proximity to Environmentally Sensitive Areas", value: false,attribute: 'ESA' },
           { type: "checkbox", label: "Proximity to Mangrove Forests", value: false,attribute: 'Mangrove' },
         ]        }
-    
+
     ],
   },
   {
@@ -178,7 +182,7 @@ const infrastructureSectionsData = [
           { type: "checkbox", label: "Beach area", value: false ,attribute: 'Beach_a'},
 
         ]        }
-    
+
     ],
   },
   {
@@ -187,15 +191,15 @@ const infrastructureSectionsData = [
       {
         text: " ", dynamicInputs: [
           { type: "checkbox", label: "Proximity to Terrestrial / Coastal Archeological Sites", value: false,attribute: 'Ar_Sites' },
-         
+
 
         ]        }
-    
+
     ],
   },
-  
-  
-  
+
+
+
 ];
 
 
