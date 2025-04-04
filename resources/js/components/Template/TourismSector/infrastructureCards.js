@@ -20,17 +20,17 @@ const infrastructureSectionsData = [
        { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'SR_800m' } ] },
 
     { text: "Proximity to a track", dynamicInputs: [
-      { type: "checkbox", label: "0m - 200m", value: false  },
-       { type: "checkbox", label: "200m - 400m", value: false },
-       { type: "checkbox", label: "400m - 600m", value: false },
-        { type: "checkbox", label: "600m - 800m", value: false } ] },
+      { type: "checkbox", label: "0m - 200m", value: false ,attribute: 'IGNORE_1' },
+       { type: "checkbox", label: "200m - 400m", value: false ,attribute: 'IGNORE_2'},
+       { type: "checkbox", label: "400m - 600m", value: false ,attribute: 'IGNORE_3'},
+        { type: "checkbox", label: "600m - 800m", value: false ,attribute: 'IGNORE_4'} ] },
 
       { text: "Proximity to a highway",
        dynamicInputs:
         [ { type: "checkbox", label: "0km - 2.5km", value: false,attribute: 'HW_2_5km' },
         { type: "checkbox", label: "2.5km - 5km", value: false ,attribute: 'HW_5km'},
          { type: "checkbox", label: "5km - 7.5km", value: false ,attribute: 'HW_7_5km'},
-         { type: "checkbox", label: "7.5km - 10km", value: false ,attribute: 'HW_10km'}
+         { type: "checkbox", label: "7.5km - 10km", value: false ,attribute: 'IGNORE_12'}
         ] },
   { text: "Proximity to a railway", dynamicInputs: [
       { type: "checkbox", label: "0km - 2.5km", value: false,attribute:'RS_2_5km' },
@@ -65,7 +65,7 @@ const infrastructureSectionsData = [
         dynamicInputs: [
           { type: "checkbox", label: "Locations of Police Marine Units", value: false, attribute: 'Po_ma_un' },
           { type: "checkbox", label: "Locations of Tourist Police Units", value: false, attribute: 'To_po_un' },
-          { type: "checkbox", label: "Police Life Saving Units", value: false, attribute: 'Po_li_Sa_un' }
+          { type: "checkbox", label: "Police Life Saving Units", value: false, attribute: 'IGNORE_11' }
         ]
       }
     ],
@@ -107,8 +107,8 @@ const infrastructureSectionsData = [
       {
         text: "​",
         dynamicInputs: [
-          { type: "checkbox", label: "High area ​", value: false, attribute: 'High_area' },
-          { type: "checkbox", label: "Moderate area​", value: false, attribute: 'Moderate_area' },
+          { type: "checkbox", label: "High area ​", value: false, attribute: 'IGNORE_5' },
+          { type: "checkbox", label: "Moderate area​", value: false, attribute: 'IGNORE_6' },
         ]
       }
     ]
@@ -128,9 +128,9 @@ const infrastructureSectionsData = [
     title: "Select the annual rainfall in your prefered location if applicable",
     cards: [
       { text: "​", dynamicInputs: [
-        { type: "checkbox", label: "> 2500 mm​", value: false,attribute: 'Rainfall' },
-        { type: "checkbox", label: "1750 mm - 2500 mm​", value: false,attribute: 'Rainfall' },
-        { type: "checkbox", label: "< 2500 mm​", value: false,attribute: 'Rainfall' },
+        { type: "checkbox", label: "> 2500 mm​", value: false,attribute: 'IGNORE_7' },
+        { type: "checkbox", label: "1750 mm - 2500 mm​", value: false,attribute: 'IGNORE_8' },
+        { type: "checkbox", label: "< 2500 mm​", value: false,attribute: 'IGNORE_9' },
       ] }
 
     ],

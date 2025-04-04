@@ -26,7 +26,7 @@
                 <input
                     type="checkbox"
                     :id="`${input.label}-${cardIndex}-${inputIndex}`"
-                    :checked="selectedAttributes.has(input.attribute)"
+                    :checked="input.attribute ? selectedAttributes.has(input.attribute) : false"
                     @change="handleCheckboxChange(input.attribute, $event.target.checked)"
                     class="form-check-input"
                 />
@@ -34,7 +34,7 @@
                     :for="`${input.label}-${cardIndex}-${inputIndex}`"
                     class="form-check-label text-white"
                 >
-                  {{ input.label }}
+                  {{ input.label  }}
                 </label>
               </div>
               <hr class="text-white opacity-70" />
@@ -105,6 +105,7 @@ const totalSections = computed(() => props.sections.length);
 
 // Checkbox Handler
 const handleCheckboxChange = (attribute, isSelected) => {
+  if (!attribute) return; // skip if attribute is undefined
   if (isSelected) {
     selectedAttributes.value.add(attribute);
   } else {
@@ -127,10 +128,13 @@ const prevSections = () => {
 
 // Process Done
 const handleDone = () => {
-  const eventData = [...selectedAttributes.value].map(attribute => ({
-    attribute,
-    value: 1
-  }));
+  const eventData = [...selectedAttributes.value]
+      .filter(attribute => attribute !== undefined) // ignore undefined attributes
+      .filter(attribute => attribute && !attribute.includes('IGNORE_'))
+      .map(attribute => ({
+        attribute,
+        value: 1
+      }));
 
   emit("process-complete", eventData);
   console.log("Processed selections:", eventData);

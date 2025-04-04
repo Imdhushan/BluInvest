@@ -7,7 +7,7 @@
     </div>
 
     <!-- Progress Bar -->
-    <div v-if="loadingProgress > 0" class="progress-container">
+    <div  class="progress-container">
       <div class="progress-bar" :style="{ width: loadingProgress + '%' }"></div>
     </div>
 
@@ -23,6 +23,8 @@ import {attributeMappings} from "../../composables/map/attributeMapping";
 const map = ref(null);
 const wfsLargeLayerGroup = L.layerGroup(); // Layer for large-scale (zoomed-out) data
 const wfsDetailedLayerGroup = L.layerGroup(); // Layer for detailed data
+const hasLoadedOnce = ref(false);
+const LoadingSpinner = ref(null);
 const $loading = inject('$loading');
 
 
@@ -134,12 +136,16 @@ const fetchTourismLarge = () => {
 
         wfsLargeLayerGroup.addLayer(queryLayer);
         stopLoading(interval);
-
+        if(LoadingSpinner.value){
+          LoadingSpinner.value.hide();
+        }
       })
       .catch(error => {
         console.error('Error querying tourism features:', error);
         stopLoading(interval);
-
+        if(LoadingSpinner.value){
+          LoadingSpinner.value.hide();
+        }
       });
 };
 
@@ -202,12 +208,16 @@ const fetchTourismDetailed = () => {
 
         wfsDetailedLayerGroup.addLayer(queryLayer);
         stopLoading(interval);
-
+        if(LoadingSpinner.value){
+          LoadingSpinner.value.hide();
+        }
       })
       .catch(error => {
         console.error('Error querying tourism features:', error);
         stopLoading(interval);
-
+        if(LoadingSpinner.value){
+          LoadingSpinner.value.hide();
+        }
       });
 };
 
@@ -274,6 +284,10 @@ onMounted(() => {
 // Watch filters and update detailed query
 watch(() => props.filters, (data) => {
   if (data) {
+    if (!hasLoadedOnce.value) {
+     LoadingSpinner.value = $loading.show(); // Only for initial load
+      // hasLoadedOnce.value = true;
+    }
     if (map.value.getZoom() >= zoomThreshold) {
       fetchTourismDetailed();
     }else{
