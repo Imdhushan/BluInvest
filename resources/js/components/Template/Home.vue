@@ -8,12 +8,12 @@
         <div class="col-lg-7 col-md-12 col-sm-12 text-center text-xl-start mt-0 pt-0">
           <!-- <h5 class="text-white fw-light opacity-5 merienda">Welcome to Sri Lanka</h5> -->
           <h4 class="text-white fw-light text-justify">Invest in Sri Lanka's Blue Economy!</h4>
-          <!-- <p class="text-white">Explore what awaits you with BluInvest</p> --> 
+          <!-- <p class="text-white">Explore what awaits you with BluInvest</p> -->
           <p class="text-white text-justify">
             Join BluInvest and make a positive impact while securing your investment! Be part of an initiative dedicated to maximising your business potential by leveraging Sri Lanka's marine frontier. Explore BluInvest—an Interactive investment opportunity mapping tool—to discover prime locations for
             <a href="/tourismsector/tourism"  class="text-white  text-decoration-none"> tourism </a>,
             <a href="/tourismsector/boat" class="text-white  text-decoration-none"> boat building</a>,
-              <a href="/tourismsector/conservation" class="text-white  text-decoration-none">  conservation</a>, 
+              <a href="/tourismsector/conservation" class="text-white  text-decoration-none">  conservation</a>,
                and other high-growth marine sectors with promising returns.</p>
               <p class="text-white text-justify">Invest in a thriving blue economy and pave the way for both business success and a healthier planet.</p>
           <div>
@@ -37,7 +37,7 @@
 
                 </a>
               </div>
-              
+
               <div class="col-4 p-1">
                 <a class="post1 hover-effect" href="/tourismsector/energy" data-gallery="gallery-1">
                   <img class="img-fluid rounded fixed-height" src="/assets/img/Wind_new.png" alt="" />
@@ -57,12 +57,12 @@
 
                 </a>
               </div>
-             
+
             </div>
           </div>
 
           <!-- <div class="row flex-center align-items-stretch">
-            
+
             <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 d-flex flex-column">
               <div class="row flex-grow-1">
                 <div class="col-12 p-1 position-relative" style="background-color: white;">
@@ -97,7 +97,7 @@
               </div>
             </div>
 
-            
+
             <div class="col-xl-7 col-lg-9 col-md-12 col-sm-12 d-flex flex-column">
               <div class="row flex-grow-1">
                 <div class="col-12 p-1 position-relative" style="background-color: white;">
@@ -119,7 +119,7 @@
           </div>
 
           <div class="row flex-center align-items-stretch">
-           
+
             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 d-flex flex-column p-1 position-relative" style="background-color: white;">
               <img class="img-fluid h-100 w-100 object-cover" src="/assets/img/solor.jpeg" alt="" />
               <div class="hover-overlay">
@@ -161,7 +161,7 @@
               </div>
             </div>
           </div> -->
-          
+
         </div>
 
         <div class="col-lg-5 col-md-12 col-sm-12">
@@ -170,7 +170,7 @@
       </div>
     </div>
   </section>
-<!-- 
+<!--
   <section class="light bg-dark">
     <div class="bg-holder overlay" style="background-image:url(/assets/img/generic/bg-2.jpg);background-position: center top;">
     </div>
@@ -194,6 +194,76 @@ import CardIconStat from "../bootstrap/CardIconStat.vue";
 import CardBody from "../bootstrap/CardBody.vue";
 import Card from "../bootstrap/Card.vue";
 import CardStat from "../bootstrap/CardStat.vue";
+import {useHead} from "@vueuse/head";
+
+
+
+useHead({
+  title: "Investment Opportunities Sri Lanka | BluInvest | UNDP Sri Lanka",
+  meta: [
+    {
+      name: "description",
+      content: "Tap into Sri Lanka's thriving blue economy using BluInvest, a powerful tool that enables you to explore rewarding investment opportunities in Sri Lanka."
+    },
+    {
+      name: "keywords",
+      content: "Investment Opportunities Sri Lanka"
+    },
+    // Open Graph/Facebook Meta Tags
+    {
+      property: "og:title",
+      content: "Investment Opportunities Sri Lanka | BluInvest | UNDP Sri Lanka"
+    },
+    {
+      property: "og:description",
+      content: "Tap into Sri Lanka's thriving blue economy using BluInvest, a powerful tool that enables you to explore rewarding investment opportunities in Sri Lanka."
+    },
+    {
+      property: "og:url",
+      content: "https://blu.gsentry.cloud/"
+    },
+    {
+      property: "og:type",
+      content: "website"
+    },
+    // Twitter Meta Tags
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:title",
+      content: "Investment Opportunities Sri Lanka | BluInvest | UNDP Sri Lanka"
+    },
+    {
+      name: "twitter:description",
+      content: "Tap into Sri Lanka's thriving blue economy using BluInvest, a powerful tool that enables you to explore rewarding investment opportunities in Sri Lanka."
+    }
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "https://blu.gsentry.cloud/"
+    }
+  ],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BluInvest",
+        "url": "https://blu.gsentry.cloud/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://blu.gsentry.cloud/search?q={search_term}",
+          "query-input": "required name=search_term"
+        }
+      })
+    }
+  ]
+})
+
 
 const user = JSON.parse(localStorage.getItem('user'));
 
@@ -305,7 +375,7 @@ onMounted(() => {
 .hover-effect:hover img {
   transform: scale(1.1);
 }
-/* 
+/*
 .overlay-text {
   position: absolute;
   bottom: 0;

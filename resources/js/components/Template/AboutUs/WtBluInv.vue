@@ -5,18 +5,18 @@
       <div class="row flex-center pt-8 pt-lg-10 pb-lg-9 pb-xl-0">
         <div class="col-md-12 col-lg-12 col-xl-8 pb-7 pb-xl-9">
           <h2 class="fs-3 text-primary">Welcome to Our Services</h2>
-  
+
         </div>
       </div>
     </div> -->
-    
+
   </section>
 
   <section style="background-color: #ffff">
     <div class="container">
       <div class="row justify-content-center text-justify">
         <div class="col-lg-10 col-xl-9 col-xxl-8">
-         
+
 
           <h1 class="fs-2 fs-sm-4 fs-md-5" style="color:#0b1727">About BluInvest</h1>
 
@@ -26,9 +26,9 @@
 
            <p style="color:#0b1727">
 
-            Guided by the National Physical Planning Policy – 2048, this process involved multi-sectoral collaboration, with over 50 agencies pooling data and insights. A Strategic Environment Assessment 
-            (SEA) framework was used to identify key areas for investment, 
-            address environmental conflicts, and integrate disaster risk reduction 
+            Guided by the National Physical Planning Policy – 2048, this process involved multi-sectoral collaboration, with over 50 agencies pooling data and insights. A Strategic Environment Assessment
+            (SEA) framework was used to identify key areas for investment,
+            address environmental conflicts, and integrate disaster risk reduction
             and conservation measures from the start.
           </p>
             <p style="color:#0b1727">
@@ -46,7 +46,7 @@
           </div> -->
 
 
-          
+
 
         </div>
       </div>
@@ -57,7 +57,54 @@
 import { ref, computed } from 'vue';
 import Swiper from '../../bootstrap/Swiper.vue';
 import boat from '../SwiperContent/aboutusimg.json';
+import {useHead} from "@vueuse/head";
 
+// ===== Meta Tags =====
+useHead({
+  title: "Investments in Sri Lanka | UNDP Sri Lanka | About BluInvest",
+  meta: [
+    {
+      name: "description",
+      content: "Our Tool empowers sustainable investments in Sri Lanka by mapping key coastal and marine areas while paving the way for a healthier planet."
+    },
+    {
+      name: "keywords",
+      content: "Investments in Sri Lanka"
+    },
+    // Open Graph (Facebook/LinkedIn)
+    {
+      property: "og:title",
+      content: "Investments in Sri Lanka | UNDP Sri Lanka | About BluInvest"
+    },
+    {
+      property: "og:description",
+      content: "Our Tool empowers sustainable investments in Sri Lanka by mapping key coastal and marine areas while paving the way for a healthier planet."
+    },
+    {
+      property: "og:url",
+      content: "https://blu.gsentry.cloud/tourismsector/aboutbluinvest"
+    },
+    {
+      property: "og:type",
+      content: "website"
+    },
+    // Twitter
+    {
+      name: "twitter:card",
+      content: "summary_large_image"
+    },
+    {
+      name: "twitter:title",
+      content: "Investments in Sri Lanka | About BluInvest"
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: "https://blu.gsentry.cloud/tourismsector/aboutbluinvest"
+    }
+  ]
+});
 
 const sections = ref([
   {
@@ -80,7 +127,7 @@ const sections = ref([
     content:
       "As a major transshipment hub, Sri Lanka's maritime logistics industry is integral to global trade. Its strategic location at the crossroads of East-West shipping routes ensures efficient cargo handling, contributing significantly to the nation's GDP and supporting the growth of international supply chains.",
   },
-  
+
 ]);
 
 </script>

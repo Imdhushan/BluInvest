@@ -82,6 +82,7 @@
         "@vue/compiler-sfc": "^3.3.4",
         "@vuepic/vue-datepicker": "^7.2.1",
         "@vueup/vue-quill": "^1.2.0",
+        "@vueuse/head": "^2.0.0",
         "apexcharts": "^3.44.0",
         "axios": "^1.6.0",
         "bootstrap": "^5.3.3",

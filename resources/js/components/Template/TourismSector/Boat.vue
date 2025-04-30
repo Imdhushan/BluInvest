@@ -119,14 +119,72 @@
   import Swiper from '../../bootstrap/Swiper.vue';
   import boat from '../SwiperContent/boat.json';
   import boatRegulation from '../SwiperContent/boatRegulation.json';
-  
-  const sliderContentURL="/tourismsector/event-boat"; 
+  import {useHead} from "@vueuse/head";
+
+  const sliderContentURL="/tourismsector/event-boat";
 
   const defaultRoute ="/regulation/boat";
 
-const filters = ref([]);
+  const filters = ref([]);
 
-
+  useHead({
+    title: "Boat Building Industry Sri Lanka | Yachting, Cruises, Sailing in Sri Lanka",
+    meta: [
+      {
+        name: "description",
+        content: "Invest in the boat building industry in Sri Lanka, a growing sector with strong exports and opportunities in the global yacht and marine tourism markets."
+      },
+      {
+        name: "keywords",
+        content: "Boat Building Industry Sri Lanka"
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: "Boat Building Industry Sri Lanka | Yachting, Cruises, Sailing in Sri Lanka"
+      },
+      {
+        property: "og:description",
+        content: "Invest in Sri Lanka's growing boat building sector with strong export potential in global yacht and marine tourism markets."
+      },
+      {
+        property: "og:url",
+        content: "https://blu.gsentry.cloud/tourismsector/boat"
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:title",
+        content: "Boat Building Industry | Sri Lanka Marine Investments"
+      },
+      // Additional SEO meta
+      {
+        name: "robots",
+        content: "index, follow"
+      }
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://blu.gsentry.cloud/tourismsector/boat"
+      }
+    ],
+    script: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Boat Building Industry Sri Lanka",
+          "description": "Investment opportunities in Sri Lanka's boat building and marine tourism sector",
+          "url": "https://blu.gsentry.cloud/tourismsector/boat"
+        })
+      }
+    ]
+  });
 const retrieveFromLocalStorage = () => {
   filters.value =  [
     { attribute: 'Beach_a', value: '1' }, // Beaches

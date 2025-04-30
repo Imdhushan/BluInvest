@@ -12,18 +12,18 @@
           </div>
         </div>
       </section>
-    
-    
+
+
         <section style="background-color: #ffff">
-    
+
     <div class="container">
       <div class="row justify-content-center text-left">
         <div class="col-lg-9 col-xl-8 col-xxl-7">
           <h1 class="fs-2 fs-sm-4 fs-md-5">How to use BluInvest</h1>
           <p class="lead">
-    
+
             Here are a few guidelines to help you find your way to places of interest for your investments.
-    
+
             </p>
             <ol class="lead">
               <li><strong>Click on an investment area that interests you</strong></li>
@@ -32,24 +32,24 @@
               <br/>
               <li><strong>This will take you to a questionnaire</strong></li>
               <br/>
-              <p>Please select your preferred options for Infrastructure, Natural Resources and land Use, Natural Environment and Biodiversity, 
+              <p>Please select your preferred options for Infrastructure, Natural Resources and land Use, Natural Environment and Biodiversity,
                 Biodiversity and recreation, and Marine Archeology.</p>
                 <br/>
                 <li><strong>Optimal locations will be generated</strong></li>
                 <br/>
-                <p>Once the questionnaire is completed, our GIS tool will generate the ideal 
+                <p>Once the questionnaire is completed, our GIS tool will generate the ideal
                   locations for your blue business venture. </p>
                   <br/>
                 <li><strong>Zoom in on suggested locations</strong></li>
                 <br/>
-                <p>Zoom in on these locations to learn more about the 
+                <p>Zoom in on these locations to learn more about the
                   availability and feasibility of your preferred investment
                    idea in a select location.</p>
                    <br/>
                 <li><strong>Learn about the corresponding
                    rules, laws & regulations for your investment</strong></li>
                    <br/>
-                <p>Next, take a look at the comprehensive regulatory framework for 
+                <p>Next, take a look at the comprehensive regulatory framework for
                   investments in Sri Lanka.</p>
                   <br/>
             </ol>
@@ -64,24 +64,69 @@
             <p>Tel :(+94) 11 244 80 63</p>
             <p>Tel :(+94) 11 243 16 20</p>
 
-    
+
         </div>
       </div>
-      
+
     </div>
     <!-- end of .container-->
-    
+
     </section>
-     
-      
-       
-      
-      
+
+
+
+
+
       </template>
-      
+
       <script setup>
       import { ref, computed } from 'vue';
-      
+      import {useHead} from "@vueuse/head";
+
+
+      // ===== Meta Tags =====
+      useHead({
+        title: "Blue Economy in Sri Lanka | How To Use BluInvest",
+        meta: [
+          {
+            name: "description",
+            content: "Learn how to use our BluInvest tool to explore promising investment opportunities within the blue economy in Sri Lanka. Start your journey today."
+          },
+          {
+            name: "keywords",
+            content: "Blue Economy in Sri Lanka"
+          },
+          // Open Graph (Facebook/LinkedIn)
+          {
+            property: "og:title",
+            content: "Blue Economy in Sri Lanka | How To Use BluInvest"
+          },
+          {
+            property: "og:description",
+            content: "Learn how to use our BluInvest tool to explore promising investment opportunities within the blue economy in Sri Lanka."
+          },
+          {
+            property: "og:url",
+            content: "https://blu.gsentry.cloud/tourismsector/howtousebluinvest"
+          },
+          // Twitter
+          {
+            name: "twitter:card",
+            content: "summary_large_image"
+          },
+          {
+            name: "twitter:title",
+            content: "How To Use BluInvest | Blue Economy Sri Lanka"
+          },
+        ],
+        link: [
+          {
+            rel: "canonical",
+            href: "https://blu.gsentry.cloud/tourismsector/howtousebluinvest"
+          }
+        ]
+      });
+
       // const currentCard = ref(1); // Track the current card being shown
       // const cards = ref([
       //   {
@@ -103,44 +148,44 @@
       //     image: '/assets/img/icons/spot-illustrations/50.png'
       //   }
       // ]);
-      
+
       // // Computed property to filter the card to be shown
       // const filteredCards = computed(() => {
       //   return cards.value.filter((card, index) => currentCard.value === index + 1);
       // });
-      
+
       // // Function to go to the next card
       // const nextCard = () => {
       //   if (currentCard.value < cards.value.length) {
       //     currentCard.value++;
       //   }
       // };
-      
+
       // // Function to go to the previous card
       // const prevCard = () => {
       //   if (currentCard.value > 1) {
       //     currentCard.value--;
       //   }
       // };
-      
+
       // // Skip function (same as next in this case)
       // const skipCard = () => {
       //   nextCard();
       // };
-      
+
       // const cards = ref([
       //   { text: "Main road" },
       //   { text: "Secondary road" },
       //   { text: "Track" },
       //   { text: "Highway" },
       //   { text: "Railway station" },
-      
-      
+
+
       // ]);
-      
+
       const BiodiversityCards =  ref([
-        { 
-          text: "Natural Environment​​", 
+        {
+          text: "Natural Environment​​",
           dynamicInputs: [
             { type: "checkbox", label: "Agricultural land​", value: false },
             { type: "checkbox", label: "Built Up Area​", value: false },
@@ -152,8 +197,8 @@
             { type: "checkbox", label: "Rocky Area​", value: false },
           ]
         },
-        { 
-          text: "Marine biodiversity Watching areas​​", 
+        {
+          text: "Marine biodiversity Watching areas​​",
           dynamicInputs: [
             { type: "checkbox", label: "High area ​", value: false },
             { type: "checkbox", label: "Moderate area​", value: false },
@@ -168,14 +213,14 @@
             { type: "checkbox", label: "Near to Archeological sites​​​", value: false },
           ]
         }
-       
-        
+
+
       ]);
-      
-      
+
+
       const NaturalResousesCards = ref([
-        { 
-          text: "Land use​", 
+        {
+          text: "Land use​",
           dynamicInputs: [
             { type: "checkbox", label: "Agricultural land​", value: false },
             { type: "checkbox", label: "Built Up Area​", value: false },
@@ -187,8 +232,8 @@
             { type: "checkbox", label: "Rocky Area​", value: false },
           ]
         },
-        { 
-          text: "Wind speed (100m)​", 
+        {
+          text: "Wind speed (100m)​",
           dynamicInputs: [
             { type: "checkbox", label: "High area ​", value: false },
             { type: "checkbox", label: "Moderate area​", value: false },
@@ -211,14 +256,14 @@
             { type: "checkbox", label: "400m - 600m", value: false },
             { type: "checkbox", label: "600m - 800m", value: false },
           ]},
-        
+
       ]);
-      
-      
-      
+
+
+
       const cards = ref([
-        { 
-          text: "Main road", 
+        {
+          text: "Main road",
           dynamicInputs: [
             { type: "checkbox", label: "0m - 200m", value: false },
             { type: "checkbox", label: "200m - 400m", value: false },
@@ -226,8 +271,8 @@
             { type: "checkbox", label: "600m - 800m", value: false },
           ]
         },
-        { 
-          text: "Secondary road", 
+        {
+          text: "Secondary road",
           dynamicInputs: [
             { type: "checkbox", label: "0m - 200m", value: false },
             { type: "checkbox", label: "200m - 400m", value: false },
@@ -255,26 +300,26 @@
             { type: "checkbox", label: "400m - 600m", value: false },
             { type: "checkbox", label: "600m - 800m", value: false },
           ]},
-        
+
       ]);
-      
-      
+
+
       const Groundcards = ref([
-        { 
-          text: " ", 
+        {
+          text: " ",
           dynamicInputs: [
             { type: "checkbox", label: "Availability of groundwater", value: false },
-            
-            
+
+
           ]
         },
-       
-        
+
+
       ]);
-      
+
       const Accommodationcards = ref([
-        { 
-          text: " ", 
+        {
+          text: " ",
           dynamicInputs: [
             { type: "checkbox", label: "Classified Hotels( 1-5 Star)​", value: false },
             { type: "checkbox", label: "Tourist Hotels​", value: false },
@@ -282,27 +327,27 @@
             { type: "checkbox", label: "Guest Houses​", value: false },
             { type: "checkbox", label: "Bangalow's​​", value: false },
             { type: "checkbox", label: "Home Stay Units​", value: false },
-           
+
           ]
         },
-       
-        
+
+
       ]);
-      
-      
+
+
       // Initialize currentCard to start at the first card
       const currentCard = ref(1);
       const currentGroundWaterCard = ref(1);
       const currentAccommodationCard = ref(1);
       const naturalResousesCard = ref(1);
       const BiodiversityCard = ref(1);
-      
+
       const direction = ref('right');
       // Computed property to filter the card to be shown (optional)
       // const filteredCards = computed(() => {
       //   return cards.value.filter((card, index) => currentCard.value === index + 1);
       // });
-      
+
       // Function to go to the next card
       const nextCard = () => {
         if (currentCard.value < cards.value.length) {
@@ -310,7 +355,7 @@
           currentCard.value++;
         }
       };
-      
+
       // Function to go to the previous card
       const prevCard = () => {
         if (currentCard.value > 1) {
@@ -318,25 +363,25 @@
           currentCard.value--;
         }
       };
-      
+
       // Skip function (same as next in this case)
       const skipCard = () => {
         direction.value = 'fade';
         nextCard();
-      
+
         // if (currentCard.value < cards.value.length) {
         //   currentCard.value++;
         // }
-      
+
       };
-      
+
       const naturalnextCard = () => {
         if (naturalResousesCard.value < cards.value.length) {
           direction.value = 'right';
           naturalResousesCard.value++;
         }
       };
-      
+
       // Function to go to the previous card
       const naturalprevCard = () => {
         if (naturalResousesCard.value > 1) {
@@ -344,25 +389,25 @@
           naturalResousesCard.value--;
         }
       };
-      
+
       // Skip function (same as next in this case)
       const naturalskipCard = () => {
         direction.value = 'fade';
         naturalnextCard();
-      
+
         // if (currentCard.value < cards.value.length) {
         //   currentCard.value++;
         // }
-      
+
       };
-      
+
       const biodiversitynextCard = () => {
         if (BiodiversityCard.value < cards.value.length) {
           direction.value = 'right';
           BiodiversityCard.value++;
         }
       };
-      
+
       // Function to go to the previous card
       const biodiversityprevCard = () => {
         if (BiodiversityCard.value > 1) {
@@ -370,22 +415,22 @@
           BiodiversityCard.value--;
         }
       };
-      
+
       // Skip function (same as next in this case)
       const biodiversityskipCard = () => {
         direction.value = 'fade';
         biodiversitynextCard();
-      
+
         // if (currentCard.value < cards.value.length) {
         //   currentCard.value++;
         // }
-      
+
       };
-      
+
       </script>
-      
+
       <style scoped>
-      
+
       .right-enter-active, .right-leave-active {
         transition: transform 0.8s ease;
       }
@@ -395,7 +440,7 @@
       .right-leave-to {
         transform: translateX(-100%); /* Leave to left */
       }
-      
+
       /* Left Slide (Back) */
       .left-enter-active, .left-leave-active {
         transition: transform 0.8s ease;
@@ -406,7 +451,7 @@
       .left-leave-to {
         transform: translateX(100%); /* Leave to right */
       }
-      
+
       /* Fade for Skip */
       .fade-enter-active, .fade-leave-active {
         transition: opacity 0.8s ease;
@@ -414,7 +459,7 @@
       .fade-enter, .fade-leave-to {
         opacity: 0;
       }
-      
+
       .card {
         padding: 20px;
         border: 0; /* No border */
@@ -423,9 +468,9 @@
         border-radius: 10px;
         transition: opacity 0.5s ease-in-out;
       }
-      
-       
-      
+
+
+
       .bg-holder-natural.natural-overlay::before {
         content: "";
         position: absolute;
@@ -436,11 +481,10 @@
         background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
         z-index: 1; /* Ensures the overlay is above the background image */
       }
-      
+
       .bg-holder-natural.natural-overlay > * {
         position: relative;
         z-index: 2; /* Ensures the content inside the div is above the overlay */
       }
-      
+
       </style>
-      

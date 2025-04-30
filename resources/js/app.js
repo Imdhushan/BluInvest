@@ -49,6 +49,8 @@ const emitter = mitt();
 import VideoBackground from 'vue-responsive-video-background-player'
 
 import 'leaflet/dist/leaflet.css';
+import {createHead} from "@vueuse/head";
+const head = createHead()
 
 
 /**
@@ -59,6 +61,7 @@ import 'leaflet/dist/leaflet.css';
  */
 const app = createApp(App);
 app.use(createPinia());
+app.use(head);
 app.use(router);
 
 

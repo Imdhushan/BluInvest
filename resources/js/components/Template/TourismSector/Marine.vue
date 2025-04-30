@@ -9,7 +9,7 @@
             <!-- <h4 class="text-white fw-light opacity-5 merienda">
               -----------------
             </h4> -->
-            
+
             <p class=" text-white  text-600 opacity-10">
               Sri Lanka’s marine industries are rapidly becoming a cornerstone of its economy, benefiting from the country's strategic location along key global trade routes and its large number of marine resources. As the nation continues to develop its blue economy, various sectors within the marine industry are experiencing significant growth, supported by government initiatives, innovation, and rising global demand. From fish processing to ship repairs and maritime logistics, these industries are creating new opportunities for economic development, job creation, and sustainable practices.
 
@@ -22,8 +22,8 @@
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
   <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
-  
-    
+
+
 
     </div>
 
@@ -40,7 +40,7 @@
              />
             </card-body>
            </card>
-             
+
         </div>
         <div class="col-sm-12 col-md-7 col-lg-7 col-xl-7 pb-2 pt-0 pb-xl-2 ">
 
@@ -51,22 +51,22 @@
           <!-- <InfrastructureSection :sections="naturalSectionsData" :title="naturalTitle" :description="naturalDescription" :backgroundImage="naturalImageUrl"/> -->
           <!-- <button
           @click="retrieveFromLocalStorage"
-          
+
           class="btn btn-outline-success btn-sm mx-2 mt-2 "
         >
           Done
         </button> -->
 
         </div>
-        
+
       </div>
     </div>
-   
+
   </section>
 
   <!-- <InfrastructureSection :sections="sectionsData" :title="title" :description="description"/> -->
   <!-- <NaturalResourcesSection ref="naturalResourcesSectionRef"/> -->
-  
+
 
   <!-- <QuestionSection title="Natural Resources and Land Use"
   description="Focus on sustainable resource management and land use for a thriving environment."
@@ -94,22 +94,83 @@
 </section> -->
 
 
- 
+
 </template>
 
 <script setup>
   import { ref, computed, watch ,onMounted} from 'vue';
-  
+
   import InfrastructureSection from './InfrastructureSection.vue';
   import {infrastructureTitle, infrastructureDescription, infrastructureimageUrl, infrastructureSectionsData} from './marineCards.js'
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
- 
+
   import LeafletMap from "../LeafletMap.vue";
 import Swiper from '../../bootstrap/Swiper.vue';
 import marine from '../SwiperContent/marine.json';
+  import {useHead} from "@vueuse/head";
 
-
-const sliderContentURL="/tourismsector/event-marine"; 
+  useHead({
+    title: "Invest in Sri Lanka | Opportunities in Marine Industries, Bio-Technology, Ship Repairs",
+    meta: [
+      {
+        name: "description",
+        content: "Now is the time to invest in Sri Lanka! Unlock growth in booming marine industries fuelled by global demand, innovation, and strategic ocean trade routes."
+      },
+      {
+        name: "keywords",
+        content: "Invest in Sri Lanka, Marine Industries Sri Lanka, Bio-Technology Sri Lanka, Ship Repairs Sri Lanka"
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: "Marine Industry Investments in Sri Lanka | BluInvest"
+      },
+      {
+        property: "og:description",
+        content: "Discover high-growth marine industry opportunities in Sri Lanka - from biotechnology to ship repairs and maritime logistics."
+      },
+      {
+        property: "og:url",
+        content: "https://blu.gsentry.cloud/tourismsector/marine"
+      },
+      {
+        property: "og:image",
+        content: "https://blu.gsentry.cloud/assets/img/marine-industries-preview.jpg"
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:title",
+        content: "Marine Industry Investments | Sri Lanka Blue Economy"
+      },
+      {
+        name: "twitter:image",
+        content: "https://blu.gsentry.cloud/assets/img/marine-industries-twitter.jpg"
+      }
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://blu.gsentry.cloud/tourismsector/marine"
+      }
+    ],
+    script: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "headline": "Marine Industries Investment Opportunities in Sri Lanka",
+          "description": "Comprehensive guide to investing in Sri Lanka's growing marine industries sector",
+          "image": "https://blu.gsentry.cloud/assets/img/marine-industries-schema.jpg"
+        })
+      }
+    ]
+  });
+const sliderContentURL="/tourismsector/event-marine";
 
 const filters = ref([]);
 
@@ -189,9 +250,9 @@ const retrieveFromLocalStorage = () => {
       console.error(`Element with ID '${id}' not found in the SVG.`);
     }
   });
-  
+
   </script>
-  
+
   <style scoped>
    .content-box {
   background: rgba(0, 0, 0, 0.4); /* Black with 60% transparency */
@@ -226,10 +287,9 @@ const retrieveFromLocalStorage = () => {
     background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
     z-index: 1; /* Ensures the overlay is above the background image */
   }
-  
+
   .bg-holder-natural.natural-overlay > * {
     position: relative;
     z-index: 2; /* Ensures the content inside the div is above the overlay */
   }
   </style>
-  

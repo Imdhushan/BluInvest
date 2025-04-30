@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm-12 col-md-5 col-lg-5 col-xl-5  pt-3 ">
   <!-- <iframe class="img-fluid" src="/assets/img/generic/dashboard-alt.jpg" title="Embedded Content"></iframe> -->
-  <iframe  src="https://phpdemo.g-sentry.com/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
+  <iframe  src="https://phpdemo.gsentry.cloud/vectormap.html" scrolling="no" style="width:600px; height:700px;"></iframe>
 
 
 
@@ -121,13 +121,59 @@
   import {naturalTitle, naturalDescription, naturalImageUrl, naturalSectionsData} from './naturalResourcesCards.js'
 
   import LeafletMap from "../LeafletMap.vue";
-import Swiper from '../../bootstrap/Swiper.vue';
-import tourism from '../SwiperContent/tourism.json';
-import tourismRegulation from '../SwiperContent/tourismRegulation.json';
+  import Swiper from '../../bootstrap/Swiper.vue';
+  import tourism from '../SwiperContent/tourism.json';
+  import tourismRegulation from '../SwiperContent/tourismRegulation.json';
+  import {useHead} from "@vueuse/head";
 
-const defaultRoute ="/regulation/tourism";
 
-const filters = ref([]);
+  useHead({
+    title: "Invest in Sri Lanka Tourism | Opportunities in Tourism | BluInvest",
+    meta: [
+      {
+        name: "description",
+        content: "Looking to invest in Sri Lanka tourism? Discover countless opportunities available at the Pearl of the Indian Ocean with BluInvest today!"
+      },
+      {
+        name: "keywords",
+        content: "Invest in Sri Lanka Tourism"
+      },
+      // Open Graph (Facebook/LinkedIn)
+      {
+        property: "og:title",
+        content: "Invest in Sri Lanka Tourism | Opportunities in Tourism | BluInvest"
+      },
+      {
+        property: "og:description",
+        content: "Looking to invest in Sri Lanka tourism? Discover countless opportunities available at the Pearl of the Indian Ocean with BluInvest today!"
+      },
+      {
+        property: "og:url",
+        content: "https://blu.gsentry.cloud/tourismsector/tourism"
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:title",
+        content: "Invest in Sri Lanka Tourism | BluInvest"
+      },
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://blu.gsentry.cloud/tourismsector/tourism"
+      }
+    ]
+  });
+
+  const defaultRoute ="/regulation/tourism";
+
+  const filters = ref([]);
+
+
 
 
 const retrieveFromLocalStorage = (eventData) => {

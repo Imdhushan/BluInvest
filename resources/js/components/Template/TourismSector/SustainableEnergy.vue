@@ -121,12 +121,76 @@
 import Swiper from '../../bootstrap/Swiper.vue';
 import enargy from '../SwiperContent/enargy.json';
 import enargyRegulation from '../SwiperContent/enargyRegulation.json';
+  import {useHead} from "@vueuse/head";
 
 
 const sliderContent ="/tourismsector/event-energy"
 const defaultRoute="/regulation/energy";
 const filters = ref([]);
 
+
+  useHead({
+    title: "Renewable Energy Sri Lanka | Solar, Wind Energy Sri Lanka | BluInvest",
+    meta: [
+      {
+        name: "description",
+        content: "Discover the potential of renewable energy in Sri Lanka, from solar power to coastal wind. Explore how this island nation is shaping a sustainable future."
+      },
+      {
+        name: "keywords",
+        content: "Renewable Energy Sri Lanka, Solar Power Sri Lanka, Wind Energy Sri Lanka"
+      },
+      // Open Graph
+      {
+        property: "og:title",
+        content: "Renewable Energy Investments in Sri Lanka | Solar & Wind Power"
+      },
+      {
+        property: "og:description",
+        content: "Sri Lanka's abundant solar and wind resources offer exceptional renewable energy investment opportunities with strong growth potential."
+      },
+      {
+        property: "og:url",
+        content: "https://blu.gsentry.cloud/tourismsector/energy"
+      },
+      {
+        property: "og:image",
+        content: "https://blu.gsentry.cloud/assets/img/renewable-energy-preview.jpg"
+      },
+      // Twitter
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:title",
+        content: "Renewable Energy Sri Lanka | Solar & Wind Investments"
+      },
+      {
+        name: "twitter:image",
+        content: "https://blu.gsentry.cloud/assets/img/renewable-energy-twitter.jpg"
+      }
+    ],
+    link: [
+      {
+        rel: "canonical",
+        href: "https://blu.gsentry.cloud/tourismsector/energy"
+      }
+    ],
+    script: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "headline": "Renewable Energy Investment Opportunities in Sri Lanka",
+          "description": "Comprehensive guide to investing in Sri Lanka's solar and wind energy sector",
+          "image": "https://blu.gsentry.cloud/assets/img/renewable-energy-schema.jpg",
+          "keywords": ["Solar Energy", "Wind Power", "Renewable Investments", "Sri Lanka Energy Sector"]
+        })
+      }
+    ]
+  });
 
 const retrieveFromLocalStorage = () => {
   filters.value =  [
